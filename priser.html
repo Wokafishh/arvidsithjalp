@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arvids IT-hjälp – Priser</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --teal: #0b8a8a;
+    --teal-light: #e6f5f5;
+    --teal-dark: #076666;
+    --navy: #1a2b3c;
+    --text: #2d3748;
+    --muted: #5a6a7a;
+    --sage: #f0f7f4;
+    --white: #ffffff;
+    --radius: 12px;
+  }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  h1, h2, h3 { font-family: 'Fraunces', serif; }
+
+  /* ── DISCOUNT BANNER ── */
+  .discount-banner {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+    color: white;
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .discount-icon { font-size: 2.5rem; flex-shrink: 0; }
+  .discount-banner h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    opacity: 0.85;
+    margin-bottom: 4px;
+  }
+  .discount-banner .discount-amount {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .discount-banner p { font-size: 0.9rem; opacity: 0.85; margin-top: 6px; }
+
+  /* ── PRICE CARDS ── */
+  .pricing { padding: 56px 48px; }
+  .pricing h1 { font-size: 2rem; color: var(--teal); margin-bottom: 36px; }
+  .price-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .price-card {
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    border: 2px solid var(--teal-light);
+    position: relative;
+  }
+  .price-card.standard { background: var(--white); }
+  .price-card.advanced { background: var(--teal); color: white; border-color: var(--teal); }
+  .price-card .label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 8px;
+  }
+  .price-card h2 { font-size: 1.4rem; margin-bottom: 4px; color: inherit; }
+  .price-card.advanced h2 { color: white; }
+  .price-amount {
+    font-family: 'Fraunces', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--teal);
+    line-height: 1;
+    margin: 16px 0 4px;
+  }
+  .price-card.advanced .price-amount { color: white; }
+  .per-hour { font-size: 0.9rem; opacity: 0.7; margin-bottom: 24px; }
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .service-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95rem;
+  }
+  .service-list li::before {
+    content: "→";
+    font-weight: 700;
+    flex-shrink: 0;
+    color: inherit;
+    opacity: 0.8;
+  }
+
+  /* ── TRAVEL FEE ── */
+  .travel-fee {
+    background: var(--sage);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .travel-fee .amount {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--teal);
+    white-space: nowrap;
+  }
+  .travel-fee p { color: var(--muted); font-size: 0.95rem; }
+
+  /* ── PAYMENT INFO ── */
+  .payment { background: var(--sage); padding: 48px; }
+  .payment h2 {
+    font-size: 1.8rem;
+    color: var(--teal);
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .payment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 560px;
+    margin: 0 auto 24px;
+  }
+  .payment-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+  }
+  .payment-card .pay-icon { font-size: 2rem; margin-bottom: 10px; }
+  .payment-card h3 { font-family: 'DM Sans', sans-serif; font-weight: 600; margin-bottom: 6px; color: var(--navy); }
+  .payment-card p { font-size: 0.9rem; color: var(--muted); }
+  .fine-print {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .fine-print p + p { margin-top: 4px; }
+
+  @media (max-width: 768px) {
+    .discount-banner { padding: 24px; flex-direction: column; text-align: center; }
+    .pricing, .payment { padding: 40px 24px; }
+    .price-cards, .payment-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- DISCOUNT BANNER -->
+<div class="discount-banner">
+  <div class="discount-icon">🏷️</div>
+  <div>
+    <h2>Pågående rabatt</h2>
+    <div class="discount-amount">Recensionsrabatt 5%</div>
+    <p>Appliceras om du svarar på några frågor efter att jag har gjort min service.</p>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section class="pricing">
+  <h1>Priser</h1>
+  <div class="price-cards">
+    <div class="price-card standard">
+      <div class="label">Standard</div>
+      <h2>Standardservice</h2>
+      <div class="price-amount">149</div>
+      <div class="per-hour">kr / timme</div>
+      <ul class="service-list">
+        <li>Hårdvarustöd / Felsökning</li>
+        <li>Systemdiagnostik / Virussökning</li>
+        <li>Annan mjukvarusupport</li>
+        <li>Optimering, underhåll och allmänna fysiska problem</li>
+      </ul>
+    </div>
+    <div class="price-card advanced">
+      <div class="label">Avancerat</div>
+      <h2>Avancerad service</h2>
+      <div class="price-amount">249</div>
+      <div class="per-hour">kr / timme</div>
+      <ul class="service-list">
+        <li>Internet / Wi-Fi</li>
+        <li>Större installationer</li>
+        <li>Reparationer</li>
+        <li>Reparation, rekonstruktion samt problem som kräver specialdelar/verktyg</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="travel-fee">
+    <div class="amount">50 kr</div>
+    <div>
+      <strong>Framkörningsavgift</strong>
+      <p>Tillkommer vid hembesök. Timpriset faktureras per påbörjad halvtimme.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section class="payment">
+  <h2>Betalning</h2>
+  <div class="payment-grid">
+    <div class="payment-card">
+      <div class="pay-icon">📱</div>
+      <h3>Swish</h3>
+      <p>Snabbt och enkelt via Swish-appen</p>
+    </div>
+    <div class="payment-card">
+      <div class="pay-icon">💵</div>
+      <h3>Kontant</h3>
+      <p>Kontanter accepteras alltid</p>
+    </div>
+  </div>
+  <div class="fine-print">
+    <p>✓ Ifall problemet inte går att lösa betalar du ingenting.</p>
+    <p>✓ Du får alltid en prisuppskattning innan vi bokar tid.</p>
+  </div>
+</section>
+
+</body>
+</html>
