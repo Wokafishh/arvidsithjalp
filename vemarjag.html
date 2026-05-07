@@ -1,253 +1,63 @@
-  <!DOCTYPE html>
-  <html lang="sv">
-  <head>
+<!DOCTYPE html>
+<html lang="sv">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arvids IT-hjälp – Vem är jag?</title>
+  <title>Arvids IT-hjälp – Om mig</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    :root {
-      --teal: #0b8a8a;
-      --teal-light: #e6f5f5;
-      --teal-dark: #076666;
-      --navy: #1a2b3c;
-      --text: #2d3748;
-      --muted: #5a6a7a;
-      --sage: #f0f7f4;
-      --white: #ffffff;
-      --radius: 12px;
-    }
+<div id="nav-placeholder"></div>
+<script src="nav.js"></script>
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.7;
-      font-size: 16px;
-    }
+<section class="about">
+  <div class="about-text">
+    <h1>Vem är jag?</h1>
+    <p><strong>Jag heter Arvid</strong> och går som teknik-elev på Hedda Anderssongymnasiet. Under min tid på skolan har jag lärt mig mycket om tekniska problem, och jag har erfarenhet av IT-hjälp genom mitt volontärarbete på seniorträffpunkt Laurentiigatan i Lund.</p>
+    <p>För ca 10 år sedan började jag experimentera med kod, och sedan dess har jag skapat många projekt. Jag har lärt mig de mönster som förekommer inom elektronik och mjukvara på riktigt.</p>
+    <div class="projects-label">Några av mina projekt:</div>
+    <ul class="project-list">
+      <li>En egen kartapp</li>
+      <li>En 3D-motor i Scratch</li>
+      <li>En självkörande arduino-bil (kom #2 i turneringen!)</li>
+    </ul>
+  </div>
+  <div class="about-photo">
+    <img src="https://i.postimg.cc/sDsfbN2S/Screenshot-2026-05-04-at-12-47-32-Arvids-IT-hjalp-Vem-ar-jag.png" alt="Arvid, grundare av Arvids IT-hjälp i Lund">
+    <div class="photo-caption">Arvid, grundare av Arvids IT-hjälp.</div>
+  </div>
+</section>
 
-    h1, h2, h3 { font-family: 'Fraunces', serif; }
-
-    /* ── ABOUT SECTION ── */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: start;
-      padding: 64px 48px 56px;
-    }
-
-    .about-text h1 {
-      font-size: 2.2rem;
-      color: var(--teal);
-      margin-bottom: 24px;
-    }
-
-    .about-text p {
-      color: var(--text);
-      margin-bottom: 16px;
-    }
-
-    .about-text strong { color: var(--navy); }
-
-    .projects-label {
-      font-weight: 600;
-      color: var(--navy);
-      margin-top: 24px;
-      margin-bottom: 12px;
-      font-size: 0.95rem;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-
-    .project-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .project-list li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 16px;
-      background: var(--teal-light);
-      border-radius: 8px;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    .project-list li::before {
-      content: "🛠";
-      flex-shrink: 0;
-    }
-
-    /* ── PHOTO ── */
-    .about-photo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .photo-frame {
-      width: 100%;
-      aspect-ratio: 3/4;
-      background: var(--teal-light);
-      border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--teal);
-      font-size: 0.9rem;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .photo-caption {
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-align: center;
-      font-style: italic;
-    }
-
-    /* ── QUOTES ── */
-    .teacher-refs {
-      background: var(--sage);
-      padding: 56px 48px;
-    }
-
-    .teacher-refs h2 {
-      font-size: 1.8rem;
-      color: var(--teal);
-      margin-bottom: 8px;
-    }
-
-    .ref-note {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 36px;
-    }
-
-    .ref-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .ref-card {
-      background: white;
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      position: relative;
-    }
-
-    .quote-mark {
-      font-family: 'Fraunces', serif;
-      font-size: 4rem;
-      color: var(--teal-light);
-      line-height: 0.7;
-      position: absolute;
-      top: 16px;
-      left: 20px;
-      user-select: none;
-    }
-
-    .ref-quote {
-      font-style: italic;
-      color: var(--text);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-top: 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .ref-divider {
-      width: 32px;
-      height: 2px;
-      background: var(--teal);
-    }
-
-    .ref-name {
-      font-weight: 600;
-      color: var(--navy);
-      font-size: 0.9rem;
-    }
-
-    .ref-role {
-      color: var(--teal);
-      font-size: 0.82rem;
-    }
-
-    @media (max-width: 768px) {
-      .about { grid-template-columns: 1fr; padding: 40px 24px; gap: 32px; }
-      .about-photo { order: -1; }
-      .teacher-refs { padding: 40px 24px; }
-      .ref-cards { grid-template-columns: 1fr; }
-    }
-  </style>
-  </head>
-  <body>
-
-  <!-- ABOUT -->
-  <section class="about">
-    <div class="about-text">
-      <h1>Vem är jag?</h1>
-      <p><strong>Jag heter Arvid</strong> och går som teknik-elev på Hedda Anderssongymnasiet. Under min tid på skolan har jag lärt mig mycket om olika tekniska problem, samt att jag även har mycket erfarenhet av teknikhjälp genom mitt arbete som volontär på seniorträffpunkt Laurentiigatan.</p>
-      <p>För ca 10 år sedan började jag experimentera med kod, och sedan dess har jag skapat många intressanta projekt. Jag har både använt och skapat program och maskiner, och på så sätt lärt mig de mönster som förekommer inom elektronik.</p>
-
-      <div class="projects-label">Några av mina projekt:</div>
-      <ul class="project-list">
-        <li>En egen kartapp</li>
-        <li>En 3D-motor i Scratch</li>
-        <li>En självkörande arduino-bil (kom #2 i tuneringen!)</li>
-      </ul>
+<section class="teacher-refs">
+  <h2>Referenser</h2>
+  <p class="ref-note">Kontaktinformation kan ges vid efterfrågan</p>
+  <div class="ref-cards">
+    <div class="card ref-card">
+      <div class="quote-mark">"</div>
+      <div class="ref-quote">Arvid är företagsam och noggrann, ambitiös och eftersträvar ett gott resultat.</div>
+      <div class="ref-divider"></div>
+      <div class="ref-name">Marcus Persson</div>
+      <div class="ref-role">Lärare i Entreprenörskap och Företagande</div>
     </div>
-
-    <div class="about-photo">
-          <img src="https://i.postimg.cc/sDsfbN2S/Screenshot-2026-05-04-at-12-47-32-Arvids-IT-hjalp-Vem-ar-jag.png" alt="Arvid" style="object-fit: cover; border-radius: 12px;">
-      <div class="photo-caption">Arvid, grundare av Arvids IT-hjälp.</div>
+    <div class="card ref-card">
+      <div class="quote-mark">"</div>
+      <div class="ref-quote">Arvid är både kreativ och problemlösare som gör det komplexa enkelt!</div>
+      <div class="ref-divider"></div>
+      <div class="ref-name">Enrique Zuloaga</div>
+      <div class="ref-role">Lärare i Matematik och Datakommunikation</div>
     </div>
-  </section>
-
-  <!-- TEACHER REFERENCES -->
-  <section class="teacher-refs">
-    <h2>Refenser</h2>
-    <p class="ref-note">Kontaktinformation kan ges vid efterfrågan</p>
-    <div class="ref-cards">
-      <div class="ref-card">
-        <div class="quote-mark">"</div>
-        <div class="ref-quote">Arvid är företagsam och noggrann, ambitiös och eftersträvar ett gott resultat.</div>
-        <div class="ref-divider"></div>
-        <div class="ref-name">Marcus Persson</div>
-        <div class="ref-role">Lärare i Entreprenörskap och Företagande</div>
-      </div>
-
-      <div class="ref-card">yallah machina
-        <div class="quote-mark">"</div>
-        <div class="ref-quote">Arvid är både kreativ och problemlösare som gör den komplexa enkel!</div>
-        <div class="ref-divider"></div>
-        <div class="ref-name">Enrique Zuloaga</div>
-        <div class="ref-role">Lärare i Matematik och Datakommunikation</div>
-      </div>
-
-      <div class="ref-card">
-        <div class="quote-mark">"</div>
-        <div class="ref-quote">Seriös, ambitiös och med god fallenhet för teknik och matematik.</div>
-        <div class="ref-divider"></div>
-        <div class="ref-name">Ida Klementson</div>
-        <div class="ref-role">Lärare i Teknik och Matematik</div>
-      </div>
+    <div class="card ref-card">
+      <div class="quote-mark">"</div>
+      <div class="ref-quote">Seriös, ambitiös och med god fallenhet för teknik och matematik.</div>
+      <div class="ref-divider"></div>
+      <div class="ref-name">Ida Klementson</div>
+      <div class="ref-role">Lärare i Teknik och Matematik</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  </body>
-  </html>
+</body>
+</html>
