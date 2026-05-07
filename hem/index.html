@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arvids IT-hjälp – IT-support i Lund</title>
+  <meta name="description"
+    content="Arvids IT-hjälp erbjuder IT-support och IT-hjälp hemma hos dig i Lund. Hjälp med BankID, Wi-Fi, dator och mer. Från 149 kr/tim.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <!-- SEO -->
+  <meta name="description"
+    content="Arvids IT-hjälp erbjuder IT-support och IT-hjälp hemma hos dig i Lund. Hjälp med BankID, Wi-Fi, dator och mer. Från 149 kr/tim.">
+  <meta name="keywords" content="IT-hjälp Lund, IT-support Lund, datorhjälp Lund, BankID hjälp Lund, wifi hjälp Lund">
+  <meta name="author" content="Arvid">
+  <link rel="canonical" href="https://arvidsithjalp.se/">
+
+  <!-- Open Graph (Instagram, Facebook, iMessage, Discord m.fl.) -->
+  <meta property="og:title" content="Arvids IT-hjälp - IT-support i Hemmet.">
+  <meta property="og:description" content="Hembesök i Lund från 149 kr/tim. Hjälp med BankID, Wi-Fi, dator och mer.">
+  <meta property="og:image" content="https://arvidsithjalp.se/preview.jpg">
+  <meta property="og:url" content="https://arvidsithjalp.se/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+
+  <!-- Twitter/X (fungerar även på många andra ställen) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arvids IT-hjälp - IT-support i Hemmet">
+  <meta name="twitter:description" content="Hembesök i Lund från 149 kr/tim.">
+  <meta name="twitter:image" content="https://arvidsithjalp.se/preview.jpg">
+</head>
+
+<body>
+
+  <div id="nav-placeholder"></div>
+  <script src="/nav.js"></script>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Arvids IT-hjälp i Lund</h1>
+      <p class="hero-lead">Trött på teknik som inte fungerar?</p>
+      <p>Hembesök i Lund med IT-support och IT-hjälp från 149 kr/tim. Du får alltid en prisuppskattning innan vi bokar
+        tid.</p>
+      <p>Jag driver Arvids IT-hjälp som ett UF-företag. Du hittar mig måndagar kl. 15–16 på seniorträffpunkt
+        Laurentiigatan!</p>
+      <br>
+      <a href="tel:0760284310" class="btn">Ring nu</a>
+    </div>
+    <div class="hero-img">
+      <img src="https://i.postimg.cc/tRtpdNz3/Screenshot-2026-05-04-at-12-47-49-Arvids-IT-hjalp.png"
+        alt="Arvids IT-hjälp i Lund">
+    </div>
+  </section>
+
+  <section class="why">
+    <h2>Varför välja mig?</h2>
+    <p>Din trygghet är det viktigaste. Jag förklarar gärna vad jag gör, så du kan lösa problemet själv nästa gång.</p>
+    <div class="why-grid">
+      <div class="card card--accent-top why-card">
+        <h3>Prisuppskattning</h3>
+        <p>Du får alltid en prisuppskattning före vi bestämmer tid.</p>
+      </div>
+      <div class="card card--accent-top why-card">
+        <h3>Betala vid lösning</h3>
+        <p>Går problemet inte att lösa betalar du ingenting.</p>
+      </div>
+      <div class="card card--accent-top why-card">
+        <h3>Kunskap på köpet</h3>
+        <p>Jag förklarar vad jag gör, så du kan lösa liknande problem själv nästa gång.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <h2>Vad kan jag hjälpa dig med?</h2>
+    <div class="services-grid">
+      <div class="service-item">Mobil och appar (BankID, Swish, meddelandeappar)</div>
+      <div class="service-item">Wi-Fi och internetuppkoppling</div>
+      <div class="service-item">Datorproblem och felsökning</div>
+      <div class="service-item">Virussökning och onlinesäkerhet</div>
+      <div class="service-item">Köpråd (mobil, laptop, tillbehör)</div>
+      <div class="service-item">Hårdvara och reparationer</div>
+      <div class="service-item">Inställningar och anpassningar</div>
+      <div class="service-item">Annan mjukvarusupport</div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <h2>Recensioner</h2>
+    <div id="avg-banner"
+      style="display:flex;flex-direction:column;align-items:center;text-align:center;background:white;border-radius:12px;padding:20px 24px;margin-bottom:28px;border:1.5px solid #d0e8e8;">
+    </div>
+    <div class="filter-bar">
+      <div class="filter-group">
+        <label for="filter">Visa</label>
+        <select id="filter">
+          <option value="0">Alla stjärnor</option>
+          <option value="5">★★★★★ 5 stjärnor</option>
+          <option value="4">★★★★☆ 4 stjärnor</option>
+          <option value="3">★★★☆☆ 3 stjärnor</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="sort">Sortera</label>
+        <select id="sort">
+          <option value="desc">Mest stjärnor först</option>
+          <option value="asc">Minst stjärnor först</option>
+        </select>
+      </div>
+    </div>
+    <div class="reviews-grid" id="reviews-grid"></div>
+  </section>
+
+  <script>
+    const reviews = [
+      { score: 5, text: "Snabbt och proffessionellt. Väldigt nöjd!", name: "Kjell N.", service: "Mjukvaruinstallation" },
+      { score: 5, text: "Effektiv och lösningsorienterad.", name: "Jenny F.", service: "Hjälp med ljudinspelning" },
+      { score: 5, text: "Jag är så totalt nöjd och glad. De andra tjänsterna jag har testat har inte lyckats, utan rent av misslyckats.", name: "Pauline R.", service: "Hjälp med mobilen" }
+    ];
+
+    function stars(n) { return "★".repeat(n) + "☆".repeat(5 - n); }
+
+    const avg = reviews.reduce((s, r) => s + r.score, 0) / reviews.length;
+    document.getElementById("avg-banner").innerHTML = `
+    <div style="display:flex;align-items:center;gap:16px">
+      <span style="font-size:2.5rem;font-weight:700;color:#1a2b3c;line-height:1">${avg.toFixed(1)}</span>
+      <div>
+        <div style="color:#f4b942;font-size:1.2rem;letter-spacing:2px">${stars(Math.round(avg))}</div>
+        <div style="font-size:0.85rem;color:#5a6a7a;margin-top:2px">${reviews.length} recensioner</div>
+      </div>
+    </div>`;
+
+    function render() {
+      const min = +document.getElementById("filter").value;
+      const asc = document.getElementById("sort").value === "asc";
+      const grid = document.getElementById("reviews-grid");
+      grid.innerHTML = "";
+      const filtered = [...reviews].filter(r => !min || r.score === min).sort((a, b) => asc ? a.score - b.score : b.score - a.score);
+      if (!filtered.length) {
+        grid.innerHTML = `<div class="no-reviews"><p>Inga recensioner att visa.</p></div>`;
+        return;
+      }
+      filtered.forEach(r => {
+        const card = document.createElement("div");
+        card.className = "review-card";
+        card.innerHTML = `<div class="stars">${stars(r.score)}</div><p class="review-text">"${r.text}"</p><div class="reviewer-name">${r.name}</div><div class="reviewer-service">${r.service}</div>`;
+        grid.appendChild(card);
+      });
+    }
+
+    document.getElementById("filter").onchange = render;
+    document.getElementById("sort").onchange = render;
+    render();
+  </script>
+
+</body>
+
+</html>
