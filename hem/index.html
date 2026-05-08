@@ -42,8 +42,27 @@
 
 <body>
 
-  <div id="nav-placeholder"></div>
-  <script src="/nav.js"></script>
+  <nav>
+    <a class="nav-logo" href="/hem/">Arvids IT-hjälp</a>
+    <button class="nav-toggle" aria-label="Meny"
+      onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/hem/">Hem/Recensioner</a></li>
+      <li><a href="/pris/">Priser</a></li>
+      <li><a href="/om/">Vem är jag?</a></li>
+      <li><a href="/kontakt/">Kontakta mig!</a></li>
+    </ul>
+  </nav>
+  <script>
+    (function () {
+      const page = '/' + location.pathname.split('/').filter(Boolean).join('/') + '/';
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        if (a.getAttribute('href') === page) a.classList.add('active');
+      });
+    })();
+  </script>
 
   <section class="hero">
     <div class="hero-text">
