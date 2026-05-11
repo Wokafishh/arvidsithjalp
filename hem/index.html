@@ -173,7 +173,7 @@
       }
       filtered.forEach(r => {
         const card = document.createElement("div");
-        card.className = "review-card";
+        card.className = "card review-card";
         card.innerHTML = `<div class="stars">${stars(r.score)}</div><p class="review-text">"${r.text}"</p><div class="reviewer-name">${r.name}</div><div class="reviewer-service">${r.service}</div>`;
         grid.appendChild(card);
       });

@@ -258,6 +258,12 @@ nav {
 
 .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
+.review-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  border: 1.5px solid var(--teal-light);
+}
 .review-card h3 { font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
 .stars { color: #f4b942; font-size: 1rem; letter-spacing: 2px; margin-bottom: 10px; }
 .review-text { color: var(--text); font-style: italic; font-size: 0.95rem; margin-bottom: 16px; line-height: 1.6; }
@@ -430,7 +436,7 @@ nav {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 24px;
-  padding: 28px 32px;
+  padding: 28px 24px;
 }
 
 .contact-card .card-icon { font-size: 2rem; }
@@ -487,7 +493,13 @@ nav {
 .project-list li::before { content: "🛠"; flex-shrink: 0; }
 
 .about-photo { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.about-photo img { width: 100%; border-radius: var(--radius); object-fit: cover; }
+.about-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--teal-light);
+}
+.about-img img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); }
 .photo-caption { font-size: 0.85rem; color: var(--muted); text-align: center; font-style: italic; }
 
 .teacher-refs { background: var(--sage); padding: 56px 48px; }

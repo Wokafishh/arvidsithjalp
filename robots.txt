@@ -1,4 +1,30 @@
+# Google - full crawling
+User-agent: Googlebot
+Allow: /
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /
+
+# Google AdSense (optional but recommended)
+User-agent: Mediapartners-Google
+Allow: /
+
+# Facebook link previews
 User-agent: facebookexternalhit
 Allow: /
+
+# Facebook bot (older crawler)
 User-agent: Facebot
 Allow: /
+
+# Instagram (uses Facebook's crawler)
+User-agent: Instagram
+Allow: /
+
+# Catch-all for everything else (optional)
+User-agent: *
+Allow: /
+
+# Sitemap (highly recommended for Google indexing)
+Sitemap: https://yourdomain.com/sitemap.xml
