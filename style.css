@@ -67,16 +67,60 @@
 .filter-group select { appearance: none; -webkit-appearance: none; border: none; outline: none; background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%230b8a8a' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 10px center; padding: 0 32px 0 12px; height: 40px; font-size: 0.88rem; font-family: 'DM Sans', sans-serif; color: var(--navy); font-weight: 500; cursor: pointer; min-width: 140px; }
 
 /* ── PRICING ── */
-.discount-banner { background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%); color: white; padding: 32px 48px; display: flex; align-items: center; gap: 20px; }
-.discount-icon { font-size: 2.5rem; flex-shrink: 0; }
-.discount-banner h2 { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.1rem; opacity: 0.85; margin-bottom: 4px; }
-.discount-banner .discount-amount { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; line-height: 1; }
-.discount-banner p { font-size: 0.9rem; opacity: 0.85; margin-top: 6px; }
+.pricing {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px 48px;
+  overflow-x: hidden;
+}
 
-.pricing { padding: 56px 48px; }
+.price-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 100%;
+}
+
+.travel-fee {
+  max-width: 900px;
+  margin: 0 auto 32px;
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--sage);
+}
+
+/* ── PAYMENT ── */
+.payment {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--sage);
+  padding: 48px;
+}
+
+/* ── DISCOUNT BANNER (om du använder den senare) ── */
+.discount-banner {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  color: white;
+  padding: 32px 48px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.pricing {
+  overflow-x: hidden;
+}
+
+.price-cards {
+  max-width: 100%;
+}
 .pricing h1 { font-size: 2rem; color: var(--teal); margin-bottom: 36px; }
-
-.price-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
 
 .price-card .label { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; margin-bottom: 8px; }
 .price-card h2 { font-size: 1.4rem; margin-bottom: 4px; }
@@ -88,11 +132,32 @@
 
 .service-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .service-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; }
-.service-list li::before { content: "→"; font-weight: 700; flex-shrink: 0; opacity: 0.8; }
+.service-list li::before { content: ">"; font-weight: 700; flex-shrink: 0; opacity: 0.8; }
 
 .travel-fee { border-radius: var(--radius); padding: 20px 24px; display: flex; align-items: center; gap: 16px; margin-bottom: 32px; background: var(--sage); }
 .travel-fee .amount { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; color: var(--teal); white-space: nowrap; }
 .travel-fee p { color: var(--muted); font-size: 0.95rem; }
+
+@media (max-width: 768px) {
+  .travel-fee {
+    flex-direction: column; 
+    align-items: flex-start;
+    padding: 16px;
+    gap: 8px;
+  }
+
+  .travel-fee .amount {
+    font-size: 1.8rem;    
+    line-height: 1.2;
+  }
+
+  .travel-fee p {
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+}
+
+
 
 .payment { background: var(--sage); padding: 48px; }
 .payment h2 { font-size: 1.8rem; color: var(--teal); margin-bottom: 24px; text-align: center; }

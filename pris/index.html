@@ -22,24 +22,146 @@
       --fb-blue: #1877f2;
       --fb-blue-dark: #0e5cbf;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    h1, h2, h3 { font-family: 'Fraunces', serif; }
-    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1.5px solid var(--teal-light); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 60px; box-shadow: 0 1px 8px rgba(11,138,138,0.07); }
-    .nav-logo { font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 700; color: var(--teal); text-decoration: none; white-space: nowrap; }
-    .nav-links { display: flex; gap: 4px; list-style: none; }
-    .nav-links a { display: block; padding: 6px 14px; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 500; color: var(--muted); transition: background 0.15s, color 0.15s; }
-    .nav-links a:hover, .nav-links a.active { background: var(--teal-light); color: var(--teal); }
-    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--teal); border-radius: 2px; transition: transform 0.2s, opacity 0.2s; }
-    .btn { display: inline-block; background: var(--teal); color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: background 0.2s; cursor: pointer; border: none; text-align: center; }
-    .btn:hover { background: var(--teal-dark); }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Fraunces', serif;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1.5px solid var(--teal-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 60px;
+      box-shadow: 0 1px 8px rgba(11, 138, 138, 0.07);
+    }
+
+    .nav-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--teal);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 6px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--teal-light);
+      color: var(--teal);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--teal);
+      border-radius: 2px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--teal);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.2s;
+      cursor: pointer;
+      border: none;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background: var(--teal-dark);
+    }
+
     @media (max-width: 768px) {
-      nav { padding: 0 20px; }
-      .nav-toggle { display: flex; }
-      .nav-links { display: none; flex-direction: column; gap: 4px; position: absolute; top: 60px; left: 0; right: 0; background: var(--white); border-bottom: 1.5px solid var(--teal-light); padding: 12px 16px 16px; box-shadow: 0 4px 12px rgba(11,138,138,0.1); }
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 10px 14px; font-size: 0.95rem; }
+      nav {
+        padding: 0 20px;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        border-bottom: 1.5px solid var(--teal-light);
+        padding: 12px 16px 16px;
+        box-shadow: 0 4px 12px rgba(11, 138, 138, 0.1);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px 14px;
+        font-size: 0.95rem;
+      }
     }
   </style>
 
@@ -122,49 +244,35 @@
     })();
   </script>
 
-  <div class="discount-banner">
-    <div class="discount-icon">🏷️</div>
-    <div>
-      <h2>Pågående rabatt</h2>
-      <div class="discount-amount">Recensionsrabatt 5%</div>
-      <p>Appliceras om du svarar på några frågor efter att jag har gjort min service.</p>
-    </div>
-  </div>
-
   <section class="pricing">
     <h1>Priser</h1>
     <div class="price-cards">
       <div class="card price-card">
-        <div class="label">Standard</div>
-        <h2>Standardservice</h2>
+        <div class="label">Introduktionspris</div>
+        <h2>Första besöket</h2>
         <div class="price-amount">149</div>
         <div class="per-hour">kr / timme</div>
+        <p style="margin-top: 1rem;">+ utkörningsavgift</p>
         <ul class="service-list">
-          <li>Hårdvarustöd / Felsökning</li>
-          <li>Systemdiagnostik / Virussökning</li>
-          <li>Annan mjukvarusupport</li>
-          <li>Optimering och underhåll</li>
+          <li>Vid ditt första besök</li>
         </ul>
       </div>
       <div class="card card--teal price-card">
-        <div class="label">Avancerat</div>
-        <h2>Avancerad service</h2>
-        <div class="price-amount">249</div>
+        <div class="label">Ordinarie pris</div>
+        <h2>Därefter</h2>
+        <div class="price-amount">299</div>
         <div class="per-hour">kr / timme</div>
+        <p style="margin-top: 1rem;">+ utkörningsavgift</p>
         <ul class="service-list">
-          <li>Internet / Wi-Fi</li>
-          <li>Större installationer</li>
-          <li>Reparationer</li>
-          <li>Problem som kräver specialdelar/verktyg</li>
+          <li>All IT-support du behöver</li>
         </ul>
       </div>
     </div>
-
     <div class="travel-fee">
       <div class="amount">50 kr</div>
       <div>
-        <strong>Framkörningsavgift</strong>
-        <p>Tillkommer vid hembesök. Timpriset faktureras per påbörjad halvtimme.</p>
+        <strong>Utkörningsavgift</strong>
+        <p>Att ta bussen är dyrt!</p>
       </div>
     </div>
   </section>
