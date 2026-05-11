@@ -6,6 +6,24 @@
   <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
   <title>Arvids IT-hjälp – IT-support i Lund</title>
   <link rel="canonical" href="https://arvidsithjalp.se/hem/">
+
+  <style>
+    :root {
+      --teal: #0b8a8a;
+      --teal-light: #e6f5f5;
+      --teal-dark: #076666;
+      --navy: #1a2b3c;
+      --text: #2d3748;
+      --muted: #5a6a7a;
+      --sage: #f0f7f4;
+      --white: #ffffff;
+      --radius: 12px;
+      --fb-blue: #1877f2;
+      --fb-blue-dark: #0e5cbf;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  </style>
   
   <!-- Open Graph / Social Media (Instagram, Facebook, etc.) -->
   <meta property="og:title" content="Arvids IT-hjälp – IT-support i Lund">
@@ -28,11 +46,13 @@
   <link rel="dns-prefetch" href="https://i.postimg.cc">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="preload" as="style" href="/style.css" onload="this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="/style.css">
+  </noscript>
   
   <!-- Redirect humans to /hem/ immediately, but let crawlers see the meta tags above -->
   <script>
-    // This runs immediately – crawlers that don't execute JS will stay and see the OG tags
     window.location.replace("/hem/");
   </script>
 </head>
