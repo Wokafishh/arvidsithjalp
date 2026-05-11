@@ -18,6 +18,9 @@ Allow: /
 User-agent: Facebot
 Allow: /
 
+# Sitemap
+Sitemap: https://arvidsithjalp.se/sitemap.xml
+
 # Instagram (uses Facebook's crawler)
 User-agent: Instagram
 Allow: /
@@ -25,6 +28,3 @@ Allow: /
 # Catch-all for everything else (optional)
 User-agent: *
 Allow: /
-
-# Sitemap (highly recommended for Google indexing)
-Sitemap: https://yourdomain.com/sitemap.xml
