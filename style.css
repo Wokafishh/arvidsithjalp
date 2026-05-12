@@ -84,7 +84,6 @@
 
 /* ── PRICING ── */
 .pricing {
-  max-width: 900px;
   margin: 0 auto;
   padding: 56px 48px;
   overflow-x: hidden;
@@ -110,7 +109,6 @@
 
 /* ── PAYMENT ── */
 .payment {
-  max-width: 900px;
   margin: 0 auto;
   background: var(--sage);
   padding: 48px;
@@ -187,7 +185,7 @@
 
 /* ── CONTACT ── */
 .contact-hero {
-  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  background: var(--teal);
   color: white;
   padding: 64px 48px 48px;
   text-align: center;
@@ -199,6 +197,7 @@
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
+  justify-content: center; 
 }
 
 .fb-badge { display: inline-flex; align-items: center; gap: 10px; background: var(--fb-blue); color: white; text-decoration: none; padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: 0.95rem; transition: background 0.2s, transform 0.15s; }
@@ -394,3 +393,13 @@
 #avg-banner { min-height: 80px; }
 #reviews-grid { min-height: 300px; }
 
+.payment-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.payment-logo--photo {
+  border-radius: 8px;
+}
