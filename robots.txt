@@ -25,6 +25,5 @@ Sitemap: https://arvidsithjalp.se/sitemap.xml
 User-agent: Instagram
 Allow: /
 
-# Catch-all for everything else (optional)
 User-agent: *
 Allow: /
