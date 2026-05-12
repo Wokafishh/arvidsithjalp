@@ -66,6 +66,22 @@
 
 .filter-group select { appearance: none; -webkit-appearance: none; border: none; outline: none; background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%230b8a8a' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 10px center; padding: 0 32px 0 12px; height: 40px; font-size: 0.88rem; font-family: 'DM Sans', sans-serif; color: var(--navy); font-weight: 500; cursor: pointer; min-width: 140px; }
 
+@media (max-width: 768px) {
+  .filter-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .filter-group label {
+    border-right: none;
+    border-bottom: 1.5px solid #d0e8e8;
+    width: 100%;
+  }
+  .filter-group select {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
 /* ── PRICING ── */
 .pricing {
   max-width: 900px;
