@@ -1,0 +1,24 @@
+name: Fetch Google Reviews
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Varje dag 06:00
+  workflow_dispatch:       # Kan köras manuellt
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Hämta recensioner
+        run: |
+          curl -s "https://maps.googleapis.com/maps/api/place/details/json?place_id=CetCjhiYVWTGEBI&fields=reviews,rating,user_ratings_total&language=sv&key=${{ secrets.GOOGLE_PLACES_API_KEY }}" \
+          -o reviews.json
+
+      - name: Commita om det finns ändringar
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add reviews.json
+          git diff --cached --quiet || git commit -m "Update reviews" && git push
