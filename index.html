@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
+  <meta name="robots" content="index, follow">
 
-  <title>IT-support hemma - Lund &amp; Skåne | Arvids IT-hjälp</title>
-  <meta name="description" content="Hembesök i Lund &amp; Skåne från 149 kr/tim. Hjälp med Mobil, Wi-Fi, dator och mer.">
+  <title>IT-support i Lund – hembesök | Arvids IT-hjälp</title>
+  <meta name="description" content="IT-support hemma i Lund från 149 kr/tim. Hjälp med BankID, Wi-Fi, dator och mobil. Inga dolda avgifter – betalar du bara om problemet löses. Ring idag!">
   <meta name="author" content="Arvid">
   <link rel="canonical" href="https://arvidsithjalp.se/">
 
@@ -15,8 +16,8 @@
   <link rel="apple-touch-icon" href="icon/apple-touch-icon.png">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="IT-support hemma - Lund &amp; Skåne | Arvids IT-hjälp">
-  <meta property="og:description" content="Hembesök i Lund &amp; Skåne från 149 kr/tim. Hjälp med Mobil, Wi-Fi, dator och mer.">
+  <meta property="og:title" content="IT-support i Lund – hembesök | Arvids IT-hjälp">
+  <meta property="og:description" content="IT-support hemma i Lund från 149 kr/tim. Hjälp med BankID, Wi-Fi, dator och mobil. Betalar du bara om problemet löses.">
   <meta property="og:image" content="https://arvidsithjalp.se/preview.jpg">
   <meta property="og:url" content="https://arvidsithjalp.se/">
   <meta property="og:type" content="website">
@@ -24,8 +25,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="IT-support hemma - Lund &amp; Skåne | Arvids IT-hjälp">
-  <meta name="twitter:description" content="Hembesök i Lund &amp; Skåne från 149 kr/tim. Hjälp med Mobil, Wi-Fi, dator och mer.">
+  <meta name="twitter:title" content="IT-support i Lund – hembesök | Arvids IT-hjälp">
+  <meta name="twitter:description" content="IT-support hemma i Lund från 149 kr/tim. Hjälp med BankID, Wi-Fi, dator och mobil. Betalar du bara om problemet löses.">
   <meta name="twitter:image" content="https://arvidsithjalp.se/preview.jpg">
 
   <!-- Structured Data: LocalBusiness -->
@@ -44,27 +45,97 @@
     },
     "url": "https://arvidsithjalp.se/",
     "telephone": "+46760284310",
-    "areaServed": "Lund, Sweden",
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.7047,
+        "longitude": 13.1910
+      },
+      "geoRadius": "30000"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 55.7047,
+      "longitude": 13.1910
+    },
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Lund",
+      "addressRegion": "Skåne",
       "addressCountry": "SE"
     },
-    "priceRange": "149-299 SEK",
-    "service": [
+    "openingHoursSpecification": [
       {
-        "@type": "Service",
-        "name": "IT-support hembesök",
-        "description": "Hembesök för IT-support och felsökning",
-        "provider": {"@type": "LocalBusiness", "name": "Arvids IT-hjälp"}
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "08:00",
+        "closes": "20:00"
       }
     ],
+    "priceRange": "149-299 SEK",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "IT-tjänster",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "IT-support hembesök",
+            "description": "Hembesök för IT-support och felsökning i Lund och Skåne"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "BankID och apphjälp",
+            "description": "Hjälp med BankID, Swish och andra appar på mobil"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Wi-Fi och nätverksproblem",
+            "description": "Felsökning och åtgärd av Wi-Fi och internetuppkoppling"
+          }
+        }
+      ]
+    },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
       "reviewCount": "4",
       "bestRating": "5"
     },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "author": {"@type": "Person", "name": "Kjell N."},
+        "reviewBody": "Snabbt och proffessionellt. Väldigt nöjd!"
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "author": {"@type": "Person", "name": "Jenny F."},
+        "reviewBody": "Effektiv och lösningsorienterad."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "author": {"@type": "Person", "name": "Pauline R."},
+        "reviewBody": "Jag är så totalt nöjd och glad. De andra tjänsterna jag har testat har inte lyckats, utan rent av misslyckats."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "author": {"@type": "Person", "name": "Bodil O."},
+        "reviewBody": "Tack för hjälpen med molnlagring mm. Bra att du finns här, när man behöver hjälp"
+      }
+    ],
     "sameAs": ["https://www.facebook.com/arvids-it-hjalp"]
   }
   </script>
@@ -76,6 +147,40 @@
     "@type": "WebSite",
     "name": "Arvids IT-hjälp",
     "url": "https://arvidsithjalp.se"
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Hur mycket kostar IT-support hemma i Lund?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Priset börjar från 149 kr/tim. Du får alltid en prisuppskattning innan vi bestämmer tid, och du betalar ingenting om problemet inte löses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vad hjälper Arvids IT-hjälp med?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hjälp med BankID, Swish, Wi-Fi, datorproblem, virussökning, köpråd, hårdvara och annan mjukvarusupport via hembesök i Lund och Skåne."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hur snabbt kan jag boka ett hembesök?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Om du ringer sker bokning inom 24 timmar."
+        }
+      }
+    ]
   }
   </script>
 
@@ -353,8 +458,8 @@
 
   <section class="hero">
     <div class="hero-text">
-      <h1>Arvids IT-hjälp</h1>
-      <p class="hero-lead">Trött på teknik som inte fungerar?</p>
+      <h1>IT-support hemma i Lund</h1>
+      <p class="hero-lead">Arvids IT-hjälp</p>
       <p>Arvids IT-hjälp erbjuder IT-support och teknikhjälp för privatpersoner via hembesök.</p>
       <p>Med över 7 års teknik-erfarenhet, och praktisk kunskap från mitt arbete hos träffpunkt Laurentiigatan i Lund,
         är jag väl rustad att hjälpa dig med allt från BankID och Wi-Fi till datorproblem och mer.
@@ -363,7 +468,7 @@
     </div>
     <div class="hero-img">
       <img src="https://i.postimg.cc/tRtpdNz3/Screenshot-2026-05-04-at-12-47-49-Arvids-IT-hjalp.png" width="562"
-        height="439" alt="Arvids IT-hjälp i Lund" loading="eager" fetchpriority="high">
+        height="439" alt="IT-support hembesök i Lund – Arvids IT-hjälp" loading="eager" fetchpriority="high">
     </div>
   </section>
 
@@ -374,7 +479,7 @@
       <div class="service-item">Wi-Fi och internetuppkoppling</div>
       <div class="service-item">Datorproblem och felsökning</div>
       <div class="service-item">Virussökning och onlinesäkerhet</div>
-      <div class="service-item">Köpråd (mobil, laptop, tillbehör)</div>
+      <div class="service-item"><a href="/pris/">Köpråd</a> (mobil, laptop, tillbehör)</div>
       <div class="service-item">Hårdvara och reparationer</div>
       <div class="service-item">Inställningar och anpassningar</div>
       <div class="service-item">Annan mjukvarusupport</div>
@@ -388,7 +493,7 @@
     <div class="why-grid">
       <div class="card card--accent-top why-card">
         <h3>Prisuppskattning</h3>
-        <p>Du får alltid en prisuppskattning före vi bestämmer tid.</p>
+        <p>Du får alltid en <a href="/pris/">prisuppskattning</a> före vi bestämmer tid.</p>
       </div>
       <div class="card card--accent-top why-card">
         <h3>Betala vid lösning</h3>
@@ -401,15 +506,16 @@
     </div>
   </section>
 
-  <section class="reviews">
+  <section class="reviews" itemscope itemtype="https://schema.org/LocalBusiness">
+    <meta itemprop="name" content="Arvids IT-hjälp">
     <h2>Recensioner</h2>
     <div class="reviews-header"
       style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px;margin-bottom:28px;">
       <div id="avg-banner"
         style="display:flex;flex-direction:column;align-items:center;text-align:center;background:white;border-radius:12px;padding:20px 24px;border:1.5px solid #d0e8e8;">
         <div id="avg-banner-content"></div>
-        <a href="https://g.page/r/CetCjhiYVWTGEBI/review" target="_blank" class="btn" style="margin-top:12px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <a href="https://g.page/r/CetCjhiYVWTGEBI/review" target="_blank" rel="noopener" class="btn" style="margin-top:12px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path
               d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
               fill="#4285F4" />
@@ -447,6 +553,39 @@
         </select>
       </div>
     </div>
+
+    <!-- Static reviews for search engine indexing -->
+    <div id="reviews-static" aria-hidden="true" style="display:none">
+      <div itemscope itemprop="review" itemtype="https://schema.org/Review">
+        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Kjell N.</span></span>
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+          <meta itemprop="ratingValue" content="5"><meta itemprop="bestRating" content="5">
+        </div>
+        <p itemprop="reviewBody">Snabbt och proffessionellt. Väldigt nöjd!</p>
+      </div>
+      <div itemscope itemprop="review" itemtype="https://schema.org/Review">
+        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Jenny F.</span></span>
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+          <meta itemprop="ratingValue" content="5"><meta itemprop="bestRating" content="5">
+        </div>
+        <p itemprop="reviewBody">Effektiv och lösningsorienterad.</p>
+      </div>
+      <div itemscope itemprop="review" itemtype="https://schema.org/Review">
+        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Pauline R.</span></span>
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+          <meta itemprop="ratingValue" content="5"><meta itemprop="bestRating" content="5">
+        </div>
+        <p itemprop="reviewBody">Jag är så totalt nöjd och glad. De andra tjänsterna jag har testat har inte lyckats, utan rent av misslyckats.</p>
+      </div>
+      <div itemscope itemprop="review" itemtype="https://schema.org/Review">
+        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Bodil O.</span></span>
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+          <meta itemprop="ratingValue" content="5"><meta itemprop="bestRating" content="5">
+        </div>
+        <p itemprop="reviewBody">Tack för hjälpen med molnlagring mm. Bra att du finns här, när man behöver hjälp</p>
+      </div>
+    </div>
+
     <div class="reviews-grid" id="reviews-grid"></div>
   </section>
 
@@ -492,6 +631,96 @@
     document.getElementById("sort").onchange = render;
     render();
     
+  </script>
+
+  <section class="faq">
+    <h2>Vanliga frågor</h2>
+    <dl class="faq-list">
+
+      <div class="faq-item">
+        <dt>
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq-1">
+            Hur mycket kostar IT-support hemma i Lund?
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </dt>
+        <dd id="faq-1" class="faq-answer" hidden>
+          <p>Förstagångskunder betalar 149 kr/tim. Efter det är priset 300kr/tim. 50kr utkörningsavgift.</p>
+        </dd>
+      </div>
+
+      <div class="faq-item">
+        <dt>
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq-2">
+            Vad hjälper Arvids IT-hjälp med?
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </dt>
+        <dd id="faq-2" class="faq-answer" hidden>
+          <p>Hjälp med BankID, Swish och appar, Wi-Fi och internetproblem, datorproblem och felsökning, virussökning, köpråd (mobil, laptop, tillbehör), hårdvara och reparationer, inställningar och annan mjukvarusupport – allt via hembesök i Lund och Skåne.</p>
+        </dd>
+      </div>
+
+      <div class="faq-item">
+        <dt>
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq-3">
+            Hur snabbt kan jag boka ett hembesök?
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </dt>
+        <dd id="faq-3" class="faq-answer" hidden>
+          <p>Om du ringer sker bokning inom 24 timmar.</p>
+        </dd>
+      </div>
+
+      <div class="faq-item">
+        <dt>
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq-4">
+            Vilket område täcker du?
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </dt>
+        <dd id="faq-4" class="faq-answer" hidden>
+          <p>Primärt Lund, men jag hjälper även kunder i övriga Skåne. Kontakta mig så berättar jag om just din adress passar.</p>
+        </dd>
+      </div>
+
+      <div class="faq-item">
+        <dt>
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq-5">
+            Hjälper du även äldre personer utan tidigare teknikvana?
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </dt>
+        <dd id="faq-5" class="faq-answer" hidden>
+          <p>Ja, absolut. Jag har lång erfarenhet av att hjälpa seniorer med teknik, bland annat som volontär hos träffpunkt Laurentiigatan i Lund och genom olika projekt för att föra samman seniorer och unga via teknik.</p>
+        </dd>
+      </div>
+
+      <div class="faq-item">
+        <dt>
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq-6">
+            Kan du hjälpa med BankID?
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </dt>
+        <dd id="faq-6" class="faq-answer" hidden>
+          <p>Ja, hjälp med BankID är ett av de vanligaste ärendena. Det kan gälla installation, problem med inloggning, byte av telefon eller att BankID slutat fungera.</p>
+        </dd>
+      </div>
+
+    </dl>
+  </section>
+
+  <script>
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        const answer = document.getElementById(btn.getAttribute('aria-controls'));
+        answer.hidden = expanded;
+      });
+    });
   </script>
 
 </body>
