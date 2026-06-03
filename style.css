@@ -166,6 +166,13 @@
   font-size: 0.85rem;
 }
 
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  contain: layout;
+}
+
 /* Placeholder heights while JS loads review content */
 #avg-banner {
   min-height: 80px;
@@ -846,6 +853,10 @@ site-footer .footer-links {
     padding: 0 20px;
   }
 
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
   .nav-toggle {
     display: flex;
   }
@@ -986,9 +997,8 @@ site-footer .footer-links {
 }
 
 .faq {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 48px 24px 64px;
+  padding: 40px 24px;
+  max-width: 100%;
 }
 
 .faq h2 {
@@ -999,8 +1009,6 @@ site-footer .footer-links {
 }
 
 .faq-list {
-  display: flex;
-  flex-direction: column;
   gap: 8px;
 }
 

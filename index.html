@@ -110,7 +110,7 @@
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
-    "reviewCount": "4",
+    "reviewCount": "5",
     "bestRating": "5"
   },
   "review": [
@@ -137,6 +137,12 @@
       "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
       "author": {"@type": "Person", "name": "Bodil O."},
       "reviewBody": "Tack för hjälpen med molnlagring mm. Bra att du finns här, när man behöver hjälp"
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "author": {"@type": "Person", "name": "Birgitta R."},
+      "reviewBody": "Jättebra!"
     }
   ],
   "sameAs": ["https://www.facebook.com/arvids-it-hjalp"]
@@ -494,15 +500,15 @@
     <p> Jag har arbetat som teknikhjälp-volontär hos träffpunkt Laurentiigatan i Lund, fått plats i tidningen 65+
       och varit deltagande i olika projekt för att föra samman seniorer och unga via teknik. </p>
     <div class="why-grid">
-      <div class="card card--accent-top why-card">
+      <div class="card why-card">
         <h3>Prisuppskattning</h3>
         <p>Du får alltid en <a href="/pris/">prisuppskattning</a> före vi bestämmer tid.</p>
       </div>
-      <div class="card card--accent-top why-card">
+      <div class="card why-card">
         <h3>Betala vid lösning</h3>
         <p>Går problemet inte att lösa betalar du ingenting.</p>
       </div>
-      <div class="card card--accent-top why-card">
+      <div class="card why-card">
         <h3>Snabb bokning</h3>
         <p>Ifall du ringer sker bokning inom 24 timmar.</p>
       </div>
@@ -613,6 +619,7 @@
       { score: 5, text: "Effektiv och lösningsorienterad.", name: "Jenny F.", service: "Hjälp med ljudinspelning" },
       { score: 5, text: "Jag är så totalt nöjd och glad. De andra tjänsterna jag har testat har inte lyckats, utan rent av misslyckats.", name: "Pauline R.", service: "Hjälp med mobilen" },
       { score: 5, text: "Tack för hjälpen med molnlagring mm. Bra att du finns här, när man behöver hjälp", name: "Bodil O.", service: "Hjälp med molnlagring (Google Photos/Drive)" },
+      { score: 5, text: "Jättebra!", name: "Birgitta R.", service: "Hjälp med att överföra foton mellan telefoner" },
     ];
 
     function stars(n) { return "★".repeat(n) + "☆".repeat(5 - n); }
@@ -653,7 +660,7 @@
 
   <section class="faq">
     <h2>Vanliga frågor</h2>
-    <dl class="faq-list">
+    <dl class="faq-list faq-grid">
 
       <div class="faq-item">
         <dt>
