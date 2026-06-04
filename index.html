@@ -360,6 +360,60 @@
       will-change: transform;
     }
 
+    /* Reviews Styles (Moved from inline attributes) */
+    .reviews-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    #avg-banner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 20px 24px;
+      border: 1.5px solid #d0e8e8;
+    }
+
+    #avg-banner .btn {
+      margin-top: 12px;
+    }
+
+    #reviews-static {
+      display: none;
+    }
+
+    .avg-banner-inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .avg-score {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1a2b3c;
+      line-height: 1;
+    }
+
+    .avg-stars {
+      color: #f4b942;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+    }
+
+    .avg-count {
+      font-size: 0.85rem;
+      color: #5a6a7a;
+      margin-top: 2px;
+    }
+
     @media (max-width: 768px) {
       nav {
         padding: 0 20px;
@@ -471,7 +525,7 @@
       <p class="hero-lead">Arvids IT-hjälp</p>
       <p>Arvids IT-hjälp erbjuder IT-support och teknikhjälp för privatpersoner via hembesök.</p>
       <p>Med över 7 års teknik-erfarenhet, och praktisk kunskap från mitt arbete hos träffpunkt Laurentiigatan i Lund,
-        är jag väl rustad att hjälpa dig med allt från BankID och Wi-Fi till datorproblem och mer.
+        eller jag väl rustad att hjälpa dig med allt från BankID och Wi-Fi till datorproblem och mer.
       </p>
       <a href="tel:0760284310" class="btn">Ring mig direkt</a>
     </div>
@@ -481,14 +535,14 @@
     </div>
   </section>
 
-  <section class="services">
+  <section class="services" id="services">
     <h2>Vad kan jag hjälpa dig med?</h2>
     <div class="services-grid">
       <div class="service-item">Mobil och appar (BankID, Swish, meddelandeappar)</div>
       <div class="service-item">Wi-Fi och internetuppkoppling</div>
       <div class="service-item">Datorproblem och felsökning</div>
       <div class="service-item">Virussökning och onlinesäkerhet</div>
-      <div class="service-item"><a href="/pris/">Köpråd</a> (mobil, laptop, tillbehör)</div>
+      <div class="service-item">Köpråd (mobil, laptop, tillbehör)</div>
       <div class="service-item">Hårdvara och reparationer</div>
       <div class="service-item">Inställningar och anpassningar</div>
       <div class="service-item">Annan mjukvarusupport</div>
@@ -498,19 +552,19 @@
   <section class="why">
     <h2>Varför välja mig?</h2>
     <p> Jag har arbetat som teknikhjälp-volontär hos träffpunkt Laurentiigatan i Lund, fått plats i tidningen 65+
-      och varit deltagande i olika projekt för att föra samman seniorer och unga via teknik. </p>
+      och varit deltagande i olika projekt för att föra samman seniorer och unga via teknik. Utöver det:</p>
     <div class="why-grid">
       <div class="card why-card">
         <h3>Prisuppskattning</h3>
-        <p>Du får alltid en <a href="/pris/">prisuppskattning</a> före vi bestämmer tid.</p>
+        <p>Du får alltid en prisuppskattning före vi bestämmer tid.</p>
       </div>
       <div class="card why-card">
         <h3>Betala vid lösning</h3>
         <p>Går problemet inte att lösa betalar du ingenting.</p>
       </div>
       <div class="card why-card">
-        <h3>Snabb bokning</h3>
-        <p>Ifall du ringer sker bokning inom 24 timmar.</p>
+        <h3>Snabb hjälp</h3>
+        <p>Jag kan vara på plats inom 24 timmar.</p>
       </div>
     </div>
   </section>
@@ -523,13 +577,10 @@
       <meta itemprop="bestRating" content="5">
     </div>
     <h2>Recensioner</h2>
-    <div class="reviews-header"
-      style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px;margin-bottom:28px;">
-      <div id="avg-banner"
-        style="display:flex;flex-direction:column;align-items:center;text-align:center;background:white;border-radius:12px;padding:20px 24px;border:1.5px solid #d0e8e8;">
+    <div class="reviews-header">
+      <div id="avg-banner">
         <div id="avg-banner-content"></div>
-        <a href="https://g.page/r/CetCjhiYVWTGEBI/review" target="_blank" rel="noopener" class="btn"
-          style="margin-top:12px;">
+        <a href="https://g.page/r/CetCjhiYVWTGEBI/review" target="_blank" rel="noopener" class="btn">
           <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path
               d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -570,7 +621,7 @@
     </div>
 
     <!-- Static reviews for search engine indexing -->
-    <div id="reviews-static" aria-hidden="true" style="display:none">
+    <div id="reviews-static" aria-hidden="true">
       <div itemscope itemprop="review" itemtype="https://schema.org/Review">
         <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Kjell
             N.</span></span>
@@ -626,11 +677,11 @@
 
     const avg = reviews.reduce((s, r) => s + r.score, 0) / reviews.length;
     document.getElementById("avg-banner-content").innerHTML = `
-    <div style="display:flex;align-items:center;gap:16px">
-      <span style="font-size:2.5rem;font-weight:700;color:#1a2b3c;line-height:1">${avg.toFixed(1)}</span>
+    <div class="avg-banner-inner">
+      <span class="avg-score">${avg.toFixed(1)}</span>
       <div>
-        <div style="color:#f4b942;font-size:1.2rem;letter-spacing:2px">${stars(Math.round(avg))}</div>
-        <div style="font-size:0.85rem;color:#5a6a7a;margin-top:2px">${reviews.length} recensioner</div>
+        <div class="avg-stars">${stars(Math.round(avg))}</div>
+        <div class="avg-count">${reviews.length} recensioner</div>
       </div>
     </div>`;
 
@@ -673,7 +724,7 @@
           </button>
         </dt>
         <dd id="faq-1" class="faq-answer" hidden>
-          <p>Förstagångskunder betalar 149 kr/tim. Efter det är priset 300kr/tim. 50kr utkörningsavgift.</p>
+          <p>Förstagångskunder betalar 149 kr/tim, efter det är det 300kr/tim. 50kr utkörningsavgift. <a href="/pris/">Läs mer</a></p>
         </dd>
       </div>
 
@@ -689,8 +740,8 @@
         </dt>
         <dd id="faq-2" class="faq-answer" hidden>
           <p>Hjälp med BankID, Swish och appar, Wi-Fi och internetproblem, datorproblem och felsökning, virussökning,
-            köpråd (mobil, laptop, tillbehör), hårdvara och reparationer, inställningar och annan mjukvarusupport – allt
-            via hembesök i Lund och Skåne.</p>
+            köpråd (mobil, laptop, tillbehör), hårdvara och reparationer, inställningar och annan mjukvarusupport - allt
+            via hembesök i Lund och Skåne. <a href="#services">Läs mer</a></p>
         </dd>
       </div>
 
@@ -705,7 +756,7 @@
           </button>
         </dt>
         <dd id="faq-3" class="faq-answer" hidden>
-          <p>Om du ringer sker bokning inom 24 timmar.</p>
+          <p>Ifall du ringer kan jag vara på plats inom 24 timmar. Ofta inom 2-4 timmar!!</p>
         </dd>
       </div>
 
@@ -737,7 +788,7 @@
         </dt>
         <dd id="faq-5" class="faq-answer" hidden>
           <p>Ja, absolut. Jag har lång erfarenhet av att hjälpa seniorer med teknik, bland annat som volontär hos
-            träffpunkt Laurentiigatan i Lund och genom olika projekt för att föra samman seniorer och unga via teknik.
+            träffpunkt Laurentiigatan i Lund. <a href="/om/">Mer om mina kunskaper</a>
           </p>
         </dd>
       </div>
@@ -745,7 +796,7 @@
       <div class="faq-item">
         <dt>
           <button class="faq-btn" aria-expanded="false" aria-controls="faq-6">
-            Kan du hjälpa med BankID?
+            Kan du hjälpa mig med något som inte nämns på hemsidan?
             <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="6 9 12 15 18 9" />
@@ -753,8 +804,7 @@
           </button>
         </dt>
         <dd id="faq-6" class="faq-answer" hidden>
-          <p>Ja, hjälp med BankID är ett av de vanligaste ärendena. Det kan gälla installation, problem med inloggning,
-            byte av telefon eller att BankID slutat fungera.</p>
+          <p>Ja, absolut. <a href="/kontakt/">Kontakta mig</a> så berättar jag om hur jag kan hjälpa dig.</p>
         </dd>
       </div>
 
