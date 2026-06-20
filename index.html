@@ -341,27 +341,27 @@
 
     <!-- Static reviews for search engine indexing -->
     <div id="reviews-static" aria-hidden="true">
+
       <div itemscope itemprop="review" itemtype="https://schema.org/Review">
-        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Kjell
-            N.</span></span>
+        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Kjell N.</span></span>
         <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
           <meta itemprop="ratingValue" content="5">
           <meta itemprop="bestRating" content="5">
         </div>
         <p itemprop="reviewBody">Snabbt och proffessionellt. Väldigt nöjd!</p>
       </div>
+
       <div itemscope itemprop="review" itemtype="https://schema.org/Review">
-        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Jenny
-            F.</span></span>
+        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Jenny F.</span></span>
         <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
           <meta itemprop="ratingValue" content="5">
           <meta itemprop="bestRating" content="5">
         </div>
         <p itemprop="reviewBody">Effektiv och lösningsorienterad.</p>
       </div>
+
       <div itemscope itemprop="review" itemtype="https://schema.org/Review">
-        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Pauline
-            R.</span></span>
+        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Pauline R.</span></span>
         <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
           <meta itemprop="ratingValue" content="5">
           <meta itemprop="bestRating" content="5">
@@ -369,15 +369,25 @@
         <p itemprop="reviewBody">Jag är så totalt nöjd och glad. De andra tjänsterna jag har testat har inte lyckats,
           utan rent av misslyckats.</p>
       </div>
+
       <div itemscope itemprop="review" itemtype="https://schema.org/Review">
-        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Bodil
-            O.</span></span>
+        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Bodil O.</span></span>
         <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
           <meta itemprop="ratingValue" content="5">
           <meta itemprop="bestRating" content="5">
         </div>
         <p itemprop="reviewBody">Tack för hjälpen med molnlagring mm. Bra att du finns här, när man behöver hjälp</p>
       </div>
+
+      <div itemscope itemprop="review" itemtype="https://schema.org/Review">
+        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Elisabet E.</span></span>
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+          <meta itemprop="ratingValue" content="5">
+          <meta itemprop="bestRating" content="5">
+        </div>
+        <p itemprop="reviewBody">Informativ och tålmodig kunskap inom teknik. Tack för hjälpen återkommer gärna vis problem! </p>
+      </div>
+
     </div>
 
     <div class="reviews-grid" id="reviews-grid"></div>
@@ -390,6 +400,7 @@
       { score: 5, text: "Jag är så totalt nöjd och glad. De andra tjänsterna jag har testat har inte lyckats, utan rent av misslyckats.", name: "Pauline R.", service: "Hjälp med mobilen" },
       { score: 5, text: "Tack för hjälpen med molnlagring mm. Bra att du finns här, när man behöver hjälp", name: "Bodil O.", service: "Hjälp med molnlagring (Google Photos/Drive)" },
       { score: 5, text: "Jättebra!", name: "Birgitta R.", service: "Hjälp med att överföra foton mellan telefoner" },
+      { score: 5, text: "Informativ och tålmodig kunskap inom teknik. Tack för hjälpen återkommer gärna vis problem!", name: "Elisabet E.", service: "Hjälp med BankID, läsa onlinedokument och rådgivning." },
     ];
 
     function stars(n) { return "★".repeat(n) + "☆".repeat(5 - n); }
