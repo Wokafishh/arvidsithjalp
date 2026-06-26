@@ -16,10 +16,10 @@
   --fb-blue-dark: #0e5cbf;
 
   /* Standardized Spacing Tokens */
-  --space-section-desktop: 56px 48px;
-  --space-section-mobile: 40px 24px;
-  --space-card-padding: 16px 16px;
-  --space-grid-gap: 16px;
+  --space-section-desktop: 40px 32px;
+  --space-section-mobile: 32px 20px;
+  --space-card-padding: 14px 14px;
+  --space-grid-gap: 14px;
   
   /* Standardized Button Tokens */
   --btn-padding: 12px 24px;
@@ -58,6 +58,14 @@ h1, h2, h3 {
   box-sizing: border-box;
 }
 
+.pricing, .payment {
+  padding: 12px 16px 14px;
+}
+
+.pricing {
+  padding-top: 8px;
+}
+
 /* ── STANDARD CARDS ──
    Locks structural card internals together */
 .card, .review-card, .contact-card, .location-card, .ref-card, .faq-item, .payment-card {
@@ -77,6 +85,10 @@ h1, h2, h3 {
   gap: var(--space-grid-gap);
   contain: layout;
   width: 100%;
+}
+
+.payment-grid {
+  gap: 8px;
 }
 
 .why-grid { padding-top: 16px; }
@@ -214,7 +226,8 @@ nav {
 .card--teal h2 { color: white; }
 
 /* ── REVENUE BACKGROUNDS ── */
-.why, .reviews, .payment, .contact-options, .location, .teacher-refs { background: var(--sage); }
+.why, .reviews, .contact-options, .location, .teacher-refs { background: var(--sage); }
+.payment { background: transparent; }
 
 .contact-options {padding: var(--space-card-padding);}
 
@@ -222,9 +235,10 @@ nav {
 .why h2, .services h2, .reviews h2, .pricing h1, .payment h2, .location h2, .teacher-refs h2, .privacy-page h1, .faq h2 {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   color: var(--teal);
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
-.reviews h2, .payment h2, .location h2, .faq h2 { text-align: center; }
+.reviews h2, .location h2, .faq h2 { text-align: center; }
+.payment h2 { text-align: left; margin-bottom: 10px; }
 
 /* Standardized Card Titles */
 .why-card h3, .review-card h3, .payment-card h3, .contact-card h2, .location-card strong, .ref-name, .faq-btn {
@@ -238,19 +252,21 @@ nav {
   font-size: 0.95rem;
 }
 
-.fine-print {text-align: center; padding: 0 20px; margin-top: 12px;}
+.fine-print {text-align: left; padding: 0 0 0 4px; margin-top: 10px;}
 
 /* ── PAYMENT CARD & LOGO FIXES ── */
-.payment-card {
+.payment-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  gap: 12px;
+  gap: 10px;
+  padding: 8px 10px;
+  background: var(--white);
+  border: 1px solid var(--teal-light);
+  border-radius: var(--radius);
 }
 .payment-logo {
-  height: 52px;
+  height: 42px;
   width: auto;
   object-fit: contain;
 }
@@ -308,15 +324,36 @@ nav {
 .service-list li::before { content: ">"; font-weight: 700; flex-shrink: 0; opacity: 0.8; margin-right: 10px; }
 
 /* ── PRICING & STRIPS (FIXED PAD/WIDTH) ── */
-.price-amount { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 700; color: var(--teal); margin: 16px 0 4px; }
+.price-amount { font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 700; color: var(--teal); margin: 12px 0 4px; }
 .card--teal .price-amount { color: white; }
 
+.price-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.price-card p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-top: 12px;
+}
+
+.price-cards {
+  width: 100%;
+  gap: 12px;
+}
+
+.price-card {
+  width: 100%;
+  padding: 18px 18px;
+}
+
 .travel-fee, .discount-banner {
-  width: 100%; /* Adapts flawlessly to container layout width */
-  margin-top: 32px; /* Fixes missing top spacing below cards */
-  margin-bottom: 32px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
   border-radius: var(--radius);
-  padding: 24px 32px;
+  padding: 18px 22px;
   display: flex;
   align-items: center;
   gap: 20px;
