@@ -328,8 +328,8 @@ nav {
 .card--teal .price-amount { color: white; }
 
 .price-card h2 {
+  color: var(--teal);
   font-size: 1.25rem;
-  margin-bottom: 8px;
 }
 
 .price-card p {
@@ -434,7 +434,7 @@ site-footer .footer-links {
 
   /* Force all rows into clean, single-column structures across screens */
   .hero, .why-grid, .services-grid, .reviews-grid, .faq-grid, 
-  .price-cards, .payment-grid, .ref-cards, .about, .contact-card {
+  .price-cards, .ref-cards, .about, .contact-card {
     grid-template-columns: 1fr !important;
     width: 100% !important;
   }
