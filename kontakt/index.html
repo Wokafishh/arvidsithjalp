@@ -15,16 +15,63 @@
   <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap">
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap"
-    media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap">
-  </noscript>
-  <link rel="preload" as="style" href="/style.css" onload="this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="/style.css">
-  </noscript>
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const storageKey = 'arvids-font-reveal-ready';
+      const revealEarly = () => root.classList.add('early-reveal');
+      const revealFonts = () => {
+        root.classList.add('fonts-ready');
+        try { sessionStorage.setItem(storageKey, 'ready'); } catch (error) {}
+      };
+      const restoreReadyState = () => {
+        root.classList.add('early-reveal', 'fonts-ready');
+        document.querySelectorAll('.font-dependent, .nav-text, .btn-text').forEach((el) => {
+          el.style.opacity = '1';
+          el.style.visibility = 'visible';
+        });
+      };
+      const init = () => {
+        try {
+          if (sessionStorage.getItem(storageKey) === 'ready') {
+            restoreReadyState();
+            return;
+          }
+        } catch (error) {}
+
+        const safeSelectors = ['img', '.hero-img', '.about-img', '.card', '.price-card', '.payment-item', '.service-item', '.review-card', '.faq-item', '.filter-group', '.payment-grid', '.price-cards', '.reviews-grid', '.services-grid', '.why-grid', '.faq-grid', '.filter-bar', '.badge-group', '.hero > div:last-child'];
+        document.querySelectorAll(safeSelectors.join(', ')).forEach((el) => el.classList.add('font-safe'));
+        document.querySelectorAll('h1, h2, h3, p, li, a, button, span, label, dt, dd').forEach((el) => {
+          if (!el.closest('.font-safe, .nav-text, .btn-text')) el.classList.add('font-dependent');
+        });
+        revealEarly();
+
+        const waitForFonts = async () => {
+          if (!('fonts' in document)) {
+            revealFonts();
+            return;
+          }
+          try {
+            await document.fonts.load('600 16px Fraunces');
+            await document.fonts.load('400 16px DM Sans');
+            revealFonts();
+          } catch (error) {
+            revealFonts();
+          }
+        };
+
+        waitForFonts();
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init, { once: true });
+      } else {
+        init();
+      }
+    })();
+  </script>
 
   <meta name="description"
     content="Arvids IT-hjälp erbjuder IT-support och IT-hjälp hemma hos dig i Lund. Hjälp med BankID, Wi-Fi, dator och mer. Från 149 kr/tim.">
@@ -70,16 +117,16 @@
 <body>
 
   <nav>
-    <a class="nav-logo" href="/">Arvids IT-hjälp</a>
+    <a class="nav-logo" href="/"><span class="nav-text">Arvids IT-hjälp</span></a>
     <button class="nav-toggle" aria-label="Meny"
       onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="/">Hem/Recensioner</a></li>
-      <li><a href="/pris/">Priser</a></li>
-      <li><a href="/om/">Vem är jag?</a></li>
-      <li><a href="/kontakt/">Kontakta mig!</a></li>
+      <li><a href="/"><span class="nav-text">Hem/Recensioner</span></a></li>
+      <li><a href="/pris/"><span class="nav-text">Priser</span></a></li>
+      <li><a href="/om/"><span class="nav-text">Vem är jag?</span></a></li>
+      <li><a href="/kontakt/"><span class="nav-text">Kontakta mig!</span></a></li>
     </ul>
   </nav>
 
@@ -94,11 +141,10 @@
 
   <section class="contact-hero">
     <h1>Kontakta mig!</h1>
-    <p class="hero-lead" style="color: white;">All bokning samt kundservice sker via telefon. Vanliga svarstider mellan
-      15:00–18:00.</p>
+    <p class="hero-lead">All bokning samt kundservice sker via telefon. Vanliga svarstider mellan 15:00–18:00.</p>
     <div class="badge-group">
       <a href="https://www.facebook.com/profile.php?id=61586720855243" target="_blank" class="fb-badge">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="white">
           <path
             d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
         </svg>

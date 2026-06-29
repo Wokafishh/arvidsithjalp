@@ -15,14 +15,63 @@
   <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap">
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap"
-    media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap">
-  </noscript>
-  <link rel="preload" as="style" href="/style.css" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/style.css"></noscript>
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const storageKey = 'arvids-font-reveal-ready';
+      const revealEarly = () => root.classList.add('early-reveal');
+      const revealFonts = () => {
+        root.classList.add('fonts-ready');
+        try { sessionStorage.setItem(storageKey, 'ready'); } catch (error) {}
+      };
+      const restoreReadyState = () => {
+        root.classList.add('early-reveal', 'fonts-ready');
+        document.querySelectorAll('.font-dependent, .nav-text, .btn-text').forEach((el) => {
+          el.style.opacity = '1';
+          el.style.visibility = 'visible';
+        });
+      };
+      const init = () => {
+        try {
+          if (sessionStorage.getItem(storageKey) === 'ready') {
+            restoreReadyState();
+            return;
+          }
+        } catch (error) {}
+
+        const safeSelectors = ['img', '.hero-img', '.about-img', '.card', '.price-card', '.payment-item', '.service-item', '.review-card', '.faq-item', '.filter-group', '.payment-grid', '.price-cards', '.reviews-grid', '.services-grid', '.why-grid', '.faq-grid', '.filter-bar', '.badge-group', '.hero > div:last-child'];
+        document.querySelectorAll(safeSelectors.join(', ')).forEach((el) => el.classList.add('font-safe'));
+        document.querySelectorAll('h1, h2, h3, p, li, a, button, span, label, dt, dd').forEach((el) => {
+          if (!el.closest('.font-safe, .nav-text, .btn-text')) el.classList.add('font-dependent');
+        });
+        revealEarly();
+
+        const waitForFonts = async () => {
+          if (!('fonts' in document)) {
+            revealFonts();
+            return;
+          }
+          try {
+            await document.fonts.load('600 16px Fraunces');
+            await document.fonts.load('400 16px DM Sans');
+            revealFonts();
+          } catch (error) {
+            revealFonts();
+          }
+        };
+
+        waitForFonts();
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init, { once: true });
+      } else {
+        init();
+      }
+    })();
+  </script>
 
   <meta name="description" content="Integritetspolicy för Arvids IT-hjälp – hur vi hanterar dina personuppgifter i enlighet med GDPR.">
   <meta name="author" content="Arvid">
@@ -42,16 +91,16 @@
 <body>
 
   <nav>
-    <a class="nav-logo" href="/">Arvids IT-hjälp</a>
+    <a class="nav-logo" href="/"><span class="nav-text">Arvids IT-hjälp</span></a>
     <button class="nav-toggle" aria-label="Meny"
       onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="/">Hem/Recensioner</a></li>
-      <li><a href="/pris/">Priser</a></li>
-      <li><a href="/om/">Vem är jag?</a></li>
-      <li><a href="/kontakt/">Kontakta mig!</a></li>
+      <li><a href="/"><span class="nav-text">Hem/Recensioner</span></a></li>
+      <li><a href="/pris/"><span class="nav-text">Priser</span></a></li>
+      <li><a href="/om/"><span class="nav-text">Vem är jag?</span></a></li>
+      <li><a href="/kontakt/"><span class="nav-text">Kontakta mig!</span></a></li>
     </ul>
   </nav>
 

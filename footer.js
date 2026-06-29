@@ -14,4 +14,43 @@ class SiteFooter extends HTMLElement {
     `;
   }
 }
+
+function revealImages() {
+  document.querySelectorAll('img').forEach((img) => {
+    if (img.dataset.imageReady === 'true') return;
+
+    const markReady = () => {
+      if (img.dataset.imageReady === 'true') return;
+      img.classList.add('is-loaded');
+      img.dataset.imageReady = 'true';
+    };
+
+    if (img.complete && img.naturalWidth > 0) {
+      markReady();
+      return;
+    }
+
+    const handleError = () => {
+      markReady();
+      img.removeEventListener('load', handleLoad);
+      img.removeEventListener('error', handleError);
+    };
+
+    const handleLoad = () => {
+      markReady();
+      img.removeEventListener('load', handleLoad);
+      img.removeEventListener('error', handleError);
+    };
+
+    img.addEventListener('load', handleLoad, { once: true });
+    img.addEventListener('error', handleError, { once: true });
+
+    if (typeof img.decode === 'function') {
+      img.decode().then(markReady).catch(handleError);
+    }
+  });
+}
+
+window.addEventListener('DOMContentLoaded', revealImages);
+window.addEventListener('load', revealImages);
 customElements.define('site-footer', SiteFooter);

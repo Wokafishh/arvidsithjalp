@@ -193,31 +193,78 @@
   <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap">
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap"
-    media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap">
-  </noscript>
-  <link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="/style.css">
-  </noscript>
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const storageKey = 'arvids-font-reveal-ready';
+      const revealEarly = () => root.classList.add('early-reveal');
+      const revealFonts = () => {
+        root.classList.add('fonts-ready');
+        try { sessionStorage.setItem(storageKey, 'ready'); } catch (error) {}
+      };
+      const restoreReadyState = () => {
+        root.classList.add('early-reveal', 'fonts-ready');
+        document.querySelectorAll('.font-dependent, .nav-text, .btn-text').forEach((el) => {
+          el.style.opacity = '1';
+          el.style.visibility = 'visible';
+        });
+      };
+      const init = () => {
+        try {
+          if (sessionStorage.getItem(storageKey) === 'ready') {
+            restoreReadyState();
+            return;
+          }
+        } catch (error) {}
+
+        const safeSelectors = ['img', '.hero-img', '.about-img', '.card', '.price-card', '.payment-item', '.service-item', '.review-card', '.faq-item', '.filter-group', '.payment-grid', '.price-cards', '.reviews-grid', '.services-grid', '.why-grid', '.faq-grid', '.filter-bar', '.badge-group', '.hero > div:last-child'];
+        document.querySelectorAll(safeSelectors.join(', ')).forEach((el) => el.classList.add('font-safe'));
+        document.querySelectorAll('h1, h2, h3, p, li, a, button, span, label, dt, dd').forEach((el) => {
+          if (!el.closest('.font-safe, .nav-text, .btn-text')) el.classList.add('font-dependent');
+        });
+        revealEarly();
+
+        const waitForFonts = async () => {
+          if (!('fonts' in document)) {
+            revealFonts();
+            return;
+          }
+          try {
+            await document.fonts.load('600 16px Fraunces');
+            await document.fonts.load('400 16px DM Sans');
+            revealFonts();
+          } catch (error) {
+            revealFonts();
+          }
+        };
+
+        waitForFonts();
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init, { once: true });
+      } else {
+        init();
+      }
+    })();
+  </script>
 </head>
 
 
 <body>
   <nav>
-    <a class="nav-logo" href="/">Arvids IT-hjälp</a>
+    <a class="nav-logo" href="/"><span class="nav-text">Arvids IT-hjälp</span></a>
     <button class="nav-toggle" aria-label="Meny"
       onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="/">Hem/Recensioner</a></li>
-      <li><a href="/pris/">Priser</a></li>
-      <li><a href="/om/">Vem är jag?</a></li>
-      <li><a href="/kontakt/">Kontakta mig!</a></li>
+      <li><a href="/"><span class="nav-text">Hem/Recensioner</span></a></li>
+      <li><a href="/pris/"><span class="nav-text">Priser</span></a></li>
+      <li><a href="/om/"><span class="nav-text">Vem är jag?</span></a></li>
+      <li><a href="/kontakt/"><span class="nav-text">Kontakta mig!</span></a></li>
     </ul>
   </nav>
   <script>
@@ -242,13 +289,13 @@
       <p>Med över 7 års teknik-erfarenhet, och praktisk kunskap från mitt arbete hos träffpunkt Laurentiigatan i Lund, 
         är jag väl rustad att lösa dina IT-problem. <a href="#reviews">Recensioner...</a>
       </p>
-      <a href="tel:0760284310" class="btn">Ring nu</a>
-      <a href="/kontakt/" class="btn">Boka tid</a>
+      <a href="tel:0760284310" class="btn"><span class="btn-text">Ring nu</span></a>
+      <a href="/kontakt/" class="btn"><span class="btn-text">Boka tid</span></a>
     </div>
     <div>
       <div class="hero-img">
-        <img src="https://i.postimg.cc/tRtpdNz3/Screenshot-2026-05-04-at-12-47-49-Arvids-IT-hjalp.png" width="562"
-          height="439" alt="IT-support hembesök i Lund – Arvids IT-hjälp" loading="eager" fetchpriority="high">
+        <img class="font-safe" src="/hjalp.png" width="562" height="439"
+          alt="IT-support hembesök i Lund – Arvids IT-hjälp" loading="eager" fetchpriority="high">
       </div>
        <p style="text-align: center;">Arvid (höger) hjälper med en dator.</p>
     </div>
@@ -314,7 +361,7 @@
               d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
               fill="#EA4335" />
           </svg>
-          Lämna en recension
+          <span class="btn-text">Lämna en recension</span>
         </a>
       </div>
     </div>
