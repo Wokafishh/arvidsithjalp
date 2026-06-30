@@ -177,30 +177,95 @@
   </section>
 
   <section class="contact-options payment-grid">
-    <!-- Card 1: Calling -->
     <div class="card contact-card">
       <div class="card-body">
-        <h3>Ring direkt</h3>
-        <p>Ring och berätta vad du behöver hjälp med, så får du rådgivning och snabb bokning.</p>
-      </div>
-      <div class="card-action">
-        <a href="tel:0760284310" class="btn">Ring 076-028 43 10</a>
-      </div>
-    </div>
-
-    <!-- Card 2: Email Template -->
-    <div class="card contact-card">
-      <div class="card-body">
-        <h3>Uppringning</h3>
-        <p>Vill du bli uppringd istället? Klicka på knappen så skapas ett mail du fyller i.</p>
-      </div>
-      <div class="card-action">
-        <a href="mailto:arvid.ithjalp@gmail.com?subject=Begäran om uppringning - Arvids IT-hjälp&body=Hej Arvid!%0A%0AJag vill gärna bli uppringd.%0A%0AMitt namn: %0AMitt telefonnummer: %0ABästa tid att ringa: %0A%0AKortbeskrivning av mitt problem:%0A%0AMvh"
-          class="btn">Öppna mail-mallen!</a>
-        <div class="email-address">arvid.ithjalp@gmail.com</div>
+        <h2>Uppringning</h2>
+        <p>Vill du bli uppringd istället? Fyll i så ringer jag dig!</p>
+        <form class="contact-form" action="">
+          <label>
+            Namn
+            <input type="text" name="Namn" placeholder="Ditt namn" required>
+          </label>
+          <label>
+            Telefonnummer
+            <input type="tel" name="Telefonnummer" placeholder="076 000 00 00" required>
+          </label>
+          <label>
+            Datum
+            <input type="date" name="Datum" required>
+          </label>
+          <label>
+            Tid
+            <input type="time" name="Tid" required>
+          </label>
+          <button type="submit" class="btn">Skicka förfrågan</button>
+        </form>
       </div>
     </div>
   </section>
+
+  <script>
+    (function () {
+      const secureTopic = 'https://ntfy.sh/arvids_alerts_9f82hd01bd82hjasd9';
+      const form = document.querySelector('.contact-form');
+      const dateInput = form.querySelector('input[name="Datum"]');
+      const timeInput = form.querySelector('input[name="Tid"]');
+      const nameInput = form.querySelector('input[name="Namn"]');
+      const phoneInput = form.querySelector('input[name="Telefonnummer"]');
+      const scheduleButtons = form.querySelectorAll('[data-days]');
+
+      const pad = (value) => String(value).padStart(2, '0');
+      const formatIsoDate = (date) => `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+      const formatMonthDay = (date) => `${pad(date.getMonth() + 1)}/${pad(date.getDate())}`;
+
+      scheduleButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const days = Number(button.dataset.days);
+          const target = new Date();
+          target.setDate(target.getDate() + days);
+          dateInput.value = formatIsoDate(target);
+          if (!timeInput.value) {
+            timeInput.value = '15:00';
+          }
+        });
+      });
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const name = nameInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const date = dateInput.value;
+        const time = timeInput.value;
+        if (!name || !phone || !date || !time) {
+          alert('Fyll i namn, telefon, datum och tid innan du skickar.');
+          return;
+        }
+
+        const [year, month, day] = date.split('-');
+        const time_and_date = `${time} på ${month}/${day}`;
+
+        try {
+          const response = await fetch(secureTopic, {
+            method: 'POST',
+            body: `Namn: ${name}\nTel: ${phone}\nTid: ${time_and_date}`,
+            headers: {
+              'Title': `${name} vill bli uppringd!`
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error('Ntfy returned ' + response.status);
+          }
+
+          alert('Din förfrågan skickades! Jag har fått en notis, och kommer höra av mig.');
+          form.reset();
+        } catch (error) {
+          console.error(error);
+          alert('Något gick fel. Försök igen senare (eller ring Arvid.)');
+        }
+      });
+    })();
+  </script>
 
   <section class="location">
     <h2>Testa min tjänst gratis</h2>

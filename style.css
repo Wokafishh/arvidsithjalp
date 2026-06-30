@@ -303,6 +303,67 @@ nav {
 
 .contact-options {padding: var(--space-card-padding);}
 
+.contact-options.payment-grid {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.contact-options.payment-grid .card {
+  width: 100%;
+  max-width: none;
+}
+
+.contact-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+  width: 100%;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.contact-form input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #d0e8e8;
+  background: var(--white);
+  color: var(--text);
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus {
+  outline: 2px solid rgba(16, 148, 132, 0.25);
+  outline-offset: 2px;
+  border-color: var(--teal-light);
+}
+
+.contact-form .booking-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.contact-form .btn-secondary {
+  background: white;
+  color: var(--teal);
+  border: 1px solid var(--teal);
+  box-shadow: none;
+}
+
+.contact-form .btn-secondary:hover {
+  background: var(--teal-light);
+}
+
 /* ── HEADER TYPOGRAPHY ── */
 .why h2, .services h2, .reviews h2, .pricing h1, .payment h2, .location h2, .teacher-refs h2, .privacy-page h1, .faq h2 {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
@@ -313,7 +374,7 @@ nav {
 .payment h2 { text-align: left; margin-bottom: 10px; }
 
 /* Standardized Card Titles */
-.why-card h3, .review-card h3, .payment-card h3, .contact-card h2, .location-card strong, .ref-name, .faq-btn {
+.why-card h3, .review-card h3, .payment-card h3, .contact-card h2, .contact-card h3, .location-card strong, .ref-name, .faq-btn {
   font-size: 1.05rem;
   color: var(--navy);
   font-weight: 600;
@@ -650,8 +711,12 @@ site-footer .footer-links {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
   text-align: left;
+}
+
+.contact-card .card-body {
+  width: 100%;
 }
 
 .card-icon {
