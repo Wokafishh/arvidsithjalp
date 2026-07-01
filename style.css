@@ -2,6 +2,10 @@
    GLOBAL TOKENS & DESIGN SYSTEM
    ═══════════════════════════════════════════════ */
 :root {
+  --footer-height: 0px;
+  --page-gutter: clamp(20px, 2.8vw, 40px);
+  --page-max-width: 1120px;
+
   /* Color Palette */
   --teal: #023154;
   --teal-light: #d4eded;
@@ -21,8 +25,8 @@
   --shadow-md: 0 18px 45px rgba(12, 40, 60, 0.08);
 
   /* Standardized Spacing Tokens */
-  --space-section-desktop: 40px 32px;
-  --space-section-mobile: 32px 20px;
+  --space-section-desktop: 40px var(--page-gutter);
+  --space-section-mobile: 32px var(--page-gutter);
   --space-card-padding: 14px 14px;
   --space-grid-gap: 14px;
   
@@ -67,6 +71,9 @@ html.fonts-ready .btn-text {
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-body, 'DM Sans', sans-serif);
   color: var(--text);
   background: linear-gradient(180deg, #fcfefe 0%, #f6fbfa 100%);
@@ -75,6 +82,43 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   zoom: 1.1;
+  margin: 0;
+}
+
+.page-shell {
+  flex: 1 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-shell > nav,
+.page-shell > section,
+.page-shell > script {
+  flex-shrink: 0;
+}
+
+site-footer {
+  display: block;
+  width: 100%;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+body.short-page {
+  padding-bottom: calc(var(--footer-height, 0px) + 24px);
+}
+
+body.short-page site-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: var(--footer-height, 0px);
+  z-index: 30;
+}
+
+html {
+  min-height: 100%;
 }
 
 img {
@@ -106,10 +150,48 @@ h1, h2, h3 {
 
 /* ── STANDARD SECTIONS ──
    Ensures uniform structural padding everywhere */
-.hero, .services, .pricing, .payment, .privacy-page, .faq {
+.pricing, .payment, .privacy-page, .faq {
   padding: var(--space-section-desktop);
-  max-width: 1120px;
+  width: 100%;
+  max-width: var(--page-max-width);
   margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.hero {
+  padding: var(--space-section-desktop);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hero {
+  display: grid;
+  gap: 24px;
+}
+
+.hero > .hero-text,
+.hero > div:not(.hero-text),
+.services > h2,
+.services > .services-grid {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero > .hero-text {
+  max-width: min(var(--page-max-width), calc(100% - 2 * var(--page-gutter)));
+}
+
+.hero > div:not(.hero-text) {
+  max-width: min(440px, calc(100% - 2 * var(--page-gutter)));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services {
+  padding: var(--space-section-desktop);
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -119,8 +201,14 @@ h1, h2, h3 {
   box-sizing: border-box;
 }
 
+.hero, .services, .pricing, .payment, .privacy-page, .faq,
+.why, .reviews, .location, .teacher-refs, .contact-options, .phone-section,
+.about, .contact-hero {
+  padding-inline: var(--page-gutter);
+}
+
 .why > *, .reviews > *, .location > *, .teacher-refs > *, .contact-options > *, .phone-section > * {
-  max-width: 1120px;
+  max-width: var(--page-max-width);
   margin-left: auto;
   margin-right: auto;
 }
@@ -135,12 +223,22 @@ h1, h2, h3 {
 
 /* ── STANDARD CARDS ──
    Locks structural card internals together */
-.card, .review-card, .contact-card, .location-card, .ref-card, .faq-item, .payment-card {
+.card, .review-card, .location-card, .ref-card, .faq-item, .payment-card {
   background: var(--surface);
   border-radius: var(--radius);
   padding: var(--space-card-padding);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
+  contain: layout style paint;
+  box-sizing: border-box;
+}
+
+.contact-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: var(--space-card-padding);
+  border: 1px solid var(--border);
+  box-shadow: none;
   contain: layout style paint;
   box-sizing: border-box;
 }
@@ -153,6 +251,11 @@ h1, h2, h3 {
   gap: var(--space-grid-gap);
   contain: layout;
   width: 100%;
+  box-sizing: border-box;
+}
+
+.services-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .payment-grid {
@@ -207,7 +310,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 48px;
+  padding: 0 var(--page-gutter);
   height: 64px;
   box-shadow: 0 8px 24px rgba(12, 40, 60, 0.04);
 }
@@ -297,20 +400,19 @@ nav {
 .card--highlight { background: var(--teal-light); border: none; }
 .card--teal h2 { color: white; }
 
-/* ── REVENUE BACKGROUNDS ── */
-.why, .reviews, .contact-options, .location, .teacher-refs { background: linear-gradient(180deg, rgba(230,242,238,0.7) 0%, rgba(245,249,248,0.95) 100%); }
+/* ── SECTION BACKGROUNDS ── */
+.why, .reviews, .contact-options, .location, .teacher-refs { background: rgba(212, 237, 237, 0.35); }
 .payment { background: transparent; }
-
-.contact-options {padding: var(--space-card-padding);}
 
 .contact-options.payment-grid {
   grid-template-columns: 1fr;
   justify-items: center;
 }
 
-.contact-options.payment-grid .card {
+.contact-options.payment-grid .card,
+.contact-options.payment-grid .contact-card {
   width: 100%;
-  max-width: none;
+  max-width: 760px;
 }
 
 .contact-form {
@@ -443,6 +545,9 @@ nav {
   background: var(--teal-light);
   border-radius: 8px;
   font-weight: 500;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .project-list {
@@ -506,13 +611,29 @@ nav {
 .filter-group select { appearance: none; -webkit-appearance: none; border: none; outline: none; background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%230b8a8a' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 10px center; padding: 0 32px 0 12px; height: 40px; font-size: 0.88rem; color: var(--navy); font-weight: 500; cursor: pointer; min-width: 140px; }
 
 /* ── CONTACT SPECIFICS ── */
+.contact-hero,
+.phone-section,
+.contact-options,
+.location {
+  width: 100%;
+  padding: var(--space-section-desktop);
+  box-sizing: border-box;
+}
+
+.contact-hero > *,
+.phone-section > *,
+.contact-options > *,
+.location > * {
+  max-width: var(--page-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .contact-hero {
   background: transparent;
   color: var(--text);
-  padding: 24px 24px 16px;
   text-align: center;
-  max-width: 1120px;
-  margin: 16px auto 0;
+  margin-top: 16px;
 }
 .contact-hero h1 {
   color: var(--teal);
@@ -559,16 +680,27 @@ nav {
 .about { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: start; padding: var(--space-section-desktop); }
 
 /* ── ACCORDION FAQ ── */
+.faq-grid {
+  align-items: start;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
 .faq-btn {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  background: transparent;
+  border: 0;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 16px 18px;
   text-align: left;
   font-family: inherit;
   font-weight: 600;
@@ -576,7 +708,7 @@ nav {
 }
 
 .faq-btn:hover {
-  border-color: rgba(2, 49, 84, 0.2);
+  background: rgba(2, 49, 84, 0.03);
 }
 .faq-icon {
   transition: transform 0.2s ease;
@@ -587,14 +719,27 @@ nav {
   transform: rotate(180deg);
 }
 .faq-answer {
-  margin-top: 12px;
+  padding: 0 18px 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease, opacity 0.2s ease, padding-bottom 0.25s ease;
+}
+.faq-answer:not([hidden]) {
+  padding-bottom: 16px;
+  max-height: 220px;
+  opacity: 1;
 }
 .faq-answer[hidden] {
-  display: none;
+  display: block;
+}
+.faq-answer p {
+  margin: 0;
+  color: var(--muted);
 }
 
 /* ── SITE FOOTER ── */
-site-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 1px solid rgba(2, 49, 84, 0.08); padding: 28px 48px; font-size: 0.88rem; color: #445566; background: rgba(255,255,255,0.7); }
+site-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 1px solid rgba(2, 49, 84, 0.08); padding: 28px var(--page-gutter); font-size: 0.88rem; color: #445566; background: rgba(255,255,255,0.7); }
 site-footer .footer-links {
   position: static;
   height: auto;
@@ -713,6 +858,8 @@ site-footer .footer-links {
   justify-content: space-between;
   align-items: stretch;
   text-align: left;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .contact-card .card-body {

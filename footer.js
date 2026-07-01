@@ -12,6 +12,25 @@ class SiteFooter extends HTMLElement {
         <a href="/kontakt/">Kontakta mig</a>
       </nav>
     `;
+
+    this.updateFooterLayout();
+    requestAnimationFrame(() => this.updateFooterLayout());
+    window.addEventListener('DOMContentLoaded', () => this.updateFooterLayout());
+    window.addEventListener('load', () => this.updateFooterLayout());
+    window.addEventListener('resize', () => this.updateFooterLayout());
+    window.addEventListener('scroll', () => this.updateFooterLayout(), { passive: true });
+  }
+
+  updateFooterLayout() {
+    const footerHeight = this.offsetHeight || 0;
+    document.documentElement.style.setProperty('--footer-height', `${footerHeight}px`);
+
+    const pageShell = document.querySelector('.page-shell');
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const shellHeight = pageShell ? pageShell.getBoundingClientRect().height : 0;
+    const isShortPage = shellHeight <= viewportHeight + 2;
+
+    document.body.classList.toggle('short-page', isShortPage);
   }
 }
 
