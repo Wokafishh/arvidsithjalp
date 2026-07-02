@@ -254,6 +254,15 @@
 
 
 <body>
+  <nav class="sr-only" aria-label="Sidöversikt">
+    <ul>
+      <li><a href="/">Hem</a></li>
+      <li><a href="/pris/">Priser</a></li>
+      <li><a href="/om/">Vem är jag?</a></li>
+      <li><a href="/kontakt/">Kontakta mig!</a></li>
+      <li><a href="/integritet/">Integritetspolicy</a></li>
+    </ul>
+  </nav>
   <div class="page-shell">
   <nav>
     <a class="nav-logo" href="/"><span class="nav-text">Arvids IT-hjälp</span></a>
@@ -280,29 +289,29 @@
     })();
   </script>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>IT-support hemma i Lund</h1>
-      <p>
-        Arvids IT-hjälp erbjuder IT-support och teknikhjälp för privatpersoner via hembesök. 
-        Bankid, Wi-Fi, Appar, Datorer, och mer! Jag hjälper dig med det mesta inom IT, snabbt och enkelt.
-      </p>
-      <p>Med över 7 års teknik-erfarenhet, och praktisk kunskap från mitt arbete hos träffpunkt Laurentiigatan i Lund, 
-        är jag väl rustad att lösa dina IT-problem. <a href="#reviews">Recensioner...</a>
-      </p>
-      <a href="tel:0760284310" class="btn"><span class="btn-text">Ring nu</span></a>
-      <a href="/kontakt/" class="btn"><span class="btn-text">Boka tid</span></a>
-    </div>
-    <div>
-      <div class="hero-img">
-        <img class="font-safe" src="/hjalp.png" width="562" height="439"
-          alt="IT-support hembesök i Lund – Arvids IT-hjälp" loading="eager" fetchpriority="high">
+  <section class="hero content-width">
+      <div class="hero-text">
+        <h1>IT-support hemma i Lund</h1>
+        <p>
+          Arvids IT-hjälp erbjuder IT-support och teknikhjälp för privatpersoner via hembesök. 
+          Bankid, Wi-Fi, Appar, Datorer, och mer! Jag hjälper dig med det mesta inom IT, snabbt och enkelt.
+        </p>
+        <p>Med över 7 års teknik-erfarenhet, och praktisk kunskap från mitt arbete hos träffpunkt Laurentiigatan i Lund, 
+          är jag väl rustad att lösa dina IT-problem. <a href="#reviews">Recensioner...</a>
+        </p>
+        <a href="tel:0760284310" class="btn"><span class="btn-text">Ring nu</span></a>
+        <a href="/kontakt/" class="btn"><span class="btn-text">Boka tid</span></a>
       </div>
-       <p style="text-align: center;">Arvid (höger) hjälper med en dator.</p>
-    </div>
+      <div>
+        <div class="hero-img">
+          <img class="font-safe" src="/hjalp.png" width="562" height="439"
+            alt="IT-support hembesök i Lund – Arvids IT-hjälp" loading="eager" fetchpriority="high">
+        </div>
+         <p style="text-align: center;">Arvid (höger) hjälper med en dator.</p>
+      </div>
   </section>
 
-  <section class="services" id="services">
+  <section class="content-width services" id="services">
     <h2>Vad kan jag hjälpa dig med?</h2>
     <div class="services-grid">
       <div class="service-item">Mobil och appar (BankID, Swish, meddelandeappar)</div>
@@ -317,10 +326,11 @@
   </section>
 
   <section class="why">
-    <h2>Varför välja mig?</h2>
-    <p> Jag har arbetat som teknikhjälp-volontär hos träffpunkt Laurentiigatan i Lund, fått plats i tidningen 65+
-      och varit deltagande i olika projekt för att föra samman seniorer och unga via teknik. Utöver det:</p>
-    <div class="why-grid">
+    <div class="content-width">
+      <h2>Varför välja mig?</h2>
+      <p> Jag har arbetat som teknikhjälp-volontär hos träffpunkt Laurentiigatan i Lund, fått plats i tidningen 65+
+        och varit deltagande i olika projekt för att föra samman seniorer och unga via teknik. Utöver det:</p>
+      <div class="why-grid">
       <div class="card why-card">
         <h3>Prisuppskattning</h3>
         <p>Du får alltid en prisuppskattning före vi bestämmer tid.</p>
@@ -334,9 +344,11 @@
         <p>Jag kan vara på plats inom 24 timmar.</p>
       </div>
     </div>
+    </div>
   </section>
 
   <section class="reviews" id="reviews" itemscope itemtype="https://schema.org/LocalBusiness">
+    <div class="content-width">
     <meta itemprop="name" content="Arvids IT-hjälp">
     <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
       <meta itemprop="ratingValue" content="5.0">
@@ -439,6 +451,7 @@
     </div>
 
     <div class="reviews-grid" id="reviews-grid"></div>
+    </div>
   </section>
 
   <script>
@@ -487,7 +500,7 @@
 
   </script>
 
-  <section class="faq">
+  <section class="faq content-width">
     <h2>Vanliga frågor</h2>
     <dl class="faq-list faq-grid">
 

@@ -115,6 +115,15 @@
 </head>
 
 <body>
+  <nav class="sr-only" aria-label="Sidöversikt">
+    <ul>
+      <li><a href="/">Hem</a></li>
+      <li><a href="/pris/">Priser</a></li>
+      <li><a href="/om/">Vem är jag?</a></li>
+      <li><a href="/kontakt/">Kontakta mig!</a></li>
+      <li><a href="/integritet/">Integritetspolicy</a></li>
+    </ul>
+  </nav>
   <div class="page-shell">
 
   <nav>
@@ -140,7 +149,7 @@
     })();
   </script>
 
-  <section class="contact-hero">
+  <section class="contact-hero content-width">
     <h1>Kontakta mig!</h1>
     <p class="hero-lead">All bokning samt kundservice sker via telefon. Vanliga svarstider mellan 15:00–18:00.</p>
     <div class="badge-group">
@@ -172,13 +181,16 @@
   </section>
 
   <section class="phone-section">
-    <div class="projects-label">Ring eller smsa:</div>
+    <div class="content-width">
+    <div class="projects-label">Ring eller skicka sms:</div>
     <a href="tel:0760284310" class="phone-number">076-028 43 10</a>
-    <p class="phone-subtext">Jag är alltid tillgänglig. Ring då det passar dig!</p>
+    <p class="phone-subtext">Helst mellan 12:00 och 18:00, så att jag kan svara direkt.</p>
+    </div>
   </section>
 
   <section class="contact-options payment-grid">
-    <div class="card contact-card">
+    <div class="content-width">
+    <div class="contact-card">
       <div class="card-body">
         <h2>Uppringning</h2>
         <p>Vill du bli uppringd istället? Fyll i så ringer jag dig!</p>
@@ -199,9 +211,11 @@
             Tid
             <input type="time" name="Tid" required>
           </label>
+          <p class="form-consent">Genom att klicka på "Skicka förfrågan" godkänner du att ditt namn och telefonnummer skickas via tredjepartstjänsten ntfy.sh, så att jag kan kontakta dig för att boka tid. Uppgifterna raderas när ärendet är avslutat. <a href="/integritetspolicy/">Läs mer om hur dina uppgifter behandlas.</a></p>
           <button type="submit" class="btn">Skicka förfrågan</button>
         </form>
       </div>
+    </div>
     </div>
   </section>
 
@@ -269,14 +283,16 @@
   </script>
 
   <section class="location">
+    <div class="content-width">
     <h2>Testa min tjänst gratis</h2>
-    <p class="phone-subtext" style="margin-bottom: 24px; max-width: 700px; margin-left: auto; margin-right: auto;">
+    <p class="phone-subtext" style="margin-bottom: 24px; margin-left: auto; margin-right: auto;">
       Varje måndag 15:00-16:00 finns jag på plats vid seniorträffpunkt Laurentiigatan! Är du senior kan du komma förbi
       och få hjälp utan bokning.
     </p>
-    <div class="card location-card" style="max-width: 600px; margin: 0 auto; text-align: left;">
+    <div class="card location-card" style="margin: 0 auto; text-align: left;">
       <strong>📍 Seniorträffpunkt Laurentiigatan 18, Lund</strong>
       <p style="margin-top: 4px;">Varje måndag kl. 15:00–16:00</p>
+    </div>
     </div>
   </section>
 

@@ -89,6 +89,15 @@
 </head>
 
 <body>
+  <nav class="sr-only" aria-label="Sidöversikt">
+    <ul>
+      <li><a href="/">Hem</a></li>
+      <li><a href="/pris/">Priser</a></li>
+      <li><a href="/om/">Vem är jag?</a></li>
+      <li><a href="/kontakt/">Kontakta mig!</a></li>
+      <li><a href="/integritet/">Integritetspolicy</a></li>
+    </ul>
+  </nav>
   <div class="page-shell">
 
   <nav>
@@ -159,6 +168,16 @@
           </tr>
           <tr>
             <td>
+              <span class="cell-main">Namn, Telefonnummer, Datum, Tid</span>
+              <span class="cell-sub">Från kontaktblankett på /kontakt/</span>
+            </td>
+            <td>
+              Boka hembesök via bokningsblankett<span class="legal-label">Art. 6.1 b – avtal</span>
+            </td>
+            <td>Raderas när ärendet är avslutat, senast 14 dagar senare</td>
+          </tr>
+          <tr>
+            <td>
               <span class="cell-main">E-postadress</span>
               <span class="cell-sub">Bara om du mejlar mig</span>
             </td>
@@ -190,7 +209,7 @@
         </tbody>
       </table>
 
-      <p style="margin-top:14px;">Uppgifter som inte anges ovan behandlas inte. Webbplatsen är en statisk sida publicerad via GitHub Pages och saknar formulär, inloggning, analysskript eller cookies – inga personuppgifter samlas in automatiskt via webbplatsen.</p>
+      <p style="margin-top:14px;">Uppgifter som inte anges ovan behandlas inte. Webbplatsen är en statisk sida publicerad via GitHub Pages och saknar inloggning, analysskript eller cookies. En bokningsblankett på /kontakt/ möjliggör att besökare kan begära återuppringning; se informationen om kontaktblankett i tabellen ovan.</p>
     </section>
 
     <!-- 3 -->
@@ -205,6 +224,7 @@
       <p>Personuppgifter lämnas inte ut till tredje part för kommersiella ändamål. Följande databehandlare kan förekomma:</p>
       <ul>
         <li><strong>Google LLC (Gmail)</strong> – fungerar som databehandlare vid e-postkommunikation. Google är certifierat under EU–US Data Privacy Framework, vilket utgör en giltig överföringsmekanism enligt GDPR kapitel V. Se Googles dataskyddspolicy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</li>
+        <li><strong>ntfy.sh</strong> – fungerar som databehandlare vid insamling och bearbetning av bokningsförfrågningar via kontaktblankett. Tjänsten tillfälligt lagrar och vidarebefordrar namn, telefonnummer, datum och tid för att skicka en push-notifikation. Servrar kan vara lokaliserade utanför EU/EES, vilket utgör en tredjelandsöverföring enligt GDPR kapitel V. Denna överföring är nödvändig för systemets funktionalitet. Personuppgifter lagras inte permanent på ntfy.sh.</li>
         <li><strong>Getswish AB (Swish)</strong> – vid betalning via Swish behandlas transaktionsdata av Getswish AB under tillämplig betaltjänstlagstiftning (PSD2). Jag tar del av enbart bekräftelsen på att betalning mottagits.</li>
       </ul>
       <p>Inga personuppgifter överförs till tredjeland utöver vad som framgår ovan, och ingen vidareförsäljning eller utlåning av uppgifter sker.</p>
