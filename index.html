@@ -1,473 +1,756 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sv">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            http-equiv="Cache-Control"
+            content="public, max-age=31536000, immutable"
+        />
+        <meta name="robots" content="index, follow" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
-  <meta name="robots" content="index, follow">
+        <title>IT-support i Lund via hembesök | Arvids IT-hjälp</title>
+        <meta
+            name="description"
+            content="IT-support hemma i Lund från 149 kr/tim. Hjälp med BankID, Wi-Fi, dator och mobil. Betala bara om problemet löses. Ring idag!"
+        />
+        <meta name="author" content="Arvid" />
+        <link rel="canonical" href="https://arvidsithjalp.se/" />
 
-  <title>IT-support i Lund via hembesök | Arvids IT-hjälp</title>
-  <meta name="description"
-    content="IT-support hemma i Lund från 149 kr/tim. Hjälp med BankID, Wi-Fi, dator och mobil. Betala bara om problemet löses. Ring idag!">
-  <meta name="author" content="Arvid">
-  <link rel="canonical" href="https://arvidsithjalp.se/">
+        <link rel="icon" href="icon/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="icon/apple-touch-icon.png" />
 
-  <link rel="icon" href="icon/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="icon/apple-touch-icon.png">
+        <!-- Open Graph -->
+        <meta
+            property="og:title"
+            content="IT-support i Lund via hembesök | Arvids IT-hjälp"
+        />
+        <meta
+            property="og:description"
+            content="IT-support hemma i Lund från 149 kr/tim. Hjälp med BankID, Wi-Fi, dator och mobil. Betala bara om problemet löses. Ring idag!"
+        />
+        <meta
+            property="og:image"
+            content="https://arvidsithjalp.se/preview.jpg"
+        />
+        <meta property="og:url" content="https://arvidsithjalp.se/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="sv_SE" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="IT-support i Lund via hembesök | Arvids IT-hjälp">
-  <meta property="og:description"
-    content="IT-support hemma i Lund från 149 kr/tim. Hjälp med BankID, Wi-Fi, dator och mobil. Betala bara om problemet löses. Ring idag!">
-  <meta property="og:image" content="https://arvidsithjalp.se/preview.jpg">
-  <meta property="og:url" content="https://arvidsithjalp.se/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="sv_SE">
+        <!-- Structured Data: LocalBusiness -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "Arvids IT-hjälp",
+                "description": "IT-support och IT-hjälp hemma hos dig i Lund och Skåne. Hjälp med BankID, Wi-Fi, dator och mer.",
+                "image": "https://arvidsithjalp.se/preview.jpg",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://arvidsithjalp.se/icon/apple-touch-icon.png",
+                    "width": 180,
+                    "height": 180
+                },
+                "url": "https://arvidsithjalp.se/",
+                "telephone": "+46760284310",
+                "areaServed": {
+                    "@type": "GeoCircle",
+                    "geoMidpoint": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 55.7047,
+                        "longitude": 13.191
+                    },
+                    "geoRadius": "30000"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 55.7047,
+                    "longitude": 13.191
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Lund",
+                    "addressRegion": "Skåne",
+                    "addressCountry": "SE"
+                },
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": [
+                            "Monday",
+                            "Tuesday",
+                            "Wednesday",
+                            "Thursday",
+                            "Friday",
+                            "Saturday",
+                            "Sunday"
+                        ],
+                        "opens": "08:00",
+                        "closes": "20:00"
+                    }
+                ],
+                "priceRange": "150 SEK",
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "IT-tjänster",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "IT-support hembesök",
+                                "description": "Hembesök för IT-support och felsökning i Lund och Skåne"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "BankID och apphjälp",
+                                "description": "Hjälp med BankID, Swish och andra appar på mobil"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Wi-Fi och nätverksproblem",
+                                "description": "Felsökning och åtgärd av Wi-Fi och internetuppkoppling"
+                            }
+                        }
+                    ]
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "5.0",
+                    "reviewCount": "5",
+                    "bestRating": "5"
+                },
+                "review": [
+                    {
+                        "@type": "Review",
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "5",
+                            "bestRating": "5"
+                        },
+                        "author": { "@type": "Person", "name": "Kjell N." },
+                        "reviewBody": "Snabbt och proffessionellt. Väldigt nöjd!"
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "5",
+                            "bestRating": "5"
+                        },
+                        "author": { "@type": "Person", "name": "Jenny F." },
+                        "reviewBody": "Effektiv och lösningsorienterad."
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "5",
+                            "bestRating": "5"
+                        },
+                        "author": { "@type": "Person", "name": "Pauline R." },
+                        "reviewBody": "Jag är så totalt nöjd och glad. De andra tjänsterna jag har testat har inte lyckats, utan rent av misslyckats."
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "5",
+                            "bestRating": "5"
+                        },
+                        "author": { "@type": "Person", "name": "Bodil O." },
+                        "reviewBody": "Tack för hjälpen med molnlagring mm. Bra att du finns här, när man behöver hjälp"
+                    },
+                    {
+                        "@type": "Review",
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "5",
+                            "bestRating": "5"
+                        },
+                        "author": { "@type": "Person", "name": "Birgitta R." },
+                        "reviewBody": "Jättebra!"
+                    }
+                ],
+                "sameAs": ["https://www.facebook.com/arvids-it-hjalp"]
+            }
+        </script>
 
-  <!-- Structured Data: LocalBusiness -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Arvids IT-hjälp",
-  "description": "IT-support och IT-hjälp hemma hos dig i Lund och Skåne. Hjälp med BankID, Wi-Fi, dator och mer.",
-  "image": "https://arvidsithjalp.se/preview.jpg",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://arvidsithjalp.se/icon/apple-touch-icon.png",
-    "width": 180,
-    "height": 180
-  },
-  "url": "https://arvidsithjalp.se/",
-  "telephone": "+46760284310",
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": 55.7047,
-      "longitude": 13.1910
-    },
-    "geoRadius": "30000"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 55.7047,
-    "longitude": 13.1910
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Lund",
-    "addressRegion": "Skåne",
-    "addressCountry": "SE"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-      "opens": "08:00",
-      "closes": "20:00"
-    }
-  ],
-  "priceRange": "150 SEK",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "IT-tjänster",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "IT-support hembesök",
-          "description": "Hembesök för IT-support och felsökning i Lund och Skåne"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "BankID och apphjälp",
-          "description": "Hjälp med BankID, Swish och andra appar på mobil"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Wi-Fi och nätverksproblem",
-          "description": "Felsökning och åtgärd av Wi-Fi och internetuppkoppling"
-        }
-      }
-    ]
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "5",
-    "bestRating": "5"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-      "author": {"@type": "Person", "name": "Kjell N."},
-      "reviewBody": "Snabbt och proffessionellt. Väldigt nöjd!"
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-      "author": {"@type": "Person", "name": "Jenny F."},
-      "reviewBody": "Effektiv och lösningsorienterad."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-      "author": {"@type": "Person", "name": "Pauline R."},
-      "reviewBody": "Jag är så totalt nöjd och glad. De andra tjänsterna jag har testat har inte lyckats, utan rent av misslyckats."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-      "author": {"@type": "Person", "name": "Bodil O."},
-      "reviewBody": "Tack för hjälpen med molnlagring mm. Bra att du finns här, när man behöver hjälp"
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-      "author": {"@type": "Person", "name": "Birgitta R."},
-      "reviewBody": "Jättebra!"
-    }
-  ],
-  "sameAs": ["https://www.facebook.com/arvids-it-hjalp"]
-}
-  </script>
+        <!-- Structured Data: WebSite -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Arvids IT-hjälp",
+                "url": "https://arvidsithjalp.se"
+            }
+        </script>
 
-  <!-- Structured Data: WebSite -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Arvids IT-hjälp",
-    "url": "https://arvidsithjalp.se"
-  }
-  </script>
+        <!-- Structured Data: FAQ -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Hur mycket kostar IT-support hemma i Lund?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Priset är 149 kr/tim just nu tills RUT. Du får alltid en prisuppskattning innan vi bestämmer tid, och du betalar ingenting om problemet inte löses."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Vad hjälper Arvids IT-hjälp med?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Hjälp med BankID, Swish, Wi-Fi, datorproblem, virussökning, köpråd, hårdvara och annan mjukvarusupport via hembesök i Lund och Skåne."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Hur snabbt kan jag boka ett hembesök?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Om du ringer sker bokning inom 24 timmar."
+                        }
+                    }
+                ]
+            }
+        </script>
 
-  <!-- Structured Data: FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Hur mycket kostar IT-support hemma i Lund?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Priset är 149 kr/tim just nu tills RUT. Du får alltid en prisuppskattning innan vi bestämmer tid, och du betalar ingenting om problemet inte löses."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Vad hjälper Arvids IT-hjälp med?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Hjälp med BankID, Swish, Wi-Fi, datorproblem, virussökning, köpråd, hårdvara och annan mjukvarusupport via hembesök i Lund och Skåne."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Hur snabbt kan jag boka ett hembesök?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Om du ringer sker bokning inom 24 timmar."
-        }
-      }
-    ]
-  }
-  </script>
+        <link rel="dns-prefetch" href="https://i.postimg.cc" />
+        <link rel="preconnect" href="https://i.postimg.cc" />
+        <link rel="pr§econnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="preload"
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap"
+        />
+        <link rel="stylesheet" href="./style.css" />
+        <script>
+            (function () {
+                const root = document.documentElement;
+                const storageKey = "arvids-font-reveal-ready";
+                const revealEarly = () => root.classList.add("early-reveal");
+                const revealFonts = () => {
+                    root.classList.add("fonts-ready");
+                    try {
+                        sessionStorage.setItem(storageKey, "ready");
+                    } catch (error) {}
+                };
+                const restoreReadyState = () => {
+                    root.classList.add("early-reveal", "fonts-ready");
+                    document
+                        .querySelectorAll(
+                            ".font-dependent, .nav-text, .btn-text",
+                        )
+                        .forEach((el) => {
+                            el.style.opacity = "1";
+                            el.style.visibility = "visible";
+                        });
+                };
+                const init = () => {
+                    try {
+                        if (sessionStorage.getItem(storageKey) === "ready") {
+                            restoreReadyState();
+                            return;
+                        }
+                    } catch (error) {}
 
-  <link rel="dns-prefetch" href="https://i.postimg.cc">
-  <link rel="preconnect" href="https://i.postimg.cc">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="/style.css?v=20260630">
-  <script>
-    (function () {
-      const root = document.documentElement;
-      const storageKey = 'arvids-font-reveal-ready';
-      const revealEarly = () => root.classList.add('early-reveal');
-      const revealFonts = () => {
-        root.classList.add('fonts-ready');
-        try { sessionStorage.setItem(storageKey, 'ready'); } catch (error) {}
-      };
-      const restoreReadyState = () => {
-        root.classList.add('early-reveal', 'fonts-ready');
-        document.querySelectorAll('.font-dependent, .nav-text, .btn-text').forEach((el) => {
-          el.style.opacity = '1';
-          el.style.visibility = 'visible';
-        });
-      };
-      const init = () => {
-        try {
-          if (sessionStorage.getItem(storageKey) === 'ready') {
-            restoreReadyState();
-            return;
-          }
-        } catch (error) {}
+                    const safeSelectors = [
+                        "img",
+                        ".hero-img",
+                        ".about-img",
+                        ".card",
+                        ".price-card",
+                        ".payment-item",
+                        ".service-item",
+                        ".review-card",
+                        ".faq-item",
+                        ".filter-group",
+                        ".payment-grid",
+                        ".price-cards",
+                        ".reviews-grid",
+                        ".services-grid",
+                        ".why-grid",
+                        ".faq-grid",
+                        ".filter-bar",
+                        ".badge-group",
+                        ".hero > div:last-child",
+                    ];
+                    document
+                        .querySelectorAll(safeSelectors.join(", "))
+                        .forEach((el) => el.classList.add("font-safe"));
+                    document
+                        .querySelectorAll(
+                            "h1, h2, h3, p, li, a, button, span, label, dt, dd",
+                        )
+                        .forEach((el) => {
+                            if (!el.closest(".font-safe, .nav-text, .btn-text"))
+                                el.classList.add("font-dependent");
+                        });
+                    revealEarly();
 
-        const safeSelectors = ['img', '.hero-img', '.about-img', '.card', '.price-card', '.payment-item', '.service-item', '.review-card', '.faq-item', '.filter-group', '.payment-grid', '.price-cards', '.reviews-grid', '.services-grid', '.why-grid', '.faq-grid', '.filter-bar', '.badge-group', '.hero > div:last-child'];
-        document.querySelectorAll(safeSelectors.join(', ')).forEach((el) => el.classList.add('font-safe'));
-        document.querySelectorAll('h1, h2, h3, p, li, a, button, span, label, dt, dd').forEach((el) => {
-          if (!el.closest('.font-safe, .nav-text, .btn-text')) el.classList.add('font-dependent');
-        });
-        revealEarly();
+                    const waitForFonts = async () => {
+                        if (!("fonts" in document)) {
+                            revealFonts();
+                            return;
+                        }
+                        try {
+                            await document.fonts.load("600 16px Fraunces");
+                            await document.fonts.load("400 16px DM Sans");
+                            revealFonts();
+                        } catch (error) {
+                            revealFonts();
+                        }
+                    };
 
-        const waitForFonts = async () => {
-          if (!('fonts' in document)) {
-            revealFonts();
-            return;
-          }
-          try {
-            await document.fonts.load('600 16px Fraunces');
-            await document.fonts.load('400 16px DM Sans');
-            revealFonts();
-          } catch (error) {
-            revealFonts();
-          }
-        };
+                    waitForFonts();
+                };
 
-        waitForFonts();
-      };
+                if (document.readyState === "loading") {
+                    document.addEventListener("DOMContentLoaded", init, {
+                        once: true,
+                    });
+                } else {
+                    init();
+                }
+            })();
+        </script>
+    </head>
 
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init, { once: true });
-      } else {
-        init();
-      }
-    })();
-  </script>
-</head>
+    <body>
+        <nav class="sr-only" aria-label="Sidöversikt">
+            <ul>
+                <li><a href="/">Hem</a></li>
+                <li><a href="/pris/">Priser</a></li>
+                <li><a href="/om/">Vem är jag?</a></li>
+                <li><a href="/kontakt/">Kontakta mig!</a></li>
+                <li><a href="/integritet/">Integritetspolicy</a></li>
+            </ul>
+        </nav>
+        <div class="page-shell">
+            <nav>
+                <a class="nav-logo" href="/"
+                    ><span class="nav-text">Arvids IT-hjälp</span></a
+                >
+                <button
+                    class="nav-toggle"
+                    aria-label="Meny"
+                    onclick="
+                        this.classList.toggle('open');
+                        document
+                            .querySelector('.nav-links')
+                            .classList.toggle('open');
+                    "
+                >
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-links">
+                    <li>
+                        <a href="/"
+                            ><span class="nav-text">Hem/Recensioner</span></a
+                        >
+                    </li>
+                    <li>
+                        <a href="/pris/"
+                            ><span class="nav-text">Priser</span></a
+                        >
+                    </li>
+                    <li>
+                        <a href="/om/"
+                            ><span class="nav-text">Vem är jag?</span></a
+                        >
+                    </li>
+                    <li>
+                        <a href="/kontakt/"
+                            ><span class="nav-text">Kontakta mig!</span></a
+                        >
+                    </li>
+                </ul>
+            </nav>
+            <script>
+                (function () {
+                    const page =
+                        "/" +
+                        location.pathname.split("/").filter(Boolean).join("/") +
+                        "/";
+                    const normalized = page === "//" ? "/" : page;
+                    document.querySelectorAll(".nav-links a").forEach((a) => {
+                        if (
+                            a.getAttribute("href") === normalized ||
+                            (normalized === "/" &&
+                                a.getAttribute("href") === "/")
+                        ) {
+                            a.classList.add("active");
+                        }
+                    });
+                })();
+            </script>
 
+            <section class="hero content-width">
+                <div class="hero-text">
+                    <h1>IT-support hemma i Lund</h1>
+                    <p>
+                        Arvids IT-hjälp erbjuder IT-support och teknikhjälp för
+                        privatpersoner via hembesök. Bankid, Wi-Fi, Appar,
+                        Datorer, och mer! Jag hjälper dig med det mesta inom IT,
+                        snabbt och enkelt.
+                    </p>
+                    <p>
+                        Med över 7 års teknik-erfarenhet, och praktisk kunskap
+                        från mitt arbete hos träffpunkt Laurentiigatan i Lund,
+                        är jag väl rustad att lösa dina IT-problem.
+                        <a href="#reviews">Recensioner...</a>
+                    </p>
+                    <a href="tel:0760284310" class="btn"
+                        ><span class="btn-text">Ring nu</span></a
+                    >
+                    <a href="/kontakt/" class="btn"
+                        ><span class="btn-text">Boka tid</span></a
+                    >
+                </div>
+                <div>
+                    <div class="hero-img">
+                        <img
+                            class="font-safe"
+                            src="/hjalp.png"
+                            width="562"
+                            height="439"
+                            alt="IT-support hembesök i Lund – Arvids IT-hjälp"
+                            loading="eager"
+                            fetchpriority="high"
+                        />
+                    </div>
+                    <p style="text-align: center">
+                        Arvid (höger) hjälper med en dator.
+                    </p>
+                </div>
+            </section>
 
-<body>
-  <nav class="sr-only" aria-label="Sidöversikt">
-    <ul>
-      <li><a href="/">Hem</a></li>
-      <li><a href="/pris/">Priser</a></li>
-      <li><a href="/om/">Vem är jag?</a></li>
-      <li><a href="/kontakt/">Kontakta mig!</a></li>
-      <li><a href="/integritet/">Integritetspolicy</a></li>
-    </ul>
-  </nav>
-  <div class="page-shell">
-  <nav>
-    <a class="nav-logo" href="/"><span class="nav-text">Arvids IT-hjälp</span></a>
-    <button class="nav-toggle" aria-label="Meny"
-      onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('open')">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="/"><span class="nav-text">Hem/Recensioner</span></a></li>
-      <li><a href="/pris/"><span class="nav-text">Priser</span></a></li>
-      <li><a href="/om/"><span class="nav-text">Vem är jag?</span></a></li>
-      <li><a href="/kontakt/"><span class="nav-text">Kontakta mig!</span></a></li>
-    </ul>
-  </nav>
-  <script>
-    (function () {
-      const page = '/' + location.pathname.split('/').filter(Boolean).join('/') + '/';
-      const normalized = page === '//' ? '/' : page;
-      document.querySelectorAll('.nav-links a').forEach(a => {
-        if (a.getAttribute('href') === normalized || (normalized === '/' && a.getAttribute('href') === '/')) {
-          a.classList.add('active');
-        }
-      });
-    })();
-  </script>
+            <section class="content-width services" id="services">
+                <h2>Vad kan jag hjälpa dig med?</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        Mobil och appar (BankID, Swish, meddelandeappar)
+                    </div>
+                    <div class="service-item">
+                        Wi-Fi och internetuppkoppling
+                    </div>
+                    <div class="service-item">Datorproblem och felsökning</div>
+                    <div class="service-item">
+                        Virussökning och onlinesäkerhet
+                    </div>
+                    <div class="service-item">
+                        Köpråd (mobil, laptop, tillbehör)
+                    </div>
+                    <div class="service-item">Hårdvara och reparationer</div>
+                    <div class="service-item">
+                        Inställningar och anpassningar
+                    </div>
+                    <div class="service-item">Annan mjukvarusupport</div>
+                </div>
+            </section>
 
-  <section class="hero content-width">
-      <div class="hero-text">
-        <h1>IT-support hemma i Lund</h1>
-        <p>
-          Arvids IT-hjälp erbjuder IT-support och teknikhjälp för privatpersoner via hembesök. 
-          Bankid, Wi-Fi, Appar, Datorer, och mer! Jag hjälper dig med det mesta inom IT, snabbt och enkelt.
-        </p>
-        <p>Med över 7 års teknik-erfarenhet, och praktisk kunskap från mitt arbete hos träffpunkt Laurentiigatan i Lund, 
-          är jag väl rustad att lösa dina IT-problem. <a href="#reviews">Recensioner...</a>
-        </p>
-        <a href="tel:0760284310" class="btn"><span class="btn-text">Ring nu</span></a>
-        <a href="/kontakt/" class="btn"><span class="btn-text">Boka tid</span></a>
-      </div>
-      <div>
-        <div class="hero-img">
-          <img class="font-safe" src="/hjalp.png" width="562" height="439"
-            alt="IT-support hembesök i Lund – Arvids IT-hjälp" loading="eager" fetchpriority="high">
-        </div>
-         <p style="text-align: center;">Arvid (höger) hjälper med en dator.</p>
-      </div>
-  </section>
+            <section class="why">
+                <div class="content-width">
+                    <h2>Varför välja mig?</h2>
+                    <p>
+                        Jag har arbetat som teknikhjälp-volontär hos träffpunkt
+                        Laurentiigatan i Lund och fått plats i tidningen 65+. Utöver det:
+                    </p>
+                    <div class="why-grid">
+                        <div class="card why-card">
+                            <h3>Prisuppskattning</h3>
+                            <p>
+                                Du får alltid en prisuppskattning före vi
+                                bestämmer tid.
+                            </p>
+                        </div>
+                        <div class="card why-card">
+                            <h3>Betala vid lösning</h3>
+                            <p>
+                                Går problemet inte att lösa betalar du
+                                ingenting.
+                            </p>
+                        </div>
+                        <div class="card why-card">
+                            <h3>Snabb hjälp</h3>
+                            <p>Jag kan vara på plats inom 24 timmar.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-  <section class="content-width services" id="services">
-    <h2>Vad kan jag hjälpa dig med?</h2>
-    <div class="services-grid">
-      <div class="service-item">Mobil och appar (BankID, Swish, meddelandeappar)</div>
-      <div class="service-item">Wi-Fi och internetuppkoppling</div>
-      <div class="service-item">Datorproblem och felsökning</div>
-      <div class="service-item">Virussökning och onlinesäkerhet</div>
-      <div class="service-item">Köpråd (mobil, laptop, tillbehör)</div>
-      <div class="service-item">Hårdvara och reparationer</div>
-      <div class="service-item">Inställningar och anpassningar</div>
-      <div class="service-item">Annan mjukvarusupport</div>
-    </div>
-  </section>
+            <section
+                class="reviews"
+                id="reviews"
+                itemscope
+                itemtype="https://schema.org/LocalBusiness"
+            >
+                <div class="content-width">
+                    <meta itemprop="name" content="Arvids IT-hjälp" />
+                    <div
+                        itemprop="aggregateRating"
+                        itemscope
+                        itemtype="https://schema.org/AggregateRating"
+                    >
+                        <meta itemprop="ratingValue" content="5.0" />
+                        <meta itemprop="reviewCount" content="4" />
+                        <meta itemprop="bestRating" content="5" />
+                    </div>
+                    <h2>Recensioner</h2>
+                    <div class="reviews-header">
+                        <div id="avg-banner">
+                            <div id="avg-banner-content"></div>
+                            <a
+                                href="https://g.page/r/CetCjhiYVWTGEBI/review"
+                                target="_blank"
+                                rel="noopener"
+                                class="btn"
+                            >
+                                <svg
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                        fill="#4285F4"
+                                    />
+                                    <path
+                                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                        fill="#34A853"
+                                    />
+                                    <path
+                                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                        fill="#FBBC05"
+                                    />
+                                    <path
+                                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                        fill="#EA4335"
+                                    />
+                                </svg>
+                                <span class="btn-text">Lämna en recension</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="filter-bar">
+                        <div class="filter-group">
+                            <label for="filter">Filter</label>
+                            <select id="filter">
+                                <option value="0">Alla stjärnor</option>
+                                <option value="5">★★★★★ 5 stjärnor</option>
+                                <option value="4">★★★★☆ 4 stjärnor</option>
+                                <option value="3">★★★☆☆ 3 stjärnor</option>
+                                <option value="2">★★☆☆☆ 2 stjärnor</option>
+                                <option value="1">★☆☆☆☆ 1 stjärna</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="sort">Sortera</label>
+                            <select id="sort">
+                                <option value="desc">Högst först</option>
+                                <option value="asc">Lägst först</option>
+                            </select>
+                        </div>
+                    </div>
 
-  <section class="why">
-    <div class="content-width">
-      <h2>Varför välja mig?</h2>
-      <p> Jag har arbetat som teknikhjälp-volontär hos träffpunkt Laurentiigatan i Lund, fått plats i tidningen 65+
-        och varit deltagande i olika projekt för att föra samman seniorer och unga via teknik. Utöver det:</p>
-      <div class="why-grid">
-      <div class="card why-card">
-        <h3>Prisuppskattning</h3>
-        <p>Du får alltid en prisuppskattning före vi bestämmer tid.</p>
-      </div>
-      <div class="card why-card">
-        <h3>Betala vid lösning</h3>
-        <p>Går problemet inte att lösa betalar du ingenting.</p>
-      </div>
-      <div class="card why-card">
-        <h3>Snabb hjälp</h3>
-        <p>Jag kan vara på plats inom 24 timmar.</p>
-      </div>
-    </div>
-    </div>
-  </section>
+                    <!-- Static reviews for search engine indexing -->
+                    <div id="reviews-static" aria-hidden="true">
+                        <div
+                            itemscope
+                            itemprop="review"
+                            itemtype="https://schema.org/Review"
+                        >
+                            <span
+                                itemprop="author"
+                                itemscope
+                                itemtype="https://schema.org/Person"
+                                ><span itemprop="name">Kjell N.</span></span
+                            >
+                            <div
+                                itemprop="reviewRating"
+                                itemscope
+                                itemtype="https://schema.org/Rating"
+                            >
+                                <meta itemprop="ratingValue" content="5" />
+                                <meta itemprop="bestRating" content="5" />
+                            </div>
+                            <p itemprop="reviewBody">
+                                Snabbt och proffessionellt. Väldigt nöjd!
+                            </p>
+                        </div>
 
-  <section class="reviews" id="reviews" itemscope itemtype="https://schema.org/LocalBusiness">
-    <div class="content-width">
-    <meta itemprop="name" content="Arvids IT-hjälp">
-    <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-      <meta itemprop="ratingValue" content="5.0">
-      <meta itemprop="reviewCount" content="4">
-      <meta itemprop="bestRating" content="5">
-    </div>
-    <h2>Recensioner</h2>
-    <div class="reviews-header">
-      <div id="avg-banner">
-        <div id="avg-banner-content"></div>
-        <a href="https://g.page/r/CetCjhiYVWTGEBI/review" target="_blank" rel="noopener" class="btn">
-          <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path
-              d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-              fill="#4285F4" />
-            <path
-              d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-              fill="#34A853" />
-            <path
-              d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
-              fill="#FBBC05" />
-            <path
-              d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-              fill="#EA4335" />
-          </svg>
-          <span class="btn-text">Lämna en recension</span>
-        </a>
-      </div>
-    </div>
-    <div class="filter-bar">
-      <div class="filter-group">
-        <label for="filter">Filter</label>
-        <select id="filter">
-          <option value="0">Alla stjärnor</option>
-          <option value="5">★★★★★ 5 stjärnor</option>
-          <option value="4">★★★★☆ 4 stjärnor</option>
-          <option value="3">★★★☆☆ 3 stjärnor</option>
-          <option value="2">★★☆☆☆ 2 stjärnor</option>
-          <option value="1">★☆☆☆☆ 1 stjärna</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="sort">Sortera</label>
-        <select id="sort">
-          <option value="desc">Högst först</option>
-          <option value="asc">Lägst först</option>
-        </select>
-      </div>
-    </div>
+                        <div
+                            itemscope
+                            itemprop="review"
+                            itemtype="https://schema.org/Review"
+                        >
+                            <span
+                                itemprop="author"
+                                itemscope
+                                itemtype="https://schema.org/Person"
+                                ><span itemprop="name">Jenny F.</span></span
+                            >
+                            <div
+                                itemprop="reviewRating"
+                                itemscope
+                                itemtype="https://schema.org/Rating"
+                            >
+                                <meta itemprop="ratingValue" content="5" />
+                                <meta itemprop="bestRating" content="5" />
+                            </div>
+                            <p itemprop="reviewBody">
+                                Effektiv och lösningsorienterad.
+                            </p>
+                        </div>
 
-    <!-- Static reviews for search engine indexing -->
-    <div id="reviews-static" aria-hidden="true">
+                        <div
+                            itemscope
+                            itemprop="review"
+                            itemtype="https://schema.org/Review"
+                        >
+                            <span
+                                itemprop="author"
+                                itemscope
+                                itemtype="https://schema.org/Person"
+                                ><span itemprop="name">Pauline R.</span></span
+                            >
+                            <div
+                                itemprop="reviewRating"
+                                itemscope
+                                itemtype="https://schema.org/Rating"
+                            >
+                                <meta itemprop="ratingValue" content="5" />
+                                <meta itemprop="bestRating" content="5" />
+                            </div>
+                            <p itemprop="reviewBody">
+                                Jag är så totalt nöjd och glad. De andra
+                                tjänsterna jag har testat har inte lyckats, utan
+                                rent av misslyckats.
+                            </p>
+                        </div>
 
-      <div itemscope itemprop="review" itemtype="https://schema.org/Review">
-        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Kjell N.</span></span>
-        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <meta itemprop="ratingValue" content="5">
-          <meta itemprop="bestRating" content="5">
-        </div>
-        <p itemprop="reviewBody">Snabbt och proffessionellt. Väldigt nöjd!</p>
-      </div>
+                        <div
+                            itemscope
+                            itemprop="review"
+                            itemtype="https://schema.org/Review"
+                        >
+                            <span
+                                itemprop="author"
+                                itemscope
+                                itemtype="https://schema.org/Person"
+                                ><span itemprop="name">Bodil O.</span></span
+                            >
+                            <div
+                                itemprop="reviewRating"
+                                itemscope
+                                itemtype="https://schema.org/Rating"
+                            >
+                                <meta itemprop="ratingValue" content="5" />
+                                <meta itemprop="bestRating" content="5" />
+                            </div>
+                            <p itemprop="reviewBody">
+                                Tack för hjälpen med molnlagring mm. Bra att du
+                                finns här, när man behöver hjälp
+                            </p>
+                        </div>
 
-      <div itemscope itemprop="review" itemtype="https://schema.org/Review">
-        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Jenny F.</span></span>
-        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <meta itemprop="ratingValue" content="5">
-          <meta itemprop="bestRating" content="5">
-        </div>
-        <p itemprop="reviewBody">Effektiv och lösningsorienterad.</p>
-      </div>
+                        <div
+                            itemscope
+                            itemprop="review"
+                            itemtype="https://schema.org/Review"
+                        >
+                            <span
+                                itemprop="author"
+                                itemscope
+                                itemtype="https://schema.org/Person"
+                                ><span itemprop="name">Elisabet E.</span></span
+                            >
+                            <div
+                                itemprop="reviewRating"
+                                itemscope
+                                itemtype="https://schema.org/Rating"
+                            >
+                                <meta itemprop="ratingValue" content="5" />
+                                <meta itemprop="bestRating" content="5" />
+                            </div>
+                            <p itemprop="reviewBody">
+                                Informativ och tålmodig kunskap inom teknik.
+                                Tack för hjälpen återkommer gärna vis problem!
+                            </p>
+                        </div>
+                    </div>
 
-      <div itemscope itemprop="review" itemtype="https://schema.org/Review">
-        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Pauline R.</span></span>
-        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <meta itemprop="ratingValue" content="5">
-          <meta itemprop="bestRating" content="5">
-        </div>
-        <p itemprop="reviewBody">Jag är så totalt nöjd och glad. De andra tjänsterna jag har testat har inte lyckats,
-          utan rent av misslyckats.</p>
-      </div>
+                    <div class="reviews-grid" id="reviews-grid"></div>
+                </div>
+            </section>
 
-      <div itemscope itemprop="review" itemtype="https://schema.org/Review">
-        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Bodil O.</span></span>
-        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <meta itemprop="ratingValue" content="5">
-          <meta itemprop="bestRating" content="5">
-        </div>
-        <p itemprop="reviewBody">Tack för hjälpen med molnlagring mm. Bra att du finns här, när man behöver hjälp</p>
-      </div>
+            <script>
+                const reviews = [
+                    {
+                        score: 5,
+                        text: "Snabbt och proffessionellt. Väldigt nöjd!",
+                        name: "Kjell N.",
+                        service: "Mjukvaruinstallation",
+                    },
+                    {
+                        score: 5,
+                        text: "Effektiv och lösningsorienterad.",
+                        name: "Jenny F.",
+                        service: "Hjälp med ljudinspelning",
+                    },
+                    {
+                        score: 5,
+                        text: "Jag är så totalt nöjd och glad. De andra tjänsterna jag har testat har inte lyckats, utan rent av misslyckats.",
+                        name: "Pauline R.",
+                        service: "Hjälp med mobilen",
+                    },
+                    {
+                        score: 5,
+                        text: "Tack för hjälpen med molnlagring mm. Bra att du finns här, när man behöver hjälp",
+                        name: "Bodil O.",
+                        service: "Hjälp med molnlagring (Google Photos/Drive)",
+                    },
+                    {
+                        score: 5,
+                        text: "Jättebra!",
+                        name: "Birgitta R.",
+                        service:
+                            "Hjälp med att överföra foton mellan telefoner",
+                    },
+                    {
+                        score: 5,
+                        text: "Informativ och tålmodig kunskap inom teknik. Tack för hjälpen återkommer gärna vis problem!",
+                        name: "Elisabet E.",
+                        service:
+                            "Hjälp med BankID, läsa onlinedokument och rådgivning.",
+                    },
+                ];
 
-      <div itemscope itemprop="review" itemtype="https://schema.org/Review">
-        <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Elisabet E.</span></span>
-        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-          <meta itemprop="ratingValue" content="5">
-          <meta itemprop="bestRating" content="5">
-        </div>
-        <p itemprop="reviewBody">Informativ och tålmodig kunskap inom teknik. Tack för hjälpen återkommer gärna vis problem! </p>
-      </div>
+                function stars(n) {
+                    return "★".repeat(n) + "☆".repeat(5 - n);
+                }
 
-    </div>
-
-    <div class="reviews-grid" id="reviews-grid"></div>
-    </div>
-  </section>
-
-  <script>
-    const reviews = [
-      { score: 5, text: "Snabbt och proffessionellt. Väldigt nöjd!", name: "Kjell N.", service: "Mjukvaruinstallation" },
-      { score: 5, text: "Effektiv och lösningsorienterad.", name: "Jenny F.", service: "Hjälp med ljudinspelning" },
-      { score: 5, text: "Jag är så totalt nöjd och glad. De andra tjänsterna jag har testat har inte lyckats, utan rent av misslyckats.", name: "Pauline R.", service: "Hjälp med mobilen" },
-      { score: 5, text: "Tack för hjälpen med molnlagring mm. Bra att du finns här, när man behöver hjälp", name: "Bodil O.", service: "Hjälp med molnlagring (Google Photos/Drive)" },
-      { score: 5, text: "Jättebra!", name: "Birgitta R.", service: "Hjälp med att överföra foton mellan telefoner" },
-      { score: 5, text: "Informativ och tålmodig kunskap inom teknik. Tack för hjälpen återkommer gärna vis problem!", name: "Elisabet E.", service: "Hjälp med BankID, läsa onlinedokument och rådgivning." },
-    ];
-
-    function stars(n) { return "★".repeat(n) + "☆".repeat(5 - n); }
-
-    const avg = reviews.reduce((s, r) => s + r.score, 0) / reviews.length;
-    document.getElementById("avg-banner-content").innerHTML = `
+                const avg =
+                    reviews.reduce((s, r) => s + r.score, 0) / reviews.length;
+                document.getElementById("avg-banner-content").innerHTML = `
     <div class="avg-banner-inner">
       <span class="avg-score">${avg.toFixed(1)}</span>
       <div>
@@ -476,147 +759,262 @@
       </div>
     </div>`;
 
-    function render() {
-      const min = +document.getElementById("filter").value;
-      const asc = document.getElementById("sort").value === "asc";
-      const grid = document.getElementById("reviews-grid");
-      grid.innerHTML = "";
-      const filtered = [...reviews].filter(r => !min || r.score === min).sort((a, b) => asc ? a.score - b.score : b.score - a.score);
-      if (!filtered.length) {
-        grid.innerHTML = `<div class="no-reviews"><p>Inga recensioner att visa med valda filter.</p></div>`;
-        return;
-      }
-      filtered.forEach(r => {
-        const card = document.createElement("div");
-        card.className = "card review-card";
-        card.innerHTML = `<div class="stars">${stars(r.score)}</div><p class="review-text">"${r.text}"</p><div class="reviewer-name">${r.name}</div><div class="reviewer-service">${r.service}</div>`;
-        grid.appendChild(card);
-      });
-    }
+                function render() {
+                    const min = +document.getElementById("filter").value;
+                    const asc = document.getElementById("sort").value === "asc";
+                    const grid = document.getElementById("reviews-grid");
+                    grid.innerHTML = "";
+                    const filtered = [...reviews]
+                        .filter((r) => !min || r.score === min)
+                        .sort((a, b) =>
+                            asc ? a.score - b.score : b.score - a.score,
+                        );
+                    if (!filtered.length) {
+                        grid.innerHTML = `<div class="no-reviews"><p>Inga recensioner att visa med valda filter.</p></div>`;
+                        return;
+                    }
+                    filtered.forEach((r) => {
+                        const card = document.createElement("div");
+                        card.className = "card review-card";
+                        card.innerHTML = `<div class="stars">${stars(r.score)}</div><p class="review-text">"${r.text}"</p><div class="reviewer-name">${r.name}</div><div class="reviewer-service">${r.service}</div>`;
+                        grid.appendChild(card);
+                    });
+                }
 
-    document.getElementById("filter").onchange = render;
-    document.getElementById("sort").onchange = render;
-    render();
+                document.getElementById("filter").onchange = render;
+                document.getElementById("sort").onchange = render;
+                render();
+            </script>
 
-  </script>
+            <section class="faq">
+                <section class="content-width">
+                    <h2>Vanliga frågor</h2>
+                    <dl class="faq-list faq-grid">
+                        <div class="faq-item">
+                            <dt>
+                                <button
+                                    class="faq-btn"
+                                    aria-expanded="false"
+                                    aria-controls="faq-1"
+                                >
+                                    Hur mycket kostar IT-support hemma i Lund?
+                                    <svg
+                                        class="faq-icon"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        aria-hidden="true"
+                                    >
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </button>
+                            </dt>
+                            <dd id="faq-1" class="faq-answer" hidden>
+                                <p>
+                                    149 kr/tim är det aktuella priset tills RUT.
+                                    50 kr utkörningsavgift.
+                                    <a href="/pris/">Läs mer</a>
+                                </p>
+                            </dd>
+                        </div>
 
-  <section class="faq content-width">
-    <h2>Vanliga frågor</h2>
-    <dl class="faq-list faq-grid">
+                        <div class="faq-item">
+                            <dt>
+                                <button
+                                    class="faq-btn"
+                                    aria-expanded="false"
+                                    aria-controls="faq-2"
+                                >
+                                    Vad hjälper Arvids IT-hjälp med?
+                                    <svg
+                                        class="faq-icon"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        aria-hidden="true"
+                                    >
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </button>
+                            </dt>
+                            <dd id="faq-2" class="faq-answer" hidden>
+                                <p>
+                                    Hjälp med BankID, Swish och appar, Wi-Fi och
+                                    internetproblem, datorproblem och
+                                    felsökning, virussökning, köpråd (mobil,
+                                    laptop, tillbehör), hårdvara och
+                                    reparationer, inställningar och annan
+                                    mjukvarusupport - allt via hembesök i Lund
+                                    och Skåne. <a href="#services">Läs mer</a>
+                                </p>
+                            </dd>
+                        </div>
 
-      <div class="faq-item">
-        <dt>
-          <button class="faq-btn" aria-expanded="false" aria-controls="faq-1">
-            Hur mycket kostar IT-support hemma i Lund?
-            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-        </dt>
-        <dd id="faq-1" class="faq-answer" hidden>
-          <p>149 kr/tim är det aktuella priset tills RUT. 50 kr utkörningsavgift. <a href="/pris/">Läs mer</a></p>
-        </dd>
-      </div>
+                        <div class="faq-item">
+                            <dt>
+                                <button
+                                    class="faq-btn"
+                                    aria-expanded="false"
+                                    aria-controls="faq-3"
+                                >
+                                    Hur snabbt kan jag boka ett hembesök?
+                                    <svg
+                                        class="faq-icon"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        aria-hidden="true"
+                                    >
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </button>
+                            </dt>
+                            <dd id="faq-3" class="faq-answer" hidden>
+                                <p>
+                                    Ifall du ringer kan jag vara på plats inom
+                                    24 timmar. Ofta inom 2-4 timmar!!
+                                </p>
+                            </dd>
+                        </div>
 
-      <div class="faq-item">
-        <dt>
-          <button class="faq-btn" aria-expanded="false" aria-controls="faq-2">
-            Vad hjälper Arvids IT-hjälp med?
-            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-        </dt>
-        <dd id="faq-2" class="faq-answer" hidden>
-          <p>Hjälp med BankID, Swish och appar, Wi-Fi och internetproblem, datorproblem och felsökning, virussökning,
-            köpråd (mobil, laptop, tillbehör), hårdvara och reparationer, inställningar och annan mjukvarusupport - allt
-            via hembesök i Lund och Skåne. <a href="#services">Läs mer</a></p>
-        </dd>
-      </div>
+                        <div class="faq-item">
+                            <dt>
+                                <button
+                                    class="faq-btn"
+                                    aria-expanded="false"
+                                    aria-controls="faq-4"
+                                >
+                                    Vilket område täcker du?
+                                    <svg
+                                        class="faq-icon"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        aria-hidden="true"
+                                    >
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </button>
+                            </dt>
+                            <dd id="faq-4" class="faq-answer" hidden>
+                                <p>
+                                    Primärt Lund, men jag hjälper även kunder i
+                                    övriga Skåne. Kontakta mig så berättar jag
+                                    om just din adress passar.
+                                </p>
+                            </dd>
+                        </div>
 
-      <div class="faq-item">
-        <dt>
-          <button class="faq-btn" aria-expanded="false" aria-controls="faq-3">
-            Hur snabbt kan jag boka ett hembesök?
-            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-        </dt>
-        <dd id="faq-3" class="faq-answer" hidden>
-          <p>Ifall du ringer kan jag vara på plats inom 24 timmar. Ofta inom 2-4 timmar!!</p>
-        </dd>
-      </div>
+                        <div class="faq-item">
+                            <dt>
+                                <button
+                                    class="faq-btn"
+                                    aria-expanded="false"
+                                    aria-controls="faq-5"
+                                >
+                                    Hjälper du även äldre personer utan tidigare
+                                    teknikvana?
+                                    <svg
+                                        class="faq-icon"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        aria-hidden="true"
+                                    >
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </button>
+                            </dt>
+                            <dd id="faq-5" class="faq-answer" hidden>
+                                <p>
+                                    Ja, absolut. Jag har lång erfarenhet av att
+                                    hjälpa seniorer med teknik, bland annat som
+                                    volontär hos träffpunkt Laurentiigatan i
+                                    Lund.
+                                    <a href="/om/">Mer om mina kunskaper</a>
+                                </p>
+                            </dd>
+                        </div>
 
-      <div class="faq-item">
-        <dt>
-          <button class="faq-btn" aria-expanded="false" aria-controls="faq-4">
-            Vilket område täcker du?
-            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-        </dt>
-        <dd id="faq-4" class="faq-answer" hidden>
-          <p>Primärt Lund, men jag hjälper även kunder i övriga Skåne. Kontakta mig så berättar jag om just din adress
-            passar.</p>
-        </dd>
-      </div>
+                        <div class="faq-item">
+                            <dt>
+                                <button
+                                    class="faq-btn"
+                                    aria-expanded="false"
+                                    aria-controls="faq-6"
+                                >
+                                    Kan du hjälpa mig med något som inte nämns
+                                    på hemsidan?
+                                    <svg
+                                        class="faq-icon"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        aria-hidden="true"
+                                    >
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </button>
+                            </dt>
+                            <dd id="faq-6" class="faq-answer" hidden>
+                                <p>
+                                    Ja, absolut.
+                                    <a href="/kontakt/">Kontakta mig</a> så
+                                    berättar jag om hur jag kan hjälpa dig.
+                                </p>
+                            </dd>
+                        </div>
+                    </dl>
+                </section>
+            </section>
 
-      <div class="faq-item">
-        <dt>
-          <button class="faq-btn" aria-expanded="false" aria-controls="faq-5">
-            Hjälper du även äldre personer utan tidigare teknikvana?
-            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-        </dt>
-        <dd id="faq-5" class="faq-answer" hidden>
-          <p>Ja, absolut. Jag har lång erfarenhet av att hjälpa seniorer med teknik, bland annat som volontär hos
-            träffpunkt Laurentiigatan i Lund. <a href="/om/">Mer om mina kunskaper</a>
-          </p>
-        </dd>
-      </div>
+            <script>
+                document.querySelectorAll(".faq-btn").forEach((btn) => {
+                    btn.addEventListener("click", () => {
+                        const expanded =
+                            btn.getAttribute("aria-expanded") === "true";
+                        const answer = document.getElementById(
+                            btn.getAttribute("aria-controls"),
+                        );
 
-      <div class="faq-item">
-        <dt>
-          <button class="faq-btn" aria-expanded="false" aria-controls="faq-6">
-            Kan du hjälpa mig med något som inte nämns på hemsidan?
-            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-        </dt>
-        <dd id="faq-6" class="faq-answer" hidden>
-          <p>Ja, absolut. <a href="/kontakt/">Kontakta mig</a> så berättar jag om hur jag kan hjälpa dig.</p>
-        </dd>
-      </div>
+                        btn.setAttribute("aria-expanded", String(!expanded));
+                        answer.hidden = expanded;
+                    });
+                });
+            </script>
 
-    </dl>
-  </section>
-
-  <script>
-    document.querySelectorAll('.faq-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        const answer = document.getElementById(btn.getAttribute('aria-controls'));
-
-        btn.setAttribute('aria-expanded', String(!expanded));
-        answer.hidden = expanded;
-      });
-    });
-  </script>
-
-    <site-footer></site-footer>
-  </div>
-</body>
-<script src="/footer.js?v=20260630"></script>
-
+            <site-footer></site-footer>
+        </div>
+    </body>
+    <script src="/footer.js?v=20260630"></script>
 </html>

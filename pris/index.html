@@ -1,189 +1,296 @@
 <!-- pris/index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sv">
+    <head>
+        <link rel="icon" href="../icon/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="../icon/apple-touch-icon.png" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            http-equiv="Cache-Control"
+            content="public, max-age=31536000, immutable"
+        />
+        <title>Priser - Arvids IT-hjälp</title>
 
-<head>
-  <link rel="icon" href="../icon/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="../icon/apple-touch-icon.png">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
-  <title>Priser - Arvids IT-hjälp</title>
+        <link rel="dns-prefetch" href="https://i.postimg.cc" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="preload"
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap"
+        />
+        <link rel="stylesheet" href="/style.css" />
+        <script>
+            (function () {
+                const root = document.documentElement;
+                const storageKey = "arvids-font-reveal-ready";
+                const revealEarly = () => root.classList.add("early-reveal");
+                const revealFonts = () => {
+                    root.classList.add("fonts-ready");
+                    try {
+                        sessionStorage.setItem(storageKey, "ready");
+                    } catch (error) {}
+                };
+                const restoreReadyState = () => {
+                    root.classList.add("early-reveal", "fonts-ready");
+                    document
+                        .querySelectorAll(
+                            ".font-dependent, .nav-text, .btn-text",
+                        )
+                        .forEach((el) => {
+                            el.style.opacity = "1";
+                            el.style.visibility = "visible";
+                        });
+                };
+                const init = () => {
+                    try {
+                        if (sessionStorage.getItem(storageKey) === "ready") {
+                            restoreReadyState();
+                            return;
+                        }
+                    } catch (error) {}
 
-  <link rel="dns-prefetch" href="https://i.postimg.cc">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="/style.css?v=20260630">
-  <script>
-    (function () {
-      const root = document.documentElement;
-      const storageKey = 'arvids-font-reveal-ready';
-      const revealEarly = () => root.classList.add('early-reveal');
-      const revealFonts = () => {
-        root.classList.add('fonts-ready');
-        try { sessionStorage.setItem(storageKey, 'ready'); } catch (error) {}
-      };
-      const restoreReadyState = () => {
-        root.classList.add('early-reveal', 'fonts-ready');
-        document.querySelectorAll('.font-dependent, .nav-text, .btn-text').forEach((el) => {
-          el.style.opacity = '1';
-          el.style.visibility = 'visible';
-        });
-      };
-      const init = () => {
-        try {
-          if (sessionStorage.getItem(storageKey) === 'ready') {
-            restoreReadyState();
-            return;
-          }
-        } catch (error) {}
+                    const safeSelectors = [
+                        "img",
+                        ".hero-img",
+                        ".about-img",
+                        ".card",
+                        ".price-card",
+                        ".payment-item",
+                        ".service-item",
+                        ".review-card",
+                        ".faq-item",
+                        ".filter-group",
+                        ".payment-grid",
+                        ".price-cards",
+                        ".reviews-grid",
+                        ".services-grid",
+                        ".why-grid",
+                        ".faq-grid",
+                        ".filter-bar",
+                        ".badge-group",
+                        ".hero > div:last-child",
+                    ];
+                    document
+                        .querySelectorAll(safeSelectors.join(", "))
+                        .forEach((el) => el.classList.add("font-safe"));
+                    document
+                        .querySelectorAll(
+                            "h1, h2, h3, p, li, a, button, span, label, dt, dd",
+                        )
+                        .forEach((el) => {
+                            if (!el.closest(".font-safe, .nav-text, .btn-text"))
+                                el.classList.add("font-dependent");
+                        });
+                    revealEarly();
 
-        const safeSelectors = ['img', '.hero-img', '.about-img', '.card', '.price-card', '.payment-item', '.service-item', '.review-card', '.faq-item', '.filter-group', '.payment-grid', '.price-cards', '.reviews-grid', '.services-grid', '.why-grid', '.faq-grid', '.filter-bar', '.badge-group', '.hero > div:last-child'];
-        document.querySelectorAll(safeSelectors.join(', ')).forEach((el) => el.classList.add('font-safe'));
-        document.querySelectorAll('h1, h2, h3, p, li, a, button, span, label, dt, dd').forEach((el) => {
-          if (!el.closest('.font-safe, .nav-text, .btn-text')) el.classList.add('font-dependent');
-        });
-        revealEarly();
+                    const waitForFonts = async () => {
+                        if (!("fonts" in document)) {
+                            revealFonts();
+                            return;
+                        }
+                        try {
+                            await document.fonts.load("600 16px Fraunces");
+                            await document.fonts.load("400 16px DM Sans");
+                            revealFonts();
+                        } catch (error) {
+                            revealFonts();
+                        }
+                    };
 
-        const waitForFonts = async () => {
-          if (!('fonts' in document)) {
-            revealFonts();
-            return;
-          }
-          try {
-            await document.fonts.load('600 16px Fraunces');
-            await document.fonts.load('400 16px DM Sans');
-            revealFonts();
-          } catch (error) {
-            revealFonts();
-          }
-        };
+                    waitForFonts();
+                };
 
-        waitForFonts();
-      };
+                if (document.readyState === "loading") {
+                    document.addEventListener("DOMContentLoaded", init, {
+                        once: true,
+                    });
+                } else {
+                    init();
+                }
+            })();
+        </script>
 
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init, { once: true });
-      } else {
-        init();
-      }
-    })();
-  </script>
+        <!-- SEO -->
+        <meta
+            name="description"
+            content="Hembesök i Lund 149 kr/tim är det aktuella priset tills RUT. Tydlig och enkel prisbild."
+        />
+        <meta
+            name="keywords"
+            content="IT-hjälp Lund, IT-support Lund, datorhjälp Lund, BankID hjälp Lund, wifi hjälp Lund"
+        />
+        <meta name="author" content="Arvid" />
+        <link rel="canonical" href="https://arvidsithjalp.se/pris/" />
 
-  <!-- SEO -->
-  <meta name="description"
-    content="Hembesök i Lund 149 kr/tim är det aktuella priset tills RUT. Tydlig och enkel prisbild.">
-  <meta name="keywords" content="IT-hjälp Lund, IT-support Lund, datorhjälp Lund, BankID hjälp Lund, wifi hjälp Lund">
-  <meta name="author" content="Arvid">
-  <link rel="canonical" href="https://arvidsithjalp.se/pris/">
+        <!-- Open Graph (Instagram, Facebook, iMessage, Discord m.fl.) -->
+        <meta property="og:title" content="Priser - Arvids IT-hjälp" />
+        <meta
+            property="og:description"
+            content="Hembesök i Lund 149 kr/tim är det aktuella priset tills RUT."
+        />
+        <meta
+            property="og:image"
+            content="https://arvidsithjalp.se/preview.jpg"
+        />
+        <meta property="og:url" content="https://arvidsithjalp.se/pris/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="sv_SE" />
 
-  <!-- Open Graph (Instagram, Facebook, iMessage, Discord m.fl.) -->
-  <meta property="og:title" content="Priser - Arvids IT-hjälp">
-  <meta property="og:description" content="Hembesök i Lund 149 kr/tim är det aktuella priset tills RUT.">
-  <meta property="og:image" content="https://arvidsithjalp.se/preview.jpg">
-  <meta property="og:url" content="https://arvidsithjalp.se/pris/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="sv_SE">
+        <!-- Twitter/X (fungerar även på många andra ställen) -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Priser - Arvids IT-hjälp" />
 
-  <!-- Twitter/X (fungerar även på många andra ställen) -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Priser - Arvids IT-hjälp">
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "IT-support i Lund",
+                "description": "IT-support och IT-hjälp hemma hos dig i Lund. 149 kr/tim är det aktuella priset tills RUT.",
+                "areaServed": "Lund, Sweden",
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "name": "Arvids IT-hjälp",
+                    "url": "https://arvidsithjalp.se/hem/",
+                    "telephone": "+46760284310"
+                }
+            }
+        </script>
+        <meta
+            name="twitter:description"
+            content="Hembesök i Lund 149 kr/tim är det aktuella priset tills RUT."
+        />
+        <meta
+            name="twitter:image"
+            content="https://arvidsithjalp.se/preview.jpg"
+        />
+    </head>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "IT-support i Lund",
-    "description": "IT-support och IT-hjälp hemma hos dig i Lund. 149 kr/tim är det aktuella priset tills RUT.",
-    "areaServed": "Lund, Sweden",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Arvids IT-hjälp",
-      "url": "https://arvidsithjalp.se/hem/",
-      "telephone": "+46760284310"
-    }
-  }
-  </script>
-  <meta name="twitter:description" content="Hembesök i Lund 149 kr/tim är det aktuella priset tills RUT.">
-  <meta name="twitter:image" content="https://arvidsithjalp.se/preview.jpg">
-</head>
+    <body>
+        <nav class="sr-only" aria-label="Sidöversikt">
+            <ul>
+                <li><a href="/">Hem</a></li>
+                <li><a href="/pris/">Priser</a></li>
+                <li><a href="/om/">Vem är jag?</a></li>
+                <li><a href="/kontakt/">Kontakta mig!</a></li>
+                <li><a href="/integritet/">Integritetspolicy</a></li>
+            </ul>
+        </nav>
+        <div class="page-shell">
+            <nav>
+                <a class="nav-logo" href="/"
+                    ><span class="nav-text">Arvids IT-hjälp</span></a
+                >
+                <button
+                    class="nav-toggle"
+                    aria-label="Meny"
+                    onclick="
+                        this.classList.toggle('open');
+                        document
+                            .querySelector('.nav-links')
+                            .classList.toggle('open');
+                    "
+                >
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-links">
+                    <li>
+                        <a href="/"
+                            ><span class="nav-text">Hem/Recensioner</span></a
+                        >
+                    </li>
+                    <li>
+                        <a href="/pris/"
+                            ><span class="nav-text">Priser</span></a
+                        >
+                    </li>
+                    <li>
+                        <a href="/om/"
+                            ><span class="nav-text">Vem är jag?</span></a
+                        >
+                    </li>
+                    <li>
+                        <a href="/kontakt/"
+                            ><span class="nav-text">Kontakta mig!</span></a
+                        >
+                    </li>
+                </ul>
+            </nav>
+            <script>
+                (function () {
+                    const page =
+                        "/" +
+                        location.pathname.split("/").filter(Boolean).join("/") +
+                        "/";
+                    document.querySelectorAll(".nav-links a").forEach((a) => {
+                        if (a.getAttribute("href") === page)
+                            a.classList.add("active");
+                    });
+                })();
+            </script>
 
-<body>
-  <nav class="sr-only" aria-label="Sidöversikt">
-    <ul>
-      <li><a href="/">Hem</a></li>
-      <li><a href="/pris/">Priser</a></li>
-      <li><a href="/om/">Vem är jag?</a></li>
-      <li><a href="/kontakt/">Kontakta mig!</a></li>
-      <li><a href="/integritet/">Integritetspolicy</a></li>
-    </ul>
-  </nav>
-  <div class="page-shell">
+            <section class="pricing content-width">
+                <h1>Priser</h1>
+                <div class="price-cards">
+                    <div class="card price-card card--highlight">
+                        <h2>Timpris</h2>
+                        <div class="price-amount">150</div>
+                        <div class="per-hour">kr / timme</div>
+                        <p>
+                            Hembesök i Lund, 149 kr/tim är det aktuella priset
+                            tills RUT.
+                        </p>
+                    </div>
+                    <div class="card price-card">
+                        <h2>Utkörningsavgift</h2>
+                        <div class="price-amount">50</div>
+                        <div class="per-hour">kr</div>
+                        <p>
+                            Utkörningsavgift för hembesök i Lund. För pris
+                            utanför lund, ring och fråga.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-  <nav>
-    <a class="nav-logo" href="/"><span class="nav-text">Arvids IT-hjälp</span></a>
-    <button class="nav-toggle" aria-label="Meny"
-      onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('open')">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="/"><span class="nav-text">Hem/Recensioner</span></a></li>
-      <li><a href="/pris/"><span class="nav-text">Priser</span></a></li>
-      <li><a href="/om/"><span class="nav-text">Vem är jag?</span></a></li>
-      <li><a href="/kontakt/"><span class="nav-text">Kontakta mig!</span></a></li>
-    </ul>
-  </nav>
-  <script>
-    (function () {
-      const page = '/' + location.pathname.split('/').filter(Boolean).join('/') + '/';
-      document.querySelectorAll('.nav-links a').forEach(a => {
-        if (a.getAttribute('href') === page) a.classList.add('active');
-      });
-    })();
-  </script>
+            <section class="payment">
+                <section class="content-width">
+                    <h2>Betalning</h2>
+                    <div class="payment-grid">
+                        <div class="payment-item">
+                            <img
+                                class="font-safe payment-logo"
+                                src="/swish.png"
+                                alt="Swish"
+                                width="512"
+                                height="512"
+                            />
+                            <span>Swish</span>
+                        </div>
+                        <div class="payment-item">
+                            <img
+                                class="font-safe payment-logo payment-logo--photo"
+                                src="/kontant.jpg"
+                                alt="Kontant"
+                                width="512"
+                                height="512"
+                            />
+                            <span>Kontant</span>
+                        </div>
+                    </div>
+                    <div class="fine-print">
+                        <p>INTE kort. (men kanske i framtiden.)</p>
+                    </div>
+                </section>
+            </section>
 
-  <section class="pricing content-width">
-    <h1>Priser</h1>
-    <div class="price-cards">
-      <div class="card price-card card--highlight">
-        <h2>Timpris</h2>
-        <div class="price-amount">150</div>
-        <div class="per-hour">kr / timme</div>
-        <p>Hembesök i Lund, 149 kr/tim är det aktuella priset tills RUT.</p>
-      </div>
-      <div class="card price-card">
-        <h2>Utkörningsavgift</h2>
-        <div class="price-amount">50</div>
-        <div class="per-hour">kr</div>
-        <p>Utkörningsavgift för hembesök i Lund. För pris utanför lund, ring och fråga.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="payment content-width">
-    <h2>Betalning</h2>
-    <div class="payment-grid">
-      <div class="payment-item">
-        <img class="font-safe payment-logo" src="/swish.png" alt="Swish" width="512" height="512">
-        <span>Swish</span>
-      </div>
-      <div class="payment-item">
-        <img class="font-safe payment-logo payment-logo--photo" src="/kontant.jpg" alt="Kontant" width="512" height="512">
-        <span>Kontant</span>
-      </div>
-    </div>
-    <div class="fine-print">
-      <p>INTE kort. (men kanske i framtiden.)</p>
-    </div>
-  </section>
-
-    <site-footer></site-footer>
-  </div>
-</body>
-<script src="/footer.js?v=20260630"></script>
-
+            <site-footer></site-footer>
+        </div>
+    </body>
+    <script src="/footer.js?v=20260630"></script>
 </html>
