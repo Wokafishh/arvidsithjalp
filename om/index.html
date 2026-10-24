@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
-  <title>Om - Arvids IT-hjälp</title>
+  <title>Om | Arvids IT-hjälp</title>
 
 
   <link rel="dns-prefetch" href="https://i.postimg.cc">
@@ -18,7 +18,7 @@
     href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="/style.css?v=20261024i">
+  <link rel="stylesheet" href="/style.css?v=20261025f">
   <script>
     (function () {
       const root = document.documentElement;
@@ -84,7 +84,7 @@
   <link rel="canonical" href="https://arvidsithjalp.se/om/">
 
   <!-- Open Graph (Instagram, Facebook, iMessage, Discord m.fl.) -->
-  <meta property="og:title" content="Om Arvid – Arvids IT-hjälp">
+  <meta property="og:title" content="Om Arvid | Arvids IT-hjälp">
   <meta property="og:description" content="Hembesök i Lund 200 kr/tim efter RUT-avdrag. Hjälp med BankID, Wi-Fi, dator och mer.">
   <meta property="og:image" content="https://arvidsithjalp.se/preview.jpg">
   <meta property="og:url" content="https://arvidsithjalp.se/om/">
@@ -93,7 +93,7 @@
 
   <!-- Twitter/X (fungerar även på många andra ställen) -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Om Arvid – Arvids IT-hjälp">
+  <meta name="twitter:title" content="Om Arvid | Arvids IT-hjälp">
   <meta name="twitter:description" content="Hembesök i Lund 200 kr/tim efter RUT-avdrag.">
   <meta name="twitter:image" content="https://arvidsithjalp.se/preview.jpg">
 
@@ -126,13 +126,18 @@
   <div class="page-shell">
 
   <nav>
-    <a class="nav-logo" href="/"><span class="nav-text">Arvids IT-hjälp</span></a>
-    <button class="nav-toggle" aria-label="Meny"
-      onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('open')">
+    <a class="nav-logo" href="/" aria-label="Arvids IT-hjälp, startsida">
+      <span class="logo-mark" aria-hidden="true"><span class="nav-text">A</span></span>
+      <span class="logo-text">
+        <span class="nav-text logo-name">Arvids IT-hjälp</span>
+        <span class="nav-text logo-sub">Hembesök i Lund</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="Meny" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links">
-      <li><a href="/"><span class="nav-text">Hem/Recensioner</span></a></li>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/"><span class="nav-text">Hem</span></a></li>
       <li><a href="/pris/"><span class="nav-text">Priser</span></a></li>
       <li><a href="/om/"><span class="nav-text">Vem är jag?</span></a></li>
       <li><a href="/kontakt/"><span class="nav-text">Kontakta mig!</span></a></li>
@@ -157,7 +162,6 @@
       <p>För ca 7 år sedan började jag experimentera med kod och teknik, och sedan dess har jag utvecklat stor passion
         för området. Här är några saker jag har gjort:</p>
 
-      <p class="hero-lead">Vad jag har gjort:</p>
       <ul class="project-list">
         <li>En social-media app</li>
         <li>Hemsidan du kollar på just nu</li>
@@ -169,7 +173,7 @@
       <div class="about-img">
         <img src="/headshot.png" alt="Arvid, grundare av Arvids IT-hjälp i Lund" loading="lazy" width="600" height="450">
       </div>
-      <p style="text-align: center;">Arvid, grundare av Arvids IT-hjälp.</p>
+      <p class="img-caption">Arvid, grundare av Arvids IT-hjälp.</p>
     </div>
   </section>
 
@@ -203,9 +207,21 @@
     </div>
   </section>
 
+  <section class="content-width cta-section">
+      <div class="card cta-card">
+          <h2>Vill du ha hjälp av mig?</h2>
+          <p>Ring så bokar vi en tid som passar dig, oftast inom 24 timmar.</p>
+          <div class="cta-pair">
+              <a href="tel:0760284310" class="btn"><span class="btn-text">Ring nu</span> <span class="btn-number">076-028 43 10</span></a>
+              <a href="/kontakt/" class="btn btn-secondary"><span class="btn-text">Boka tid</span></a>
+          </div>
+      </div>
+  </section>
+
+
     <site-footer></site-footer>
   </div>
 </body>
-<script src="/footer.js?v=20261024i"></script>
+<script src="/footer.js?v=20261025d"></script>
 
 </html>

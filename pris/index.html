@@ -10,7 +10,7 @@
             http-equiv="Cache-Control"
             content="public, max-age=31536000, immutable"
         />
-        <title>Priser - Arvids IT-hjälp</title>
+        <title>Priser | Arvids IT-hjälp</title>
 
         <link rel="dns-prefetch" href="https://i.postimg.cc" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,7 +24,7 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap"
         />
-        <link rel="stylesheet" href="/style.css?v=20261024i" />
+        <link rel="stylesheet" href="/style.css?v=20261025f" />
         <script>
             (function () {
                 const root = document.documentElement;
@@ -130,7 +130,7 @@
         <link rel="canonical" href="https://arvidsithjalp.se/pris/" />
 
         <!-- Open Graph (Instagram, Facebook, iMessage, Discord m.fl.) -->
-        <meta property="og:title" content="Priser - Arvids IT-hjälp" />
+        <meta property="og:title" content="Priser | Arvids IT-hjälp" />
         <meta
             property="og:description"
             content="Hembesök i Lund 200 kr/tim efter RUT-avdrag (ordinarie pris 400 kr/tim)."
@@ -171,25 +171,20 @@
         </nav>
         <div class="page-shell">
             <nav>
-                <a class="nav-logo" href="/"
-                    ><span class="nav-text">Arvids IT-hjälp</span></a
-                >
-                <button
-                    class="nav-toggle"
-                    aria-label="Meny"
-                    onclick="
-                        this.classList.toggle('open');
-                        document
-                            .querySelector('.nav-links')
-                            .classList.toggle('open');
-                    "
-                >
+                <a class="nav-logo" href="/" aria-label="Arvids IT-hjälp, startsida">
+      <span class="logo-mark" aria-hidden="true"><span class="nav-text">A</span></span>
+      <span class="logo-text">
+        <span class="nav-text logo-name">Arvids IT-hjälp</span>
+        <span class="nav-text logo-sub">Hembesök i Lund</span>
+      </span>
+    </a>
+                <button class="nav-toggle" aria-label="Meny" aria-expanded="false" aria-controls="nav-links">
                     <span></span><span></span><span></span>
                 </button>
-                <ul class="nav-links">
+                <ul class="nav-links" id="nav-links">
                     <li>
                         <a href="/"
-                            ><span class="nav-text">Hem/Recensioner</span></a
+                            ><span class="nav-text">Hem</span></a
                         >
                     </li>
                     <li>
@@ -231,7 +226,7 @@
                         <div class="per-hour">kr / timme efter RUT-avdrag</div>
                         <p>
                             Ordinarie pris 400&nbsp;kr/tim. Med RUT-avdraget betalar
-                            du bara hälften. <a href="#rut">Hur funkar det?</a>
+                            du bara hälften. <a href="#rut" class="rut-jump">Hur funkar det?</a>
                         </p>
                     </div>
                     <div class="card price-card">
@@ -239,8 +234,8 @@
                         <div class="price-amount">50</div>
                         <div class="per-hour">kr</div>
                         <p>
-                            Generell uppskatting av utkörningsavgift för hembesök i Lund. För pris
-                            utanför lund, ring och fråga.
+                            Generell uppskattning av utkörningsavgift för hembesök i Lund. För pris
+                            utanför Lund, ring och fråga.
                         </p>
                     </div>
                 </div>
@@ -248,31 +243,16 @@
                 <div class="card rut-card" id="rut">
                     <h2>Hur funkar RUT-avdraget?</h2>
                     <p>
-                        IT-hjälp i hemmet räknas som en RUT-tjänst. Det betyder
-                        att du betalar halva arbetskostnaden, och resten får jag
-                        från Skatteverket.
+                        IT-hjälp i hemmet räknas som en RUT-tjänst, så du
+                        betalar bara halva arbetskostnaden. Avdraget görs direkt
+                        när du betalar och jag sköter resten med Skatteverket.
+                        Det enda jag behöver är ditt personnummer.
                     </p>
-                    <ul>
-                        <li>
-                            Du behöver inte göra något själv. Avdraget görs
-                            direkt när du betalar, och jag sköter ansökan.
-                        </li>
-                        <li>Jag behöver bara ditt personnummer.</li>
-                        <li>
-                            Avdraget gäller arbetstiden, inte
-                            utkörningsavgiften.
-                        </li>
-                        <li>
-                            Du behöver ha betalat skatt (t.ex. på lön eller
-                            pension) och inte redan använt upp ditt
-                            RUT-utrymme på 75&nbsp;000&nbsp;kr per år. Det gäller de
-                            flesta.
-                        </li>
-                        <li>
-                            Kan du inte få RUT är priset 400&nbsp;kr/tim. Är du
-                            osäker kan vi kolla det tillsammans.
-                        </li>
-                    </ul>
+                    <p class="rut-note">
+                        Gäller arbetstiden, inte utkörningsavgiften. De flesta
+                        har rätt till RUT, men om du inte har det är priset
+                        400&nbsp;kr/tim.
+                    </p>
                 </div>
             </section>
 
@@ -307,8 +287,19 @@
                 </section>
             </section>
 
+            <section class="content-width cta-section">
+                <div class="card cta-card">
+                    <h2>Vill du boka ett besök?</h2>
+                    <p>Ring så hittar vi en tid. Du får alltid en prisuppskattning innan.</p>
+                    <div class="cta-pair">
+                        <a href="tel:0760284310" class="btn"><span class="btn-text">Ring nu</span> <span class="btn-number">076-028 43 10</span></a>
+                        <a href="/kontakt/" class="btn btn-secondary"><span class="btn-text">Boka tid</span></a>
+                    </div>
+                </div>
+            </section>
+
             <site-footer></site-footer>
         </div>
     </body>
-    <script src="/footer.js?v=20261024i"></script>
+    <script src="/footer.js?v=20261025d"></script>
 </html>

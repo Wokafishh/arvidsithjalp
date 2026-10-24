@@ -142,26 +142,58 @@
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "Hur mycket kostar IT-support hemma i Lund?",
+                        "name": "Vad kostar det?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Priset är 200 kr/tim efter RUT-avdrag (ordinarie pris 400 kr/tim). Du får alltid en prisuppskattning innan vi bestämmer tid, och du betalar ingenting om problemet inte löses."
+                            "text": "Priset är 200 kr/tim efter RUT-avdrag (ordinarie pris 400 kr/tim), plus 50 kr i utkörningsavgift inom Lund. Du får alltid en prisuppskattning innan vi bestämmer tid."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Vad hjälper Arvids IT-hjälp med?",
+                        "name": "Vad händer om problemet inte går att lösa?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Hjälp med BankID, Swish, Wi-Fi, datorproblem, virussökning, köpråd, hårdvara och annan mjukvarusupport via hembesök i Lund och Skåne."
+                            "text": "Då betalar du ingenting."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Hur snabbt kan jag boka ett hembesök?",
+                        "name": "Hur snabbt kan du komma?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Om du ringer sker bokning inom 24 timmar."
+                            "text": "Om du ringer kan jag vara på plats inom 24 timmar, ofta redan inom 2–4 timmar."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Hur funkar RUT-avdraget?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Du betalar bara halva arbetskostnaden. Avdraget görs direkt när du betalar och jag sköter ansökan, jag behöver bara ditt personnummer."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Hur betalar jag?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Med Swish eller kontant. Kort går inte att använda än."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Vilket område täcker du?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Främst Lund, men jag hjälper även kunder i övriga Skåne. Ring så berättar jag om din adress passar."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Hjälper du även äldre personer utan teknikvana?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja, absolut. Jag har lång erfarenhet av att hjälpa seniorer med teknik, bland annat som volontär hos träffpunkt Laurentiigatan i Lund."
                         }
                     }
                 ]
@@ -181,7 +213,7 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap"
         />
-        <link rel="stylesheet" href="./style.css?v=20261024i" />
+        <link rel="stylesheet" href="./style.css?v=20261025f" />
         <script>
             (function () {
                 const root = document.documentElement;
@@ -287,25 +319,20 @@
         </nav>
         <div class="page-shell">
             <nav>
-                <a class="nav-logo" href="/"
-                    ><span class="nav-text">Arvids IT-hjälp</span></a
-                >
-                <button
-                    class="nav-toggle"
-                    aria-label="Meny"
-                    onclick="
-                        this.classList.toggle('open');
-                        document
-                            .querySelector('.nav-links')
-                            .classList.toggle('open');
-                    "
-                >
+                <a class="nav-logo" href="/" aria-label="Arvids IT-hjälp, startsida">
+      <span class="logo-mark" aria-hidden="true"><span class="nav-text">A</span></span>
+      <span class="logo-text">
+        <span class="nav-text logo-name">Arvids IT-hjälp</span>
+        <span class="nav-text logo-sub">Hembesök i Lund</span>
+      </span>
+    </a>
+                <button class="nav-toggle" aria-label="Meny" aria-expanded="false" aria-controls="nav-links">
                     <span></span><span></span><span></span>
                 </button>
-                <ul class="nav-links">
+                <ul class="nav-links" id="nav-links">
                     <li>
                         <a href="/"
-                            ><span class="nav-text">Hem/Recensioner</span></a
+                            ><span class="nav-text">Hem</span></a
                         >
                     </li>
                     <li>
@@ -349,23 +376,26 @@
                     <h1>IT-support hemma i Lund</h1>
                     <p>
                         Arvids IT-hjälp erbjuder IT-support och teknikhjälp för
-                        privatpersoner via hembesök. Bankid, Wi-Fi, Appar,
-                        Datorer, och mer! Jag hjälper dig med det mesta inom IT,
+                        privatpersoner via hembesök. BankID, Wi-Fi, appar,
+                        datorer och mer! Jag hjälper dig med det mesta inom IT,
                         snabbt och enkelt.
                     </p>
                     <p>
-                        Jag har hjälpt människor med teknik i nästan två år:
-                        20+ nöjda kunder, och 200+ personer genom mitt
-                        volontärarbete. Med över sju år av generell
-                        IT-kunskap är jag väl rustad att lösa dina IT-problem.
-                        <a href="#reviews">Recensioner...</a>
+                        Jag har drivit Arvids IT-hjälp i snart två år och haft
+                        20+ nöjda kunder &ndash;
+                        <a href="#reviews">läs vad de tycker</a>. Utöver det
+                        har jag hjälpt 200+ personer genom mitt
+                        volontärarbete.
                     </p>
-                    <a href="tel:0760284310" class="btn"
-                        ><span class="btn-text">Ring nu</span></a
-                    >
-                    <a href="/kontakt/" class="btn"
-                        ><span class="btn-text">Boka tid</span></a
-                    >
+                    <div class="cta-pair">
+                        <a href="tel:0760284310" class="btn"
+                            ><span class="btn-text">Ring nu</span>
+                            <span class="btn-number">076-028 43 10</span></a
+                        >
+                        <a href="/kontakt/" class="btn btn-secondary"
+                            ><span class="btn-text">Boka tid</span></a
+                        >
+                    </div>
                 </div>
                 <div>
                     <div class="hero-img">
@@ -379,7 +409,7 @@
                             fetchpriority="high"
                         />
                     </div>
-                    <p style="text-align: center">
+                    <p class="img-caption">
                         Arvid (höger) hjälper med en dator.
                     </p>
                 </div>
@@ -387,26 +417,71 @@
 
             <section class="content-width services" id="services">
                 <h2>Vad kan jag hjälpa dig med?</h2>
+                <p class="services-lead">
+                    Det mesta som har med teknik i hemmet att göra. Här är
+                    det jag oftast hjälper till med:
+                </p>
                 <div class="services-grid">
-                    <div class="service-item">
-                        Mobil och appar (BankID, Swish, meddelandeappar)
+                    <div class="service-card">
+                        <span class="service-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+                        </span>
+                        <div>
+                            <h3>Mobil och appar</h3>
+                            <p>BankID, Swish, meddelandeappar, uppdateringar och inställningar som krånglar.</p>
+                        </div>
                     </div>
-                    <div class="service-item">
-                        Wi-Fi och internetuppkoppling
+                    <div class="service-card">
+                        <span class="service-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                        </span>
+                        <div>
+                            <h3>Wi-Fi och internet</h3>
+                            <p>Svajig uppkoppling, ny router eller dålig täckning i delar av hemmet.</p>
+                        </div>
                     </div>
-                    <div class="service-item">Datorproblem och felsökning</div>
-                    <div class="service-item">
-                        Virussökning och onlinesäkerhet
+                    <div class="service-card">
+                        <span class="service-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </span>
+                        <div>
+                            <h3>Dator och program</h3>
+                            <p>Långsam dator, felmeddelanden, installationer och inställningar.</p>
+                        </div>
                     </div>
-                    <div class="service-item">
-                        Köpråd (mobil, laptop, tillbehör)
+                    <div class="service-card">
+                        <span class="service-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        </span>
+                        <div>
+                            <h3>Bilder och molnlagring</h3>
+                            <p>Flytta bilder mellan telefoner, Google Foto, iCloud och säkerhetskopior.</p>
+                        </div>
                     </div>
-                    <div class="service-item">Hårdvara och reparationer</div>
-                    <div class="service-item">
-                        Inställningar och anpassningar
+                    <div class="service-card">
+                        <span class="service-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                        </span>
+                        <div>
+                            <h3>Säkerhet och virus</h3>
+                            <p>Virussökning, lösenord, säkra inloggningar och misstänkta meddelanden.</p>
+                        </div>
                     </div>
-                    <div class="service-item">Annan mjukvarusupport</div>
+                    <div class="service-card">
+                        <span class="service-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        </span>
+                        <div>
+                            <h3>Köpråd och hårdvara</h3>
+                            <p>Hjälp att välja mobil, dator eller tillbehör, och att komma igång. Enklare reparationer.</p>
+                        </div>
+                    </div>
                 </div>
+                <p class="services-more">
+                    Står ditt problem inte här?
+                    <a href="tel:0760284310">Ring och fråga</a>, jag hjälper
+                    till med det mesta.
+                </p>
             </section>
 
             <section class="why">
@@ -419,23 +494,32 @@
                         i en artikel på Lunds kommuns hemsida. Utöver det:
                     </p>
                     <div class="why-grid">
-                        <div class="card why-card">
-                            <h3>Prisuppskattning</h3>
-                            <p>
-                                Du får alltid en prisuppskattning före vi
-                                bestämmer tid.
-                            </p>
+                        <div class="service-card">
+                            <span class="service-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                            </span>
+                            <div>
+                                <h3>Prisuppskattning</h3>
+                                <p>Du får alltid en prisuppskattning innan vi bestämmer tid.</p>
+                            </div>
                         </div>
-                        <div class="card why-card">
-                            <h3>Betala vid lösning</h3>
-                            <p>
-                                Går problemet inte att lösa betalar du
-                                ingenting.
-                            </p>
+                        <div class="service-card">
+                            <span class="service-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </span>
+                            <div>
+                                <h3>Betala vid lösning</h3>
+                                <p>Går problemet inte att lösa betalar du ingenting.</p>
+                            </div>
                         </div>
-                        <div class="card why-card">
-                            <h3>Snabb hjälp</h3>
-                            <p>Jag kan vara på plats inom 24 timmar.</p>
+                        <div class="service-card">
+                            <span class="service-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </span>
+                            <div>
+                                <h3>Snabb hjälp</h3>
+                                <p>Jag kan vara på plats inom 24 timmar.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -557,6 +641,7 @@
                         </div>
                         <div class="card review-card" data-score="5">
                             <div class="stars">★★★★★</div>
+                            <p class="review-text review-text--empty">Skrev ingen kommentar, bara betyg.</p>
                             <div class="review-footer">
                                 <div class="reviewer-name">Stina W.</div>
                                 <a href="https://share.google/xJUSp2evAw9QP1gxU" target="_blank" rel="noopener" class="reviewer-service review-source">
@@ -681,221 +766,98 @@
                     else grid.appendChild(noReviews);
                 }
 
+                // Filtering only makes sense once there's a review below 5 stars
+                if (cards.every((c) => +c.dataset.score === 5)) {
+                    document.querySelector(".filter-bar").hidden = true;
+                }
+
                 document.getElementById("filter").onchange = render;
                 document.getElementById("sort").onchange = render;
                 render();
             </script>
 
-            <section class="faq">
-                <section class="content-width">
-                    <h2>Vanliga frågor</h2>
-                    <dl class="faq-list faq-grid">
-                        <div class="faq-item">
-                            <dt>
-                                <button
-                                    class="faq-btn"
-                                    aria-expanded="false"
-                                    aria-controls="faq-1"
-                                >
-                                    Hur mycket kostar IT-support hemma i Lund?
-                                    <svg
-                                        class="faq-icon"
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        aria-hidden="true"
-                                    >
-                                        <polyline points="6 9 12 15 18 9" />
-                                    </svg>
-                                </button>
-                            </dt>
-                            <dd id="faq-1" class="faq-answer" hidden>
-                                <p>
-                                    200 kr/tim efter RUT-avdrag (ordinarie pris 400
-                                    kr/tim), plus 50 kr i utkörningsavgift.
-                                    <a href="/pris/">Läs mer</a>
-                                </p>
-                            </dd>
-                        </div>
-
-                        <div class="faq-item">
-                            <dt>
-                                <button
-                                    class="faq-btn"
-                                    aria-expanded="false"
-                                    aria-controls="faq-2"
-                                >
-                                    Vad hjälper Arvids IT-hjälp med?
-                                    <svg
-                                        class="faq-icon"
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        aria-hidden="true"
-                                    >
-                                        <polyline points="6 9 12 15 18 9" />
-                                    </svg>
-                                </button>
-                            </dt>
-                            <dd id="faq-2" class="faq-answer" hidden>
-                                <p>
-                                    Hjälp med BankID, Swish och appar, Wi-Fi och
-                                    internetproblem, datorproblem och
-                                    felsökning, virussökning, köpråd (mobil,
-                                    laptop, tillbehör), hårdvara och
-                                    reparationer, inställningar och annan
-                                    mjukvarusupport - allt via hembesök i Lund
-                                    och Skåne. <a href="#services">Läs mer</a>
-                                </p>
-                            </dd>
-                        </div>
-
-                        <div class="faq-item">
-                            <dt>
-                                <button
-                                    class="faq-btn"
-                                    aria-expanded="false"
-                                    aria-controls="faq-3"
-                                >
-                                    Hur snabbt kan jag boka ett hembesök?
-                                    <svg
-                                        class="faq-icon"
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        aria-hidden="true"
-                                    >
-                                        <polyline points="6 9 12 15 18 9" />
-                                    </svg>
-                                </button>
-                            </dt>
-                            <dd id="faq-3" class="faq-answer" hidden>
-                                <p>
-                                    Ifall du ringer kan jag vara på plats inom
-                                    24 timmar. Ofta inom 2-4 timmar!!
-                                </p>
-                            </dd>
-                        </div>
-
-                        <div class="faq-item">
-                            <dt>
-                                <button
-                                    class="faq-btn"
-                                    aria-expanded="false"
-                                    aria-controls="faq-4"
-                                >
-                                    Vilket område täcker du?
-                                    <svg
-                                        class="faq-icon"
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        aria-hidden="true"
-                                    >
-                                        <polyline points="6 9 12 15 18 9" />
-                                    </svg>
-                                </button>
-                            </dt>
-                            <dd id="faq-4" class="faq-answer" hidden>
-                                <p>
-                                    Primärt Lund, men jag hjälper även kunder i
-                                    övriga Skåne. Kontakta mig så berättar jag
-                                    om just din adress passar.
-                                </p>
-                            </dd>
-                        </div>
-
-                        <div class="faq-item">
-                            <dt>
-                                <button
-                                    class="faq-btn"
-                                    aria-expanded="false"
-                                    aria-controls="faq-5"
-                                >
-                                    Hjälper du även äldre personer utan tidigare
-                                    teknikvana?
-                                    <svg
-                                        class="faq-icon"
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        aria-hidden="true"
-                                    >
-                                        <polyline points="6 9 12 15 18 9" />
-                                    </svg>
-                                </button>
-                            </dt>
-                            <dd id="faq-5" class="faq-answer" hidden>
-                                <p>
-                                    Ja, absolut. Jag har lång erfarenhet av att
-                                    hjälpa seniorer med teknik, bland annat som
-                                    volontär hos träffpunkt Laurentiigatan i
-                                    Lund.
-                                    <a href="/om/">Mer om mina kunskaper</a>
-                                </p>
-                            </dd>
-                        </div>
-
-                        <div class="faq-item">
-                            <dt>
-                                <button
-                                    class="faq-btn"
-                                    aria-expanded="false"
-                                    aria-controls="faq-6"
-                                >
-                                    Kan du hjälpa mig med något som inte nämns
-                                    på hemsidan?
-                                    <svg
-                                        class="faq-icon"
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        aria-hidden="true"
-                                    >
-                                        <polyline points="6 9 12 15 18 9" />
-                                    </svg>
-                                </button>
-                            </dt>
-                            <dd id="faq-6" class="faq-answer" hidden>
-                                <p>
-                                    Ja, absolut.
-                                    <a href="/kontakt/">Kontakta mig</a> så
-                                    berättar jag om hur jag kan hjälpa dig.
-                                </p>
-                            </dd>
-                        </div>
-                    </dl>
-                </section>
+            <section class="faq content-width" id="faq">
+                <h2>Vanliga frågor</h2>
+                <dl class="faq-list">
+                    <div class="faq-item">
+                        <dt>
+                            <button class="faq-btn" aria-expanded="false" aria-controls="faq-1">
+                                Vad kostar det?
+                                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+                            </button>
+                        </dt>
+                        <dd id="faq-1" class="faq-answer" hidden>
+                            <div class="faq-answer-inner"><p>Priset är 200 kr/tim efter RUT-avdrag (ordinarie pris 400 kr/tim), plus 50 kr i utkörningsavgift inom Lund. Du får alltid en prisuppskattning innan vi bestämmer tid. <a href="/pris/">Mer om priser</a></p></div>
+                        </dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt>
+                            <button class="faq-btn" aria-expanded="false" aria-controls="faq-2">
+                                Vad händer om problemet inte går att lösa?
+                                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+                            </button>
+                        </dt>
+                        <dd id="faq-2" class="faq-answer" hidden>
+                            <div class="faq-answer-inner"><p>Då betalar du ingenting.</p></div>
+                        </dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt>
+                            <button class="faq-btn" aria-expanded="false" aria-controls="faq-3">
+                                Hur snabbt kan du komma?
+                                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+                            </button>
+                        </dt>
+                        <dd id="faq-3" class="faq-answer" hidden>
+                            <div class="faq-answer-inner"><p>Om du ringer kan jag vara på plats inom 24 timmar, ofta redan inom 2–4 timmar.</p></div>
+                        </dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt>
+                            <button class="faq-btn" aria-expanded="false" aria-controls="faq-4">
+                                Hur funkar RUT-avdraget?
+                                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+                            </button>
+                        </dt>
+                        <dd id="faq-4" class="faq-answer" hidden>
+                            <div class="faq-answer-inner"><p>Du betalar bara halva arbetskostnaden. Avdraget görs direkt när du betalar och jag sköter ansökan, jag behöver bara ditt personnummer. <a href="/pris/#rut">Läs mer om RUT</a></p></div>
+                        </dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt>
+                            <button class="faq-btn" aria-expanded="false" aria-controls="faq-5">
+                                Hur betalar jag?
+                                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+                            </button>
+                        </dt>
+                        <dd id="faq-5" class="faq-answer" hidden>
+                            <div class="faq-answer-inner"><p>Med Swish eller kontant. Kort går inte att använda än.</p></div>
+                        </dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt>
+                            <button class="faq-btn" aria-expanded="false" aria-controls="faq-6">
+                                Vilket område täcker du?
+                                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+                            </button>
+                        </dt>
+                        <dd id="faq-6" class="faq-answer" hidden>
+                            <div class="faq-answer-inner"><p>Främst Lund, men jag hjälper även kunder i övriga Skåne. Ring så berättar jag om din adress passar.</p></div>
+                        </dd>
+                    </div>
+                    <div class="faq-item">
+                        <dt>
+                            <button class="faq-btn" aria-expanded="false" aria-controls="faq-7">
+                                Hjälper du även äldre personer utan teknikvana?
+                                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+                            </button>
+                        </dt>
+                        <dd id="faq-7" class="faq-answer" hidden>
+                            <div class="faq-answer-inner"><p>Ja, absolut. Jag har lång erfarenhet av att hjälpa seniorer med teknik, bland annat som volontär hos träffpunkt Laurentiigatan i Lund. <a href="/om/">Mer om mig</a></p></div>
+                        </dd>
+                    </div>
+                </dl>
+            </section>
             </section>
 
             <script>
@@ -916,5 +878,5 @@
             <site-footer></site-footer>
         </div>
     </body>
-    <script src="/footer.js?v=20261024i"></script>
+    <script src="/footer.js?v=20261025d"></script>
 </html>
