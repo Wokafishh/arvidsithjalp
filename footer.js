@@ -6,31 +6,23 @@ class SiteFooter extends HTMLElement {
 
     this.innerHTML = `
       <span class="footer-copy">© ${new Date().getFullYear()} Arvids IT-hjälp</span>
-      <nav class="footer-links">
+      <nav class="footer-links" aria-label="Sidfot">
         <a href="/integritet/">Integritetspolicy</a>
         <a href="/pris/">Priser</a>
         <a href="/kontakt/">Kontakta mig</a>
       </nav>
     `;
 
-    this.updateFooterLayout();
-    requestAnimationFrame(() => this.updateFooterLayout());
-    window.addEventListener('DOMContentLoaded', () => this.updateFooterLayout());
-    window.addEventListener('load', () => this.updateFooterLayout());
-    window.addEventListener('resize', () => this.updateFooterLayout());
-    window.addEventListener('scroll', () => this.updateFooterLayout(), { passive: true });
-  }
-
-  updateFooterLayout() {
-    const footerHeight = this.offsetHeight || 0;
-    document.documentElement.style.setProperty('--footer-height', `${footerHeight}px`);
-
-    const pageShell = document.querySelector('.page-shell');
-    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-    const shellHeight = pageShell ? pageShell.getBoundingClientRect().height : 0;
-    const isShortPage = shellHeight <= viewportHeight + 2;
-
-    document.body.classList.toggle('short-page', isShortPage);
+    // Sticky call/book bar on phones (hidden by CSS on desktop and on the contact page)
+    if (!location.pathname.startsWith('/kontakt')) {
+      const bar = document.createElement('div');
+      bar.className = 'call-bar';
+      bar.innerHTML = `
+        <a href="tel:0760284310" class="btn">Ring 076-028 43 10</a>
+        <a href="/kontakt/" class="btn btn-secondary">Boka tid</a>
+      `;
+      document.body.appendChild(bar);
+    }
   }
 }
 
