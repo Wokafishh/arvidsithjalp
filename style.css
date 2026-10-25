@@ -1353,15 +1353,32 @@ site-footer .footer-links a:hover { text-decoration: underline; }
   opacity: 0.85;
 }
 
-.cta-card { padding: 24px; }
+/* Closing booking band: dark so it reads as the end of the page, not another card */
+.cta-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px 40px;
+  padding: 36px 40px;
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
 
 .cta-card h2 {
-  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
-  color: var(--teal);
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  color: var(--white);
   margin-bottom: 6px;
 }
 
-.cta-card p { color: var(--muted); margin-bottom: 10px; }
+.cta-card p { color: rgba(255, 255, 255, 0.78); margin: 0; max-width: 46ch; }
+
+.cta-card .cta-pair { margin: 0; flex-wrap: nowrap; }
+.cta-card .btn { background: var(--white); color: var(--teal); }
+.cta-card .btn:hover { background: var(--teal-light); }
+.cta-card .btn.btn-secondary { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.5); }
+.cta-card .btn.btn-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--white); }
 
 .review-text--empty { font-style: normal; color: var(--subtle-text); }
 
@@ -1369,7 +1386,8 @@ site-footer .footer-links a:hover { text-decoration: underline; }
 
 @media (max-width: 768px) {
   .cta-pair { flex-direction: column; }
-  .cta-card { padding: 20px 16px; }
+  .cta-card { grid-template-columns: 1fr; padding: 24px 20px; }
+  .cta-card .cta-pair { flex-wrap: wrap; }
 }
 
 /* ── SERVICES ── */
