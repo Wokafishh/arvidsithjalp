@@ -182,8 +182,8 @@ h1, h2, h3 {
 }
 
 /* ── STANDARD SECTIONS ── */
-.payment, .privacy-page, .faq, .pricing, .services,
-.why, .reviews, .location, .teacher-refs, .contact-options, .phone-section {
+.payment, .faq, .pricing, .services,
+.why, .reviews, .location, .teacher-refs {
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
@@ -205,28 +205,18 @@ h1, h2, h3 {
   margin-right: auto;
 }
 
-.why > *, .reviews > *, .location > *, .teacher-refs > *, .contact-options > *, .phone-section > * {
+.why > *, .reviews > *, .location > *, .teacher-refs > * {
   margin-left: auto;
   margin-right: auto;
 }
 
 /* ── STANDARD CARDS ── */
-.card, .why-card, .review-card, .location-card, .ref-card, .faq-item, .payment-card {
+.card, .review-card, .location-card, .faq-item {
   background: var(--surface);
   border-radius: var(--radius-lg);
   padding: var(--space-card-padding);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
-  contain: layout style paint;
-  box-sizing: border-box;
-}
-
-.contact-card {
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  padding: var(--space-card-padding);
-  border: 1px solid var(--border);
-  box-shadow: none;
   contain: layout style paint;
   box-sizing: border-box;
 }
@@ -259,7 +249,7 @@ h1, h2, h3 {
 /* ═══════════════════════════════════════════════
    BUTTONS & BADGES
    ═══════════════════════════════════════════════ */
-.btn, .fb-badge, .g-badge, #avg-banner .btn, .contact-card .btn {
+.btn, .fb-badge, .g-badge, #avg-banner .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -278,8 +268,8 @@ h1, h2, h3 {
   min-height: 44px;
 }
 
-.btn, #avg-banner .btn, .contact-card .btn { background: var(--teal); color: var(--white); }
-.btn:hover, #avg-banner .btn:hover, .contact-card .btn:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 6px 14px rgba(2, 49, 84, 0.16); }
+.btn, #avg-banner .btn { background: var(--teal); color: var(--white); }
+.btn:hover, #avg-banner .btn:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 6px 14px rgba(2, 49, 84, 0.16); }
 
 /* ═══════════════════════════════════════════════
    NAVIGATION COMPONENT
@@ -459,24 +449,11 @@ section > h1:first-child,
 .about-img { aspect-ratio: 366/365; }
 
 /* ── CARD VARIANTS ── */
-.card--accent-top { border-top: 3px solid var(--teal); border-left: none; border-right: none; border-bottom: none; }
-.card--teal { background: var(--teal); color: white; border-color: var(--teal); }
 .card--highlight { background: var(--teal-light); border: none; }
-.card--teal h2 { color: white; }
 
 /* ── SECTION BACKGROUNDS ── */
-.why, .reviews, .contact-options, .location, .teacher-refs { background: rgba(212, 237, 237, 0.35); }
+.why, .reviews, .location, .teacher-refs { background: rgba(212, 237, 237, 0.35); }
 .payment { background: transparent; }
-
-.contact-options.payment-grid {
-  grid-template-columns: 1fr;
-  justify-items: center;
-}
-
-.contact-options.payment-grid .card,
-.contact-options.payment-grid .contact-card {
-  width: 100%;
-}
 
 .contact-form {
   display: grid;
@@ -556,7 +533,7 @@ section > h1:first-child,
 }
 
 /* ── HEADER TYPOGRAPHY ── */
-.why h2, .services h2, .reviews h2, .pricing h1, .payment h2, .location h2, .teacher-refs h2, .privacy-page h1, .faq h2 {
+.why h2, .services h2, .reviews h2, .pricing h1, .payment h2, .location h2, .teacher-refs h2, .faq h2 {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   color: var(--teal);
   margin-bottom: 14px;
@@ -564,20 +541,13 @@ section > h1:first-child,
 .payment h2 { text-align: left; margin-bottom: 10px; }
 
 /* Standardized Card Titles */
-.why-card h3, .review-card h3, .payment-card h3, .contact-card h3, .location-card strong, .ref-name, .faq-btn {
+.review-card h3, .location-card strong, .faq-btn {
   font-size: 1.05rem;
   color: var(--navy);
   font-weight: 600;
 }
 
-.contact-card h2 {
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  color: var(--teal);
-  margin-bottom: 10px;
-  line-height: 1.2;
-}
-
-.why-card p, .service-list li, .travel-fee p, .payment-card p, .fine-print, .contact-card p, .location-card p, .ref-note, .ref-role, .faq-answer {
+.fine-print, .location-card p, .faq-answer {
   color: var(--muted);
   font-size: 0.95rem;
 }
@@ -625,19 +595,7 @@ section > h1:first-child,
 #avg-banner .btn { gap: 8px; }
 .reviews-all-link { margin-top: 10px; font-size: 0.9rem; color: var(--teal); }
 .avg-stars { font-size: 1.2rem; }
-.review-text, .ref-quote { font-style: italic; line-height: 1.6; margin-bottom: 16px; }
-
-.ref-quote::before {
-  content: "“";
-  font-weight: bold;
-  margin-right: 4px;
-}
-
-.ref-quote::after {
-  content: "”";
-  font-weight: bold;
-  margin-left: 4px;
-}
+.review-text { font-style: italic; line-height: 1.6; margin-bottom: 16px; }
 
 /* ── FLEX LISTS ── */
 .project-list li {
@@ -666,12 +624,8 @@ section > h1:first-child,
 
 .project-list li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
 
-.service-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.service-list li::before { content: ">"; font-weight: 700; flex-shrink: 0; opacity: 0.8; margin-right: 10px; }
-
 /* ── PRICING & STRIPS ── */
 .price-amount { font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 700; color: var(--teal); margin: 12px 0 4px; }
-.card--teal .price-amount { color: white; }
 
 .price-card h2 {
   color: var(--teal);
@@ -704,21 +658,6 @@ section > h1:first-child,
 
 .rut-card .rut-note { margin-top: 10px; font-size: 0.88rem; color: var(--subtle-text); }
 
-.travel-fee, .discount-banner {
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-radius: var(--radius-lg);
-  padding: 18px 22px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  box-sizing: border-box;
-}
-.travel-fee { background: var(--sage); border: 1px solid var(--border); }
-.travel-fee .amount { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; color: var(--teal); white-space: nowrap; }
-.discount-banner { background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%); color: white; }
-
 /* ── FILTER INPUTS ── */
 .filter-bar { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
 .filter-group { display: flex; align-items: center; background: white; border-radius: var(--radius-md); border: 1px solid var(--border); overflow: hidden; }
@@ -727,16 +666,12 @@ section > h1:first-child,
 
 /* ── CONTACT SPECIFICS ── */
 .contact-hero,
-.phone-section,
-.contact-options,
 .location {
   width: 100%;
   box-sizing: border-box;
 }
 
 .contact-hero > *,
-.phone-section > *,
-.contact-options > *,
 .location > * {
   margin-left: auto;
   margin-right: auto;
@@ -784,10 +719,6 @@ section > h1:first-child,
   flex-shrink: 0;
   display: block;
 }
-
-
-/* ── ABOUT PAGE LAYOUT ── */
-.about { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: start; }
 
 /* ── ACCORDION FAQ ── */
 .faq-grid {
@@ -898,12 +829,12 @@ site-footer .footer-links a:hover { text-decoration: underline; }
   }
 
   .hero, .why-grid, .services-grid, .reviews-grid, .faq-grid,
-  .price-cards, .ref-cards, .about, .contact-card {
+  .price-cards, .ref-cards {
     grid-template-columns: 1fr !important;
     width: 100% !important;
   }
 
-  .btn, .fb-badge, .g-badge, #avg-banner .btn, .contact-card .btn {
+  .btn, .fb-badge, .g-badge, #avg-banner .btn {
     width: 100% !important;
     display: flex !important;
     text-align: center;
@@ -912,7 +843,6 @@ site-footer .footer-links a:hover { text-decoration: underline; }
   /* Headline and call button first, photo after */
   .hero { grid-template-columns: 1fr !important; gap: 20px; }
   .hero-img { aspect-ratio: 16/10; }
-  .travel-fee, .discount-banner { flex-direction: column; align-items: stretch; text-align: center; }
 
   .filter-bar { flex-wrap: nowrap; gap: 8px; margin-bottom: 16px; }
   .filter-group { flex: 1 1 0; min-width: 0; }
@@ -1025,11 +955,6 @@ site-footer .footer-links a:hover { text-decoration: underline; }
 }
 
 /* ── CONTACT COMPONENT FIXES ── */
-.phone-section {
-  background: transparent;
-  text-align: center;
-}
-
 .badge-group {
   display: flex;
   justify-content: flex-start;
@@ -1038,50 +963,11 @@ site-footer .footer-links a:hover { text-decoration: underline; }
   margin-top: 20px;
 }
 
-.phone-section {
-  text-align: center;
-  background: var(--white);
-}
-
 .phone-subtext {
   color: var(--muted);
   font-size: 0.95rem;
   margin-top: 8px;
 }
-
-.contact-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  text-align: left;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-}
-
-.contact-card .card-body {
-  width: 100%;
-  display: grid;
-  gap: 8px;
-}
-
-.card-icon {
-  font-size: 1.8rem;
-  margin-bottom: 12px;
-}
-
-.email-address {
-  font-size: 0.88rem;
-  color: var(--subtle-text);
-  text-align: center;
-  margin-top: 4px;
-  font-weight: 500;
-}
-
 
 /* ── PRIVACY POLICY PAGE ── */
 .page-wrap {
@@ -1262,8 +1148,6 @@ site-footer .footer-links a:hover { text-decoration: underline; }
   contain: layout style paint;
 }
 
-
-
 .right-card strong {
   color: var(--navy);
   font-weight: 600;
@@ -1273,7 +1157,6 @@ site-footer .footer-links a:hover { text-decoration: underline; }
   gap: 8px;
   margin-bottom: 4px;
 }
-
 
 .right-card span {
   color: var(--muted);
@@ -1329,10 +1212,6 @@ site-footer .footer-links a:hover { text-decoration: underline; }
     margin-bottom: 20px;
   }
 
-  .contact-options {
-    grid-template-columns: 1fr !important;
-  }
-
   .rights-grid {
     grid-template-columns: 1fr !important;
   }
@@ -1340,7 +1219,6 @@ site-footer .footer-links a:hover { text-decoration: underline; }
   .right-card {
     padding: 12px;
   }
-
 
   .info-table {
     font-size: 0.9rem;
@@ -1718,7 +1596,6 @@ site-footer .footer-links a:hover { text-decoration: underline; }
   color: var(--navy);
   line-height: 1.35;
 }
-
 
 @media (max-width: 768px) {
   .faq .faq-btn { padding: 14px 16px; }
