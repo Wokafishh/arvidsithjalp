@@ -1108,7 +1108,7 @@ site-footer .footer-links a:hover { text-decoration: underline; }
 @media (max-width: 768px) {
   :root { --page-zoom: 1; }
 
-  html:has(.call-bar) { --callbar-height: calc(68px + env(safe-area-inset-bottom)); }
+  html:has(.call-bar) { --callbar-height: calc(58px + max(10px, env(safe-area-inset-bottom))); }
 
   .call-bar {
     display: flex;
@@ -1118,18 +1118,21 @@ site-footer .footer-links a:hover { text-decoration: underline; }
     right: 0;
     bottom: 0;
     z-index: 90;
-    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(10px);
+    /* max() instead of adding: Firefox on Android can report a large bottom inset once its toolbar hides */
+    padding: 10px 16px max(10px, env(safe-area-inset-bottom));
+    /* Solid, no backdrop-filter: blur on a fixed bar leaves a blank strip in Firefox for Android */
+    background: var(--white);
     border-top: 1px solid var(--border);
     box-shadow: 0 -4px 14px rgba(12, 40, 60, 0.05);
-    transition: transform 0.22s ease, visibility 0.22s;
+    transition: transform 0.22s ease, opacity 0.22s ease, visibility 0.22s;
   }
 
   /* Tucked away while the page's own call/book buttons are on screen */
   .call-bar.is-hidden {
     transform: translateY(100%);
+    opacity: 0;
     visibility: hidden;
+    pointer-events: none;
   }
 
   .call-bar .btn {
